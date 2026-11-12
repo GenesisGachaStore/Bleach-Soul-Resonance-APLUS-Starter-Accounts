@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bleach Soul Resonance Catalog</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+  @keyframes bgPulse {
+    0%, 100% { background-color: #08070a; box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.9); }
+    50% { background-color: #170c29; box-shadow: inset 0 0 110px rgba(123, 66, 188, 0.22); }
+  }
+  body { background-color: #08070a; color: #fff; padding: 15px; display: flex; flex-direction: column; align-items: center; animation: bgPulse 7s infinite ease-in-out; }
+  .discord-bar { width: 100%; max-width: 1080px; background: linear-gradient(90deg, #1b1f3b 0%, #5865F2 50%, #1b1f3b 100%); border: 1.5px solid #8ea1e1; border-radius: 10px; padding: 10px 16px; margin-bottom: 12px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(88, 101, 242, 0.45); text-align: center; }
+  .discord-text { font-size: 14px; font-weight: bold; color: #ffffff; letter-spacing: 0.4px; }
+  .discord-tag { background: rgba(0, 0, 0, 0.45); color: #ffe680; font-weight: 800; font-size: 14px; padding: 4px 10px; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.25); user-select: all; }
+  .copy-discord-btn { background: #ffcc00; color: #111; border: none; border-radius: 5px; padding: 5px 11px; font-size: 12px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.15s; }
+  .copy-discord-btn:hover { background: #ffffff; transform: scale(1.04); }
+  .bleach-panel { width: 100%; max-width: 1080px; background: radial-gradient(circle at 50% 0%, #3b1c5e 0%, #190d2b 60%, #0e0917 100%); border: 2px solid #8a4fd1; border-radius: 12px; padding: 22px 18px 18px 18px; margin-bottom: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(138, 79, 209, 0.35); display: flex; flex-direction: column; align-items: center; }
+  .bleach-title { font-size: 30px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; text-align: center; background: linear-gradient(180deg, #ffffff 10%, #ffd24d 55%, #ff6600 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 3px 12px rgba(255, 102, 0, 0.7)); margin-bottom: 6px; }
+  .bleach-subtitle { font-size: 12px; font-weight: bold; letter-spacing: 2px; color: #d8bff8; background: rgba(0, 0, 0, 0.35); padding: 4px 14px; border-radius: 20px; border: 1px solid rgba(155, 102, 223, 0.3); text-transform: uppercase; margin-bottom: 16px; text-align: center; }
+  .heroes-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 9px; width: 100%; max-width: 1060px; }
+  .hero-card { background: linear-gradient(180deg, #a792d1 0%, #7d66ad 100%); border: 1.5px solid #35274d; border-radius: 6px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; align-items: center; user-select: none; box-shadow: 0 3px 6px rgba(0,0,0,0.45); transition: 0.15s; }
+  .hero-card:hover { border-color: #e0c3fc; transform: translateY(-2px); }
+  .hero-card.active { border-color: #ffcc00; box-shadow: 0 0 14px rgba(255, 204, 0, 0.95); transform: translateY(-2px) scale(1.02); }
+  .hero-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+  @keyframes cbGlow {
+    0%, 100% { border-color: #d8bff8; box-shadow: 0 0 6px rgba(192, 132, 252, 0.6), inset 0 0 4px rgba(192, 132, 252, 0.4); }
+    50% { border-color: #ffcc00; box-shadow: 0 0 14px rgba(255, 204, 0, 0.95), inset 0 0 6px rgba(255, 204, 0, 0.6); }
+  }
+  .cb-area { width: 100%; padding: 6px 0; display: flex; justify-content: center; background: #26173d; border-top: 1.5px solid #482d70; transition: 0.15s; }
+  .hero-card:hover .cb-area { background: #342052; }
+  .hero-card.active .cb-area { background: #3d2400; border-top-color: #ffcc00; }
+  .cb { width: 22px; height: 22px; border: 2px solid #d8bff8; background: #140b24; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; color: #111; animation: cbGlow 1.6s infinite ease-in-out; transition: 0.15s; }
+  .hero-card:hover .cb { border-color: #ffffff; transform: scale(1.08); }
+  .hero-card.active .cb { background: #ffcc00; border-color: #ffffff; box-shadow: 0 0 16px #ffcc00, 0 0 24px #ff8800; animation: none; }
+  .hero-card.active .cb::after { content: "✔"; }
+  .status { width: 100%; max-width: 1080px; display: flex; justify-content: center; align-items: center; gap: 12px; padding: 10px 16px; margin-bottom: 16px; background: linear-gradient(90deg, #160c24 0%, #24133b 50%, #160c24 100%); border: 1px solid #5c338f; border-radius: 8px; font-size: 14px; font-weight: bold; color: #e6d4ff; }
+  .reset-btn { background: #ffcc00; color: #140a21; border: none; border-radius: 4px; padding: 4px 10px; font-size: 12px; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+  .reset-btn:hover { background: #ffffff; }
+  @keyframes blinkBorder { 0%, 100% { border-color: #666666; box-shadow: 0 0 6px rgba(255, 204, 0, 0.2); } 50% { border-color: #ffcc00; box-shadow: 0 0 18px rgba(255, 204, 0, 0.85); } }
+  @keyframes blinkAccount { 0%, 100% { color: #ffcc00; text-shadow: 0 0 8px rgba(255, 204, 0, 0.8); } 50% { color: #ffffff; text-shadow: 0 0 18px #ffcc00, 0 0 28px #ff8800; } }
+  .accounts { width: 100%; max-width: 1080px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; align-items: start; }
+  .acc { background: #181818; border: 2px solid #ffcc00; border-radius: 6px; padding: 0; overflow: hidden; animation: blinkBorder 1.5s infinite ease-in-out; }
+  .drive-btn { display: block; width: 100%; text-align: center; background: linear-gradient(90deg, #3b1e5e 0%, #6833a8 50%, #3b1e5e 100%); color: #ffe680; font-weight: bold; font-size: 13px; letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none; padding: 9px 12px; border-bottom: 1px solid #5a5a5a; transition: 0.2s; }
+  .drive-btn:hover { background: linear-gradient(90deg, #522982 0%, #8744d6 50%, #522982 100%); color: #ffffff; }
+  .acc-title { font-size: 18px; font-weight: bold; color: #ffcc00; background: #262626; padding: 10px; border-bottom: 2px solid #5a5a5a; margin: 0; text-align: center; animation: blinkAccount 1.2s infinite ease-in-out; }
+  .acc img { width: 100%; display: block; padding: 8px; background: #141414; }
+  .img-crop-box { width: 100%; max-height: 580px; overflow: hidden; position: relative; background: #141414; transition: max-height 0.35s ease; }
+  .img-crop-box.expanded { max-height: 2500px; }
+  .img-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 35px; background: linear-gradient(to bottom, transparent, #181818); pointer-events: none; }
+  .img-crop-box.expanded .img-fade { display: none; }
+  .toggle-wrap { display: flex; justify-content: center; padding: 10px; background: #1c1c1c; border-top: 1px solid #333; }
+  .toggle-btn { background: linear-gradient(90deg, #3b1e5e 0%, #6833a8 50%, #3b1e5e 100%); color: #ffe680; border: 1.5px solid #9b66df; border-radius: 5px; padding: 8px 18px; font-size: 13px; font-weight: bold; letter-spacing: 0.6px; text-transform: uppercase; cursor: pointer; transition: 0.2s; }
+  .toggle-btn:hover { background: linear-gradient(90deg, #522982 0%, #8744d6 50%, #522982 100%); color: #ffffff; }
+  @media (max-width: 768px) { .accounts { grid-template-columns: 1fr; } .heroes-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; } .bleach-title { font-size: 20px; letter-spacing: 1.5px; } .img-crop-box { max-height: 280px !important; } .img-crop-box.expanded { max-height: 2500px !important; } }
+/* COSMIC THEME START */
+  .cosmic-sky {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+  }
+  .discord-bar, .bleach-panel, .status, .accounts {
+    position: relative;
+    z-index: 2;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.25; transform: scale(0.9); }
+    50% { opacity: 0.9; transform: scale(1.2); }
+  }
+  .stars-bg {
+    position: absolute;
+    width: 100%; height: 100%;
+    background-image:
+      radial-gradient(1.5px 1.5px at 12% 18%, #ffffff, transparent),
+      radial-gradient(2px 2px at 28% 72%, #e879f9, transparent),
+      radial-gradient(1.5px 1.5px at 44% 33%, #fde047, transparent),
+      radial-gradient(2px 2px at 67% 15%, #c084fc, transparent),
+      radial-gradient(1.5px 1.5px at 82% 64%, #ffffff, transparent),
+      radial-gradient(2px 2px at 91% 29%, #ffcc00, transparent),
+      radial-gradient(1.5px 1.5px at 19% 88%, #d8b4fe, transparent),
+      radial-gradient(1.5px 1.5px at 56% 81%, #ffffff, transparent),
+      radial-gradient(2px 2px at 74% 48%, #f0abfc, transparent);
+    animation: twinkle 5s infinite ease-in-out;
+  }
+  @keyframes shootingStar {
+    0% { transform: translate(0, 0) rotate(-35deg); opacity: 0; }
+    4% { opacity: 1; }
+    16% { transform: translate(-1100px, 750px) rotate(-35deg); opacity: 0; }
+    100% { transform: translate(-1100px, 750px) rotate(-35deg); opacity: 0; }
+  }
+  .meteor {
+    position: absolute;
+    width: 130px;
+    height: 2px;
+    background: linear-gradient(90deg, #ffffff 0%, #ffcc00 35%, #a855f7 75%, transparent 100%);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px #ffcc00);
+    opacity: 0;
+  }
+  .meteor::before {
+    content: "";
+    position: absolute;
+    left: 0; top: -2px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 12px #ffffff, 0 0 20px #ffcc00;
+  }
+  .m1 { top: 6%; left: 95%; animation: shootingStar 7s infinite linear 1s; }
+  .m2 { top: 22%; left: 105%; animation: shootingStar 11s infinite linear 4.5s; }
+  .m3 { top: -2%; left: 68%; animation: shootingStar 9s infinite linear 7.5s; }
+  .m4 { top: 45%; left: 102%; animation: shootingStar 13s infinite linear 10s; }
+  /* COSMIC THEME END */
+/* EXTRA EFFECTS START */
+  @keyframes auraWave {
+    0%, 100% { opacity: 0.35; transform: scaleY(1); }
+    50% { opacity: 0.75; transform: scaleY(1.15); }
+  }
+  .soul-aura {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%; height: 180px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(168, 85, 247, 0.45) 0%, rgba(107, 33, 168, 0.15) 55%, transparent 80%);
+    pointer-events: none;
+    animation: auraWave 5s infinite ease-in-out;
+  }
+  @keyframes floatEmber {
+    0% { transform: translateY(0) translateX(0) scale(0.7); opacity: 0; }
+    20% { opacity: 0.95; }
+    80% { opacity: 0.8; }
+    100% { transform: translateY(-95vh) translateX(35px) scale(1.2); opacity: 0; }
+  }
+  .ember {
+    position: absolute;
+    bottom: -15px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .e1 { left: 4%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: floatEmber 8s infinite ease-in 0.2s; }
+  .e2 { left: 8%; width: 3px; height: 3px; background: #e879f9; box-shadow: 0 0 10px #e879f9; animation: floatEmber 10.5s infinite ease-in 2.1s; }
+  .e3 { left: 12%; width: 5px; height: 5px; background: #fde047; box-shadow: 0 0 12px #fde047; animation: floatEmber 9.5s infinite ease-in 4.2s; }
+  .e4 { left: 16%; width: 4px; height: 4px; background: #c084fc; box-shadow: 0 0 10px #c084fc; animation: floatEmber 11.5s infinite ease-in 1.1s; }
+  .e5 { left: 20%; width: 3px; height: 3px; background: #ffffff; box-shadow: 0 0 9px #ffcc00; animation: floatEmber 8.5s infinite ease-in 3.4s; }
+  .e6 { left: 25%; width: 5px; height: 5px; background: #ffcc00; box-shadow: 0 0 12px #ff8800; animation: floatEmber 12s infinite ease-in 5.5s; }
+  .e7 { left: 29%; width: 4px; height: 4px; background: #f0abfc; box-shadow: 0 0 10px #f0abfc; animation: floatEmber 9s infinite ease-in 0.8s; }
+  .e8 { left: 33%; width: 3px; height: 3px; background: #fde047; box-shadow: 0 0 9px #fde047; animation: floatEmber 10s infinite ease-in 2.8s; }
+  .e9 { left: 37%; width: 5px; height: 5px; background: #a855f7; box-shadow: 0 0 12px #a855f7; animation: floatEmber 11s infinite ease-in 4.8s; }
+  .e10 { left: 41%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: floatEmber 7.8s infinite ease-in 1.9s; }
+  .e11 { left: 45%; width: 3px; height: 3px; background: #e879f9; box-shadow: 0 0 9px #e879f9; animation: floatEmber 9.8s infinite ease-in 3.9s; }
+  .e12 { left: 50%; width: 4px; height: 4px; background: #ffffff; box-shadow: 0 0 10px #c084fc; animation: floatEmber 8.8s infinite ease-in 6.1s; }
+  .e13 { left: 54%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: floatEmber 9.2s infinite ease-in 0.5s; }
+  .e14 { left: 58%; width: 3px; height: 3px; background: #e879f9; box-shadow: 0 0 10px #e879f9; animation: floatEmber 11.2s infinite ease-in 2.7s; }
+  .e15 { left: 62%; width: 5px; height: 5px; background: #fde047; box-shadow: 0 0 12px #fde047; animation: floatEmber 8.9s infinite ease-in 4.9s; }
+  .e16 { left: 66%; width: 4px; height: 4px; background: #c084fc; box-shadow: 0 0 10px #c084fc; animation: floatEmber 10.8s infinite ease-in 1.5s; }
+  .e17 { left: 71%; width: 3px; height: 3px; background: #ffffff; box-shadow: 0 0 9px #ffcc00; animation: floatEmber 8.2s infinite ease-in 3.1s; }
+  .e18 { left: 75%; width: 5px; height: 5px; background: #ffcc00; box-shadow: 0 0 12px #ff8800; animation: floatEmber 11.8s infinite ease-in 5.2s; }
+  .e19 { left: 79%; width: 4px; height: 4px; background: #f0abfc; box-shadow: 0 0 10px #f0abfc; animation: floatEmber 9.4s infinite ease-in 1.3s; }
+  .e20 { left: 83%; width: 3px; height: 3px; background: #fde047; box-shadow: 0 0 9px #fde047; animation: floatEmber 10.3s infinite ease-in 3.6s; }
+  .e21 { left: 87%; width: 5px; height: 5px; background: #a855f7; box-shadow: 0 0 12px #a855f7; animation: floatEmber 11.4s infinite ease-in 6.4s; }
+  .e22 { left: 91%; width: 4px; height: 4px; background: #ffcc00; box-shadow: 0 0 10px #ffcc00; animation: floatEmber 7.6s infinite ease-in 2.4s; }
+  .e23 { left: 94%; width: 3px; height: 3px; background: #e879f9; box-shadow: 0 0 9px #e879f9; animation: floatEmber 9.6s infinite ease-in 4.5s; }
+  .e24 { left: 97%; width: 4px; height: 4px; background: #ffffff; box-shadow: 0 0 10px #c084fc; animation: floatEmber 8.4s infinite ease-in 0.9s; }
+  .acc { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .acc:hover { transform: translateY(-3px); box-shadow: 0 0 24px rgba(255, 204, 0, 0.9), 0 0 36px rgba(168, 85, 247, 0.5) !important; }
+  /* EXTRA EFFECTS END */
+/* MATCHED HEROES START */
+  .matched-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: linear-gradient(90deg, #1b0f2e 0%, #2d184d 50%, #1b0f2e 100%);
+    border-bottom: 1.5px solid #ffcc00;
+  }
+  .matched-label {
+    font-size: 11.5px;
+    font-weight: 900;
+    color: #ffe680;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-right: 4px;
+  }
+  .matched-hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 2px solid #ffcc00;
+    border-radius: 6px;
+    padding: 3px 8px 3px 3px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.75);
+  }
+  .matched-hero-badge img {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+  }
+  .matched-hero-badge span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  /* MATCHED HEROES END */
+/* PREMIUM HEROES START */
+  .hero-card {
+    position: relative;
+    background: radial-gradient(circle at 50% 30%, #4b2882 0%, #1a0e2e 100%) !important;
+    border: 2px solid #6b42a8 !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.7), inset 0 0 12px rgba(168, 85, 247, 0.4) !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important;
+  }
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -120%;
+    width: 60%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.45s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .hero-card:hover::before {
+    left: 160%;
+  }
+  .hero-card:hover {
+    border-color: #e879f9 !important;
+    transform: translateY(-4px) scale(1.03) !important;
+    box-shadow: 0 8px 18px rgba(192, 132, 252, 0.55), inset 0 0 15px rgba(232, 121, 249, 0.5) !important;
+  }
+  .hero-card.active {
+    border-color: #ffcc00 !important;
+    box-shadow: 0 0 18px rgba(255, 204, 0, 0.95), 0 0 28px rgba(255, 136, 0, 0.65) !important;
+    transform: translateY(-4px) scale(1.04) !important;
+  }
+  .hero-card img {
+    filter: contrast(1.08) saturate(1.15);
+    transition: transform 0.25s ease, filter 0.25s ease;
+  }
+  .hero-card:hover img {
+    transform: scale(1.06);
+    filter: contrast(1.12) saturate(1.22);
+  }
+  /* PREMIUM HEROES END */
+
+/* SEAMLESS BANNER START */
+  @keyframes bannerPulse {
+    0%, 100% { border-color: #9333ea; box-shadow: 0 0 22px rgba(168, 85, 247, 0.5), inset 0 0 15px rgba(168, 85, 247, 0.3); }
+    50% { border-color: #f0abfc; box-shadow: 0 0 38px rgba(217, 70, 239, 0.85), 0 0 15px rgba(255, 204, 0, 0.4); }
+  }
+  @keyframes bannerSweep {
+    0% { left: -100%; }
+    35%, 100% { left: 150%; }
+  }
+  .main-banner-wrap {
+    width: 100%;
+    max-width: 1080px;
+    margin-bottom: 0;
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+    border: 2px solid #a855f7;
+    border-bottom: none;
+    position: relative;
+    z-index: 2;
+    background: #0d0717;
+    animation: bannerPulse 4s infinite ease-in-out;
+  }
+  .main-banner-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 45%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+    transform: skewX(-25deg);
+    animation: bannerSweep 7s infinite ease-in-out;
+    pointer-events: none;
+  }
+  .main-banner-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: contrast(1.04) saturate(1.08);
+  }
+  .discord-bar {
+    border-radius: 0 0 14px 14px !important;
+    border-top: 1px solid rgba(240, 171, 252, 0.45) !important;
+    border-left: 2px solid #a855f7 !important;
+    border-right: 2px solid #a855f7 !important;
+    border-bottom: 2px solid #a855f7 !important;
+    margin-bottom: 16px !important;
+    background: linear-gradient(90deg, #160c29 0%, #3b1c6e 30%, #5865F2 50%, #3b1c6e 70%, #160c29 100%) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.85), 0 4px 20px rgba(168, 85, 247, 0.45) !important;
+  }
+  /* SEAMLESS BANNER END */
+
+
+/* NEBULA & TOP BTN START */
+  @keyframes nebulaBreathe {
+    0%, 100% { opacity: 0.45; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.12); }
+  }
+  
+  
+  
+  
+  
+  
+  @media (max-width: 1150px) {
+    
+  }
+  /* NEBULA & TOP BTN END */
+/* SMOOTH SCROLL & PERF START */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .cosmic-sky, .ember, .meteor {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+  .acc {
+    content-visibility: auto;
+    contain-intrinsic-size: 680px;
+  }
+  /* SMOOTH SCROLL & PERF END */
+
+  
+  
+
+/* RED DRIVE BTN START */
+  @keyframes redDriveGlow {
+    0%, 100% { box-shadow: inset 0 0 12px rgba(255, 100, 100, 0.35), 0 2px 8px rgba(220, 38, 38, 0.4); }
+    50% { box-shadow: inset 0 0 20px rgba(255, 204, 0, 0.45), 0 2px 14px rgba(239, 68, 68, 0.85); }
+  }
+  .drive-btn {
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    text-align: center !important;
+    background: linear-gradient(90deg, #5c0a16 0%, #b91c1c 35%, #dc2626 50%, #b91c1c 65%, #5c0a16 100%) !important;
+    color: #fff3b0 !important;
+    font-weight: 900 !important;
+    font-size: 13.5px !important;
+    letter-spacing: 0.9px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    padding: 11px 14px !important;
+    border-bottom: 2px solid #ff6b6b !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85) !important;
+    animation: redDriveGlow 2.2s infinite ease-in-out !important;
+    transition: all 0.2s ease !important;
+  }
+  .drive-btn::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.5s ease;
+  }
+  .drive-btn:hover::after {
+    left: 150%;
+  }
+  .drive-btn:hover {
+    background: linear-gradient(90deg, #7f1d1d 0%, #dc2626 30%, #ef4444 50%, #dc2626 70%, #7f1d1d 100%) !important;
+    color: #ffffff !important;
+    border-bottom-color: #ffcc00 !important;
+    text-shadow: 0 0 10px rgba(255, 230, 128, 0.95) !important;
+  }
+  /* RED DRIVE BTN END */
+/* PAYMENT BAR START */
+  .payment-bar {
+    width: 100%;
+    max-width: 1080px;
+    background: linear-gradient(90deg, #120921 0%, #241240 50%, #120921 100%);
+    border: 1.5px solid #7e22ce;
+    border-radius: 10px;
+    padding: 9px 16px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75), 0 0 14px rgba(147, 51, 234, 0.3);
+    position: relative;
+    z-index: 2;
+  }
+  .payment-label {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #e9d5ff;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .pay-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 13px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  .pay-paypal {
+    background: linear-gradient(135deg, #003087 0%, #0070e0 100%);
+    border: 1.5px solid #7dd3fc;
+    color: #ffffff;
+  }
+  .pay-steam {
+    background: linear-gradient(135deg, #171a21 0%, #2a475e 100%);
+    border: 1.5px solid #66c0f4;
+    color: #e0f2fe;
+  }
+  /* PAYMENT BAR END */
+
+
+  .back-to-top {
+    position: fixed !important;
+    right: 145px !important;
+    bottom: 24px !important;
+    z-index: 99999 !important;
+    background: linear-gradient(135deg, #4c1d95 0%, #7e22ce 100%) !important;
+    color: #ffe680 !important;
+    border: 2px solid #ffcc00 !important;
+    border-radius: 50px !important;
+    padding: 12px 18px !important;
+    font-size: 13px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 16px rgba(255, 204, 0, 0.75) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: transform 0.2s ease, background 0.2s ease !important;
+  }
+  .back-to-top:hover {
+    background: #ffcc00 !important;
+    color: #140a21 !important;
+    transform: translateY(-3px) scale(1.05) !important;
+  }
+
+/* FLAG COUNTER START */
+  @keyframes trustedGlow {
+    0%, 100% { color: #ffcc00; text-shadow: 0 0 6px rgba(255, 204, 0, 0.7); transform: scale(1); }
+    50% { color: #ffffff; text-shadow: 0 0 14px #ffcc00, 0 0 22px #ff8800; transform: scale(1.04); }
+  }
+  .trusted-box {
+    position: fixed;
+    top: 15px;
+    right: calc(50% + 540px + ((50vw - 540px) / 2));
+    transform: translateX(50%);
+    z-index: 95;
+    background: radial-gradient(circle at 50% 20%, #3b1c5e 0%, #120821 100%);
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 204, 0, 0.55);
+    text-align: center;
+    max-width: 195px;
+  }
+  .trusted-text {
+    font-size: 13.5px;
+    font-weight: 900;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    line-height: 1.25;
+    animation: trustedGlow 1.8s infinite ease-in-out;
+  }
+  .trusted-box img {
+    width: 175px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    border: 1.5px solid rgba(255, 204, 0, 0.65);
+  }
+  
+  
+  
+  @media (max-width: 1520px) {
+    .trusted-box {
+      position: static;
+      transform: none;
+      margin: 0 auto 14px auto;
+      width: fit-content;
+    }
+  }
+  @media (max-width: 1520px) {
+    
+  }
+  /* FLAG COUNTER END */
+
+  .live-top-box {
+    position: fixed;
+    top: 294px;
+    left: calc(50% + 540px + ((50vw - 540px) / 2));
+    transform: translateX(-50%);
+    z-index: 96;
+    width: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: #0d0717;
+    border: 2px solid #a855f7;
+    border-top: 1.5px solid #ffcc00;
+    border-radius: 0 0 10px 10px;
+    padding: 6px 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(255, 204, 0, 0.4);
+  }
+  .flag-clean-wrap {
+    position: fixed;
+    top: 15px;
+    left: calc(50% + 540px + ((50vw - 540px) / 2));
+    transform: translateX(-50%);
+    z-index: 95;
+    background: #0d0717;
+    border: 2px solid #a855f7;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 6px 6px 4px 6px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(168, 85, 247, 0.45);
+  }
+  @media (max-width: 1520px) {
+    .live-top-box, .flag-clean-wrap {
+      position: static;
+      transform: none;
+      margin: 16px auto;
+      width: fit-content;
+    }
+  }
+
+</style>
+</head>
+<body>
+  
+  
+  <!-- NEBULA & TOP BTN HTML START -->
+  <button type="button" class="back-to-top" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'});document.documentElement.scrollTop=0;document.body.scrollTop=0;">▲ Top</button>
+  <!-- NEBULA & TOP BTN HTML END -->
+  <div class="cosmic-sky">
+    <div class="stars-bg"></div>
+    <div class="meteor m1"></div>
+    <div class="meteor m2"></div>
+    <div class="meteor m3"></div>
+    <div class="meteor m4"></div>
+    <div class="soul-aura"></div>
+    <div class="ember e1"></div>
+    <div class="ember e2"></div>
+    <div class="ember e3"></div>
+    <div class="ember e4"></div>
+    <div class="ember e5"></div>
+    <div class="ember e6"></div>
+    <div class="ember e7"></div>
+    <div class="ember e8"></div>
+    <div class="ember e9"></div>
+    <div class="ember e10"></div>
+    <div class="ember e11"></div>
+    <div class="ember e12"></div>
+    <div class="ember e13"></div>
+    <div class="ember e14"></div>
+    <div class="ember e15"></div>
+    <div class="ember e16"></div>
+    <div class="ember e17"></div>
+    <div class="ember e18"></div>
+    <div class="ember e19"></div>
+    <div class="ember e20"></div>
+    <div class="ember e21"></div>
+    <div class="ember e22"></div>
+    <div class="ember e23"></div>
+    <div class="ember e24"></div>
+    <div class="ember e2"></div>
+    <div class="ember e3"></div>
+    <div class="ember e4"></div>
+    <div class="ember e5"></div>
+    <div class="ember e6"></div>
+    <div class="ember e7"></div>
+    <div class="ember e8"></div>
+    <div class="ember e9"></div>
+    <div class="ember e10"></div>
+    <div class="ember e11"></div>
+    <div class="ember e12"></div>
+    <div class="ember e2"></div>
+    <div class="ember e3"></div>
+    <div class="ember e4"></div>
+    <div class="ember e5"></div>
+    <div class="ember e6"></div>
+  </div>
+  <!-- FULL BANNER HTML START -->
+  <div class="main-banner-wrap">
+    <img src="slike/banner.jpg" alt="Bleach Soul Resonance Promo Banner">
+  </div>
+  <!-- FULL BANNER HTML END -->
+  <div class="discord-bar"><span class="discord-text">💬 For any questions, prices or more images, add me on Discord:</span><span class="discord-tag" id="dcTag">GenesisGacha#0271</span><button type="button" class="copy-discord-btn" onclick="kopirajDiscord(this)">📋 Copy</button></div>
+  <!-- PAYMENT BAR HTML START -->
+  <div class="payment-bar">
+    <span class="payment-label">💳 Accepted Payment Methods:</span>
+    <span class="pay-badge pay-paypal">🅿️ PayPal</span>
+    <span class="pay-badge pay-steam">🎮 Steam Gift Cards (EU)</span>
+  </div>
+  <!-- PAYMENT BAR HTML END -->
+  <div class="bleach-panel"><div class="bleach-title">BLEACH: SOUL RESONANCE</div><div class="bleach-subtitle">EU • APLUS GUEST STARTER CATALOG • SELECT HEROES TO FILTER</div><div id="heroes" class="heroes-grid"></div></div>
+  <div id="status" class="status"></div>
+  <div id="accounts" class="accounts"></div>
+  <script>
+    const HEROJI = [{"ime": "Bambietta", "slika": "slike/hero_0.jpg"}, {"ime": "Byakuya Kuchiki", "slika": "slike/hero_1.jpg"}, {"ime": "Gin Ichimaru", "slika": "slike/hero_2.jpg"}, {"ime": "Grimmjow - Resurreccion", "slika": "slike/hero_3.jpg"}, {"ime": "Ichigo Kurosaki - Bankai", "slika": "slike/hero_4.jpg"}, {"ime": "Ichigo Kurosaki - Dual Zangetsu", "slika": "slike/hero_5.jpg"}, {"ime": "Ichigo Kurosaki - Inner Hollow", "slika": "slike/hero_6.jpg"}, {"ime": "Ikkaku Madarame", "slika": "slike/hero_7.jpg"}, {"ime": "Kaname Tosen", "slika": "slike/hero_8.jpg"}, {"ime": "Kenpachi Zaraki", "slika": "slike/hero_9.jpg"}, {"ime": "Kensei Muguruma - Bankai", "slika": "slike/hero_10.jpg"}, {"ime": "Kisuke Urahara - Bankai", "slika": "slike/hero_11.jpg"}, {"ime": "Kisuke Urahara", "slika": "slike/hero_12.jpg"}, {"ime": "Mayuri Kurotsuchi", "slika": "slike/hero_13.jpg"}, {"ime": "Nelliel", "slika": "slike/hero_14.jpg"}, {"ime": "Sajin Komamura", "slika": "slike/hero_15.jpg"}, {"ime": "Soi Fon", "slika": "slike/hero_16.jpg"}, {"ime": "Sosuke Aizen", "slika": "slike/hero_17.jpg"}, {"ime": "Szayelaporro", "slika": "slike/hero_18.jpg"}, {"ime": "Toshiro Hitsugaya", "slika": "slike/hero_19.jpg"}, {"ime": "Ulquiorra - Resurreccion", "slika": "slike/hero_20.jpg"}, {"ime": "Uryu Ishida - Vollstanding", "slika": "slike/hero_21.jpg"}, {"ime": "Yoruichi Shihoin", "slika": "slike/hero_22.jpg"}];
+    const DRIVE_LINKOVI = {"Account#105": "https://drive.google.com/drive/folders/1mHjV29iBgyYXmULxk5iLSgAD4jnY3bFt", "Account#194": "https://drive.google.com/drive/folders/1XmZIYdejbohtQvzQ-OrgrjWDc1r5s9Nh", "Account#199": "https://drive.google.com/drive/folders/1gknUA7AqIP_ZgtOApjJW6bRi7YFOBMTK", "Account#197": "https://drive.google.com/drive/folders/1r2ICvGVkkO-dkYLbyouxpI-HuAO991PJ", "Account#193": "https://drive.google.com/drive/folders/1K0oSwIKCpk6E1H_ztXKc-R9_EhmhLUgr", "Account#189": "https://drive.google.com/drive/folders/1dAgHndpeauPQ8bq1PKi8ozVkWxke5-2C", "Account#187": "https://drive.google.com/drive/folders/1ShwJYoKvp1IHMFJOFVlnvia4D2bp6Xl4", "Account#185": "https://drive.google.com/drive/folders/1fSXHUzcK4cWwHu-kBVrWiLgjJ6ee4GSK", "Account#184": "https://drive.google.com/drive/folders/1PfiCc7BCvz3q8OO1xbahHbXn4-bbLpZK", "Account#183": "https://drive.google.com/drive/folders/1qMphfjOqCOdmXOM5NegR9k7jLrfQ7vgg", "Account#182": "https://drive.google.com/drive/folders/1T74Axl8JpxwntwlGhFb9Pwk83MXkDQs_", "Account#181": "https://drive.google.com/drive/folders/1BbT6TwoVe0nTOdrvGrJxMk5wS0UKvJRt", "Account#180": "https://drive.google.com/drive/folders/1oY2SEDLvMTrZt9c0lkHLFaR3J28-X48P", "Account#175": "https://drive.google.com/drive/folders/19Jwz9Jv48iXXV0w7suod7pvOGTbN9vpS", "Account#174": "https://drive.google.com/drive/folders/1hGetoyY89hSsRhp9E70YfVZhs573-Ent", "Account#173": "https://drive.google.com/drive/folders/1WbN__R9ChnUURTaODQDl3yWDFxv-K2lX", "Account#171": "https://drive.google.com/drive/folders/1Fe4U6KhDzRfXg4unzew1F7P9Kvy4VOQy", "Account#170": "https://drive.google.com/drive/folders/18xqBUkmv6Msxmwod0Cb_8CcNsA3ZC2fS", "Account#169": "https://drive.google.com/drive/folders/1eKp9IJgWYBMTpfvfsIuP24dkOTzeY8F5", "Account#168": "https://drive.google.com/drive/folders/1t41ajbaEYsSbVavdwBwO-olM2fbBGEcW", "Account#167": "https://drive.google.com/drive/folders/1sbjNpzCu5X27L8cRHEn5eUemt1GUDd1W", "Account#166": "https://drive.google.com/drive/folders/1O77TWo6TOKy8q9wDl2M9OrkZQcyjGqWW", "Account#164": "https://drive.google.com/drive/folders/1aV2RVxc6E3e0ZKm-6X11Eder1YWTWCIe", "Account#163": "https://drive.google.com/drive/folders/1fC6DKGFXldHyihOTCJzVB_j5PxIN4yLr", "Account#162": "https://drive.google.com/drive/folders/17yuK0QWoW4-56LOiYwHWW4ynx1YbX00q", "Account#161": "https://drive.google.com/drive/folders/1ECGnL78rGvzEUwDie89wFneR-AhhcII8", "Account#160": "https://drive.google.com/drive/folders/10n8twrATf8wce150FJOm-gIlBVwQTCUr", "Account#159": "https://drive.google.com/drive/folders/1cVakB4mujqRyzKRefA5eKhR6zMNsXIrc", "Account#155": "https://drive.google.com/drive/folders/1VojU3JpR-PYAADXcwngGibKHqV5Mn_et", "Account#154": "https://drive.google.com/drive/folders/1SW3dCRWfo-ZcXIfeHacz__PdtlBgM_AX", "Account#151": "https://drive.google.com/drive/folders/1W0AL4Ig6mmKeJ-Jz5xLp0c3jqwIdFwCw", "Account#149": "https://drive.google.com/drive/folders/1pEfo3AOT236qLNPQwTfdC7TVfV-lJ1OG", "Account#148": "https://drive.google.com/drive/folders/1SDC6hRNvy7k3e2GtNpxNmEP5nyIbcByR", "Account#146": "https://drive.google.com/drive/folders/1dQitNcuhyaONQtTVXVcjBwjX30Bet0CK", "Account#144": "https://drive.google.com/drive/folders/1F4GYigvl23oc9IYVcrZxEIt4LwyNUHyb", "Account#143": "https://drive.google.com/drive/folders/15Lb2fX3BnI5CCuQgSyNcjRfZII2pPKsC", "Account#142": "https://drive.google.com/drive/folders/1eFTxmbq3Gmhq06SEOXAU9xaFrsMFO4Hq", "Account#141": "https://drive.google.com/drive/folders/1KMbiJ973zXKHjgeE2I5IafUBcH27Kqvm", "Account#140": "https://drive.google.com/drive/folders/1xb4nZvNgUT2W849Eblyr-qM4ag1bGrNP", "Account#139": "https://drive.google.com/drive/folders/1lAQCXCf5lqh-1Nnule2iAUQYSo6UtPRu", "Account#138": "https://drive.google.com/drive/folders/1PyUlOa5RX2b7iRMyvJ49j-EDmPLFQv-h", "Account#136": "https://drive.google.com/drive/folders/18AjraBkglRRJKe19n4ibqdf8VAMTznb2", "Account#132": "https://drive.google.com/drive/folders/1GDytesZ5tsaSiRgb8pHEXFbKwX5bgLqb", "Account#131": "https://drive.google.com/drive/folders/1TD5_53bO1u5Iw-LWkfWDGt6h13Zhk_E0", "Account#130": "https://drive.google.com/drive/folders/1KmQQsVzKbzb0uI3sru5xhaHqF2XkJl4D", "Account#129": "https://drive.google.com/drive/folders/1Pv4Pa-8hALI7asew9e4c_ngi5Q3vE4kn", "Account#127": "https://drive.google.com/drive/folders/1puHBsa10rv0aVBZ8Y-yM55KLBzpWNW-0", "Account#126": "https://drive.google.com/drive/folders/1jEX0ycn0a6ARAZZskP8R7NwC6tYmb9iR", "Account#125": "https://drive.google.com/drive/folders/1bVj8WhiICofHZHwG2HU6HzrlqinxUE0R", "Account#124": "https://drive.google.com/drive/folders/1O23FU-EZ1mXTjGwLqn5z3jP-oEIK4Tfz", "Account#123": "https://drive.google.com/drive/folders/1nCmkud8jKpAC3mjoT55isCPsQgVqnPkd", "Account#122": "https://drive.google.com/drive/folders/15bjPZXqAe0XEqAIl2O-2a0VCJqdYzGCl", "Account#121": "https://drive.google.com/drive/folders/13GqpvDcFWgukMaly7Ta9BIfCAzErLBgk", "Account#120": "https://drive.google.com/drive/folders/1YVjF-GJpGuVFQJs_aIpPcNjAscAZGUSG", "Account#119": "https://drive.google.com/drive/folders/12jS22t2zZc60GmJR1NKo6FcKEfb1lF28", "Account#117": "https://drive.google.com/drive/folders/10dL-3d497uqMiRLwqAJl3bRNtpnE2OWp", "Account#114": "https://drive.google.com/drive/folders/1zkuzZhUH1xTxBC6y3fp6FpoZXmIcN7GJ", "Account#113": "https://drive.google.com/drive/folders/11nkjobfe6dnsBj59nkQONZ0F4LcpcSkU", "Account#112": "https://drive.google.com/drive/folders/1eG8gDNRXaD2wlqbM5Y2NdZLSx24bM9kE", "Account#110": "https://drive.google.com/drive/folders/1uuI_6HV4nhOiEBf20wID6cZNytyUpf86", "Account#108": "https://drive.google.com/drive/folders/1AC6q6IG4bBCFulIE0d-dsB7zCtVz7vf3", "Account#106": "https://drive.google.com/drive/folders/1jJ7_w2GWt0FJcFlw200Q7WzcVz0MibJE", "Account#104": "https://drive.google.com/drive/folders/1zEk8g_5MBJedeKdrWQmysQPFjAm7z3-e", "Account#102": "https://drive.google.com/drive/folders/1wbT8VjvOkDonJ1lSJ2leSws3KyUX6j9P", "Account#101": "https://drive.google.com/drive/folders/1XmHzfSGKOqvJWfYtjLk-KePyoPuZInh8", "Account#100": "https://drive.google.com/drive/folders/1_qYxqLSiqFsFQ8TCA3sOIfLFR4FbIEgC", "Account#99": "https://drive.google.com/drive/folders/1NtTiYl-bsLs4m0xKu9n_nd-xvJ5QcK0t", "Account#98": "https://drive.google.com/drive/folders/1ThpEOlIjp7Ha0ur8nfY-jceBE_cBInzc", "Account#96": "https://drive.google.com/drive/folders/1PDBR6Qzz1eci34OInCKHMP4gCIgJgzYB", "Account#95": "https://drive.google.com/drive/folders/14oN6D7KGkejW93otL5j4Hauc5SJuA92x", "Account#94": "https://drive.google.com/drive/folders/1OXMW2YM9YtuVsxTL2o-UxvDmbmDaeSHJ", "Account#88": "https://drive.google.com/drive/folders/1UzV70gnaGJNzKkQSophm701gDW4keDYd", "Account#86": "https://drive.google.com/drive/folders/1NS8_WmUy-EcW6_bX0169h09M5AsAW-js", "Account#85": "https://drive.google.com/drive/folders/190eW_PNatxVc1au0w2fnHApgdG3zNV5Y", "Account#84": "https://drive.google.com/drive/folders/1zz_ocjLoV_6qc-bpiCLWSwOENAxbokZ1", "Account#81": "https://drive.google.com/drive/folders/1TSoQPxDadIq3MI3zyv1RGjKal8pVWBwu", "Account#79": "https://drive.google.com/drive/folders/1gVdwoZ6TM1Z2077OCBQePzuyr2o__wfB", "Account#78": "https://drive.google.com/drive/folders/1_JmxgBDETU2lv_gMvCs8AeVHy7MDcm3E", "Account#77": "https://drive.google.com/drive/folders/1JjC4ELcFEdNju2SruAbTU86HRYjMFwA6", "Account#76": "https://drive.google.com/drive/folders/1PBhIAYLZEQ4aJptDFbeozFomGvwfyJih", "Account#73": "https://drive.google.com/drive/folders/15ELZNF9e26T8hf4pkDzW6jGnbgCf5VJU", "Account#71": "https://drive.google.com/drive/folders/1l1_JxhP4K32A_utbw_MMUcDUypYcMZxp", "Account#69": "https://drive.google.com/drive/folders/1Gb9InrWYoMSZRhY2cowgQABSLBz6M9UE", "Account#68": "https://drive.google.com/drive/folders/1ztsHsY23QJ5csj0upd5yB2Usy0r8MPH1", "Account#67": "https://drive.google.com/drive/folders/1aiV1HGEEDqjx26Kcghc0-I6jf723J-3N", "Account#65": "https://drive.google.com/drive/folders/1GVmGitPiMdGYPZMaikEs35Hktr56jSe4", "Account#64": "https://drive.google.com/drive/folders/1pPFVjwU-4W1JXJojbs9o1DhnlaHgoMN4", "Account#63": "https://drive.google.com/drive/folders/1DEU4ZQCF52sEXmKiIzOlqnNOZ05BKN8X", "Account#61": "https://drive.google.com/drive/folders/1yJzflD7SWro334UTCgqmfeL6jFZIOkbX", "Account#60": "https://drive.google.com/drive/folders/1QOY964IcPfll_XH7srX2aNv5c8gZQfwm", "Account#58": "https://drive.google.com/drive/folders/1noEZ4uI40gphQlWNCVK20w0qBo4cfZ3p", "Account#53": "https://drive.google.com/drive/folders/1ODYOgMHmRSAft10_2cbjR01WuDJkKUzv", "Account#51": "https://drive.google.com/drive/folders/1dFbulTk0OTK5r9dJ-_mZPC0GfXFLWPVd", "Account#50": "https://drive.google.com/drive/folders/1MpYunn_kJXUhr-ph0IvviGccrrAAlWOI", "Account#49": "https://drive.google.com/drive/folders/1jDfDGm4bWSwqUgCxKl1TrqiQjFOWQjsS", "Account#48": "https://drive.google.com/drive/folders/1kXkYugTtBs-X1bsplcfX3NqMzdMPtwk1", "Account#47": "https://drive.google.com/drive/folders/10VcX70qVfrf73-_NfO6-BRsy9-AEPw7G", "Account#46": "https://drive.google.com/drive/folders/1P-2FTpfcY9HjgNaYsSx9BSfIWPGVv8gL", "Account#45": "https://drive.google.com/drive/folders/1G8tFrcogBWJWtYB48vtqiLWDRxSj0tsr", "Account#43": "https://drive.google.com/drive/folders/17JTD0zoM0B-16U0rDJDga3z0ri9oLBoc", "Account#42": "https://drive.google.com/drive/folders/1TkeCE4Qvl9zmMRVAQSA8FRoRHBPSzCOZ", "Account#41": "https://drive.google.com/drive/folders/1UomWQdi7g2mC68tB336dapQhv1Aryz0X", "Account#40": "https://drive.google.com/drive/folders/1tfyR2GX-E6w3jy6etED5pJfeBFl6X-XG", "Account#39": "https://drive.google.com/drive/folders/1QE2ryCPb_jzyyRQ6BFYUhyjkm3fbTsqq", "Account#38": "https://drive.google.com/drive/folders/1J6v8WIc0IYTw9bEXSwFviQyqx6IsHTYr", "Account#34": "https://drive.google.com/drive/folders/1WI3ha9CjymLVJFd_whwvWFG31VurfyjD", "Account#33": "https://drive.google.com/drive/folders/1baKrq8xQx8PT7Msdh2JJiwUYL6uU1Eju", "Account#30": "https://drive.google.com/drive/folders/1fdXrbXY24iExZCBotCt9gJgKm99GwwOQ", "Account#29": "https://drive.google.com/drive/folders/1VSg25G5-NCRtdYm5xwUwm2GE01dGfZlP", "Account#27": "https://drive.google.com/drive/folders/1cmZUB1uMR0GNth4Tl0mnkLPwSvK1U74d", "Account#26": "https://drive.google.com/drive/folders/1R7yogYVTTCJm80dyQQ816fy9h_6BdDi0", "Account#23": "https://drive.google.com/drive/folders/1Waq0qKrFZEY47jSZkvNfbZvF5TOFm9rq", "Account#22": "https://drive.google.com/drive/folders/1AmLfpXZiNt2UCBhLsaDtGB2Pp-PpxdqZ", "Account#19": "https://drive.google.com/drive/folders/1Ct0V-ctiehHUzBeea3kQhqrXHl2a9Akz", "Account#18": "https://drive.google.com/drive/folders/1_TWm6ghxrl_EOwQV19VgAlT0tMIaii9g", "Account#16": "https://drive.google.com/drive/folders/1IEONBE46zo3kptuokCw8xuG04psAeh1W", "Account#15": "https://drive.google.com/drive/folders/1doKdlVX2hVkXOyHW0etq_SX6Yeto_1eZ", "Account#14": "https://drive.google.com/drive/folders/1DOJ4VBiQBcN5oTgXAOlhHs6_eTOY1aWC", "Account#13": "https://drive.google.com/drive/folders/1bB6pJB8Vh3O6bJLiaD00Fy0Ks562WOva", "Account#12": "https://drive.google.com/drive/folders/1HLnSx8Qk-p7PGMH0LKn1WLBUWjFXl0bd", "Account#10": "https://drive.google.com/drive/folders/1hsim6LaRjQuHnEUPjwWoLQf46ekB--rp", "Account#8": "https://drive.google.com/drive/folders/1XTKoSCdK_OrtAx8Wb76tQXSa-jatGrBZ", "Account#7": "https://drive.google.com/drive/folders/1P_aab6oz4yZF527FUhsFJH5NkkgsMTAD", "Account#3": "https://drive.google.com/drive/folders/1WIOOjfZtMTCt36CHeRbi3hdfykZK868S", "Account#2": "https://drive.google.com/drive/folders/1hgqMKWnA0uYLfDsz80712kHRENiUdqho", "Account#200": "https://drive.google.com/drive/folders/1tS7BBsy88rnXouyZpbx3xL8xO6lyHbQH", "Account#198": "https://drive.google.com/drive/folders/1YvUvxPUBNBCFJuZ0F3wOrMNdO7iHOJLA", "Account#196": "https://drive.google.com/drive/folders/1B01_70q0WZiutcTPVVA8-fZquSPD4E8U", "Account#192": "https://drive.google.com/drive/folders/1Jp1TRGfkLFW-ZiiKlHFkanbA5HaKS3NJ", "Account#190": "https://drive.google.com/drive/folders/1tStCunEaRR_Gs1ODsw8SNNxrNPTULTsE", "Account#191": "https://drive.google.com/drive/folders/1pl9lfBYI8AtARqz711EkFZEyCycV6zR2", "Account#178": "https://drive.google.com/drive/folders/1WU0Vfqjo-JRZ3xyRcn5csiiI7-S2Egmj", "Account#176": "https://drive.google.com/drive/folders/1GrhdKWJXaKF7m6N3qWg_DzIYnXFo9cus", "Account#165": "https://drive.google.com/drive/folders/1_J_QbFy5XhXs58GzRMV1_TahrZa0yNi6", "Account#158": "https://drive.google.com/drive/folders/1uxD1IWT4VWbDferqyJwFXTQIh-y7prY8", "Account#157": "https://drive.google.com/drive/folders/1pAi5hGUrGqIvOX_1MP30JiaHg8Wi_rH3", "Account#156": "https://drive.google.com/drive/folders/18OTEsFiFS8QbshpHUtRUovz9PQMjAIwn", "Account#153": "https://drive.google.com/drive/folders/19FJDmZoRz8hRYcG5WvajHT0sGP4eq8yy", "Account#152": "https://drive.google.com/drive/folders/1srtWfZcwsCYFLhS5Azf07igzH7UzdBtf", "Account#150": "https://drive.google.com/drive/folders/1TH-2MVKMF_fYyAt_txInAWkMOadfSia2", "Account#147": "https://drive.google.com/drive/folders/1O7KoZ91fOdj2caARaNnZJ54_q9Z01I3f", "Account#145": "https://drive.google.com/drive/folders/1g7NUeiYxJOey0jRA0A8tWaDCkZ7P6wcx", "Account#137": "https://drive.google.com/drive/folders/1V7x8Ml4eQf89vnGHz9mLf_9bT6QAg628", "Account#135": "https://drive.google.com/drive/folders/1qh-ymG2cdeQ3rueBJ01MxQKWEHyYwLmj", "Account#134": "https://drive.google.com/drive/folders/1bfd7rmKNizFq6Q2jWwLbkW0B3kc715SC", "Account#118": "https://drive.google.com/drive/folders/1favUFxAOnRRnBPB6iUnruAsp57-vY0rr", "Account#116": "https://drive.google.com/drive/folders/1_sIY4VB_aG7AEPgU1BORP0PIYNM3A0Cr", "Account#115": "https://drive.google.com/drive/folders/1KviIN1SNEyvUKBj_yxTqTMT9Oq4UKVoU", "Account#109": "https://drive.google.com/drive/folders/12zfH5iozY7kNQW8W0i-qO3cUdq_0FuFI", "Account#107": "https://drive.google.com/drive/folders/1c_9gxGTttIysOTaMU6UwhLnkziwBmdnu", "Account#103": "https://drive.google.com/drive/folders/10t-2hAhz3mhwUUm6VMOs2QYvodmNB4Kt", "Account#93": "https://drive.google.com/drive/folders/1poFlrV1WE3Q1x8NkDYAV-d-Y2T3Cu2wR", "Account#92": "https://drive.google.com/drive/folders/1NmIiNCkVYN1unY_pPaDzsy5vcBdbLTZv", "Account#91": "https://drive.google.com/drive/folders/12EEAJgjICakhveluZJ8XlK2c4Tsvmbt-", "Account#89": "https://drive.google.com/drive/folders/1epx3BI5Lwv46XzWA-RV0zC34i74XYoum", "Account#87": "https://drive.google.com/drive/folders/13PtNx2P541NH0EulLk4wt0l9Erc_AVg3", "Account#80": "https://drive.google.com/drive/folders/1ld21Y_Y1pP-qtBE1PQGrW4VXmL-k3zxV", "Account#75": "https://drive.google.com/drive/folders/1ZRjlyyp07ykFNbrBDY8fh0_2JTAzhtK-", "Account#62": "https://drive.google.com/drive/folders/18achpppE011t8jXnualsnHsaKwc4ihbQ", "Account#57": "https://drive.google.com/drive/folders/12mbArsQxXGZ5RAn7n5n2jU63ghBACcVB", "Account#56": "https://drive.google.com/drive/folders/1tHAmMPFesPYHZgY4mCAu3qc0NeaD1oVQ", "Account#55": "https://drive.google.com/drive/folders/1MtCfRxT3rr_aP5MygTEkpPLi87DhYYkM", "Account#52": "https://drive.google.com/drive/folders/1a3ClxYrq2eXSWECNWmsEmf9H7JoU8tKm", "Account#44": "https://drive.google.com/drive/folders/1mmPJ24IK-0ZYMfKkNG_Bf6L3RLe02JfS", "Account#36": "https://drive.google.com/drive/folders/1Kvkive5M0dZP3cEfBYgeoWog6XKIzoGT", "Account#35": "https://drive.google.com/drive/folders/1BVcJjZr2irSe-5Dbl8L2m74-J7DyH_th", "Account#32": "https://drive.google.com/drive/folders/13A-1u7iOzn9yDq9BNATwFJ0B_0zfggRh", "Account#31": "https://drive.google.com/drive/folders/1S5ol98AH2goWs-Nfj2Po6DJsdBi_ALuj", "Account#28": "https://drive.google.com/drive/folders/1r7hdfiPsNtplEM_II2g4eXWo0Gc2nLH2", "Account#24": "https://drive.google.com/drive/folders/1OHpAdnBE6XOrXisPoHJKB8otcs2DelzD", "Account#21": "https://drive.google.com/drive/folders/1QdkylWR2UQmdx9vMvZhFiX74e4iXn2kn", "Account#11": "https://drive.google.com/drive/folders/1_rBHTGOYD8vFCYObI5EDFdfZ7p-y6A9x", "Account#9": "https://drive.google.com/drive/folders/1HjoF-CkQwgTHJfVcAr2rFXZvMq8z11Pa", "Account#6": "https://drive.google.com/drive/folders/14nXh0yViXqxGIiAQL-0MKwmRuxYfT6LV", "Account#5": "https://drive.google.com/drive/folders/1MjEDansNgQ3l3drl5eEh3HPmBPqk5xyx", "Account#4": "https://drive.google.com/drive/folders/1XRauNn-4uudLctoOrlppTWuMDvihbQqv", "Account#1": "https://drive.google.com/drive/folders/1flyI2hb5nSXKH2CvVJURLm77cQnTj1IF"};
+    const NALOZI = [{"naziv": "Account#1", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kaname tosen", "ulquiorra - resurreccion"], "slika": "slike/acc_1.jpg"}, {"naziv": "Account#2", "heroji": ["ichigo kurosaki - bankai", "kaname tosen", "kenpachi zaraki", "kisuke urahara - bankai", "ulquiorra - resurreccion"], "slika": "slike/acc_2.jpg"}, {"naziv": "Account#3", "heroji": ["byakuya kuchiki", "ichigo kurosaki - dual zangetsu", "kaname tosen", "nelliel", "sajin komamura", "sosuke aizen", "toshiro hitsugaya"], "slika": "slike/acc_3.jpg"}, {"naziv": "Account#6", "heroji": ["grimmjow - resurreccion", "ichigo kurosaki - bankai", "kaname tosen", "kenpachi zaraki", "kensei muguruma - bankai"], "slika": "slike/acc_6.jpg"}, {"naziv": "Account#7", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "kisuke urahara - bankai", "nelliel", "ulquiorra - resurreccion", "yoruichi shihoin"], "slika": "slike/acc_7.jpg"}, {"naziv": "Account#8", "heroji": ["gin ichimaru", "ichigo kurosaki - inner hollow", "toshiro hitsugaya", "uryu ishida - vollstanding", "yoruichi shihoin"], "slika": "slike/acc_8.jpg"}, {"naziv": "Account#9", "heroji": ["byakuya kuchiki", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kaname tosen", "kisuke urahara - bankai", "sosuke aizen"], "slika": "slike/acc_9.jpg"}, {"naziv": "Account#10", "heroji": ["gin ichimaru", "grimmjow - resurreccion", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "sajin komamura"], "slika": "slike/acc_10.jpg"}, {"naziv": "Account#11", "heroji": ["bambietta", "nelliel", "sajin komamura", "sosuke aizen", "toshiro hitsugaya"], "slika": "slike/acc_11.jpg"}, {"naziv": "Account#12", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "sajin komamura"], "slika": "slike/acc_12.jpg"}, {"naziv": "Account#13", "heroji": ["ichigo kurosaki - dual zangetsu", "ikkaku madarame", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_13.jpg"}, {"naziv": "Account#14", "heroji": ["ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_14.jpg"}, {"naziv": "Account#15", "heroji": ["bambietta", "ikkaku madarame", "kisuke urahara", "nelliel", "sajin komamura", "sosuke aizen"], "slika": "slike/acc_15.jpg"}, {"naziv": "Account#16", "heroji": ["byakuya kuchiki", "gin ichimaru", "grimmjow - resurreccion", "kaname tosen", "kensei muguruma - bankai", "kisuke urahara - bankai", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_16.jpg"}, {"naziv": "Account#21", "heroji": ["gin ichimaru", "grimmjow - resurreccion", "ichigo kurosaki - bankai", "kaname tosen", "kensei muguruma - bankai"], "slika": "slike/acc_21.jpg"}, {"naziv": "Account#22", "heroji": ["gin ichimaru", "ichigo kurosaki - inner hollow", "kaname tosen", "toshiro hitsugaya", "uryu ishida - vollstanding", "yoruichi shihoin"], "slika": "slike/acc_22.jpg"}, {"naziv": "Account#23", "heroji": ["gin ichimaru", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara - bankai", "sosuke aizen", "toshiro hitsugaya"], "slika": "slike/acc_23.jpg"}, {"naziv": "Account#24", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "kisuke urahara"], "slika": "slike/acc_24.jpg"}, {"naziv": "Account#26", "heroji": ["byakuya kuchiki", "ichigo kurosaki - dual zangetsu", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_26.jpg"}, {"naziv": "Account#27", "heroji": ["ichigo kurosaki - bankai", "ichigo kurosaki - dual zangetsu", "kisuke urahara", "nelliel", "ulquiorra - resurreccion"], "slika": "slike/acc_27.jpg"}, {"naziv": "Account#28", "heroji": ["kisuke urahara - bankai", "sajin komamura", "soi fon", "sosuke aizen", "szayelaporro", "toshiro hitsugaya", "uryu ishida - vollstanding"], "slika": "slike/acc_28.jpg"}, {"naziv": "Account#30", "heroji": ["gin ichimaru", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_30.jpg"}, {"naziv": "Account#31", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "kisuke urahara - bankai", "sajin komamura", "ulquiorra - resurreccion"], "slika": "slike/acc_31.jpg"}, {"naziv": "Account#33", "heroji": ["gin ichimaru", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "sajin komamura", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_33.jpg"}, {"naziv": "Account#34", "heroji": ["nelliel", "sajin komamura", "toshiro hitsugaya", "ulquiorra - resurreccion", "uryu ishida - vollstanding"], "slika": "slike/acc_34.jpg"}, {"naziv": "Account#35", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "nelliel", "sajin komamura", "ulquiorra - resurreccion"], "slika": "slike/acc_35.jpg"}, {"naziv": "Account#36", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "soi fon", "ulquiorra - resurreccion"], "slika": "slike/acc_36.jpg"}, {"naziv": "Account#38", "heroji": ["bambietta", "ichigo kurosaki - inner hollow", "kaname tosen", "kenpachi zaraki", "toshiro hitsugaya"], "slika": "slike/acc_38.jpg"}, {"naziv": "Account#39", "heroji": ["kisuke urahara - bankai", "sajin komamura", "soi fon", "sosuke aizen", "uryu ishida - vollstanding"], "slika": "slike/acc_39.jpg"}, {"naziv": "Account#40", "heroji": ["ichigo kurosaki - dual zangetsu", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_40.jpg"}, {"naziv": "Account#41", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - dual zangetsu", "nelliel", "sajin komamura"], "slika": "slike/acc_41.jpg"}, {"naziv": "Account#42", "heroji": ["byakuya kuchiki", "grimmjow - resurreccion", "kenpachi zaraki", "kensei muguruma - bankai", "toshiro hitsugaya"], "slika": "slike/acc_42.jpg"}, {"naziv": "Account#43", "heroji": ["gin ichimaru", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_43.jpg"}, {"naziv": "Account#45", "heroji": ["byakuya kuchiki", "ichigo kurosaki - inner hollow", "kenpachi zaraki", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_45.jpg"}, {"naziv": "Account#46", "heroji": ["ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara - bankai", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_46.jpg"}, {"naziv": "Account#47", "heroji": ["grimmjow - resurreccion", "ikkaku madarame", "kisuke urahara - bankai", "sosuke aizen", "ulquiorra - resurreccion", "yoruichi shihoin"], "slika": "slike/acc_47.jpg"}, {"naziv": "Account#48", "heroji": ["ikkaku madarame", "nelliel", "szayelaporro", "toshiro hitsugaya", "uryu ishida - vollstanding"], "slika": "slike/acc_48.jpg"}, {"naziv": "Account#49", "heroji": ["bambietta", "kaname tosen", "nelliel", "sosuke aizen", "toshiro hitsugaya"], "slika": "slike/acc_49.jpg"}, {"naziv": "Account#50", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kensei muguruma - bankai"], "slika": "slike/acc_50.jpg"}, {"naziv": "Account#51", "heroji": ["ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "kenpachi zaraki", "sajin komamura", "sosuke aizen"], "slika": "slike/acc_51.jpg"}, {"naziv": "Account#52", "heroji": ["byakuya kuchiki", "grimmjow - resurreccion", "ichigo kurosaki - bankai", "kisuke urahara - bankai", "mayuri kurotsuchi", "sosuke aizen"], "slika": "slike/acc_52.jpg"}, {"naziv": "Account#53", "heroji": ["byakuya kuchiki", "kisuke urahara", "nelliel", "szayelaporro", "toshiro hitsugaya", "uryu ishida - vollstanding", "yoruichi shihoin"], "slika": "slike/acc_53.jpg"}, {"naziv": "Account#55", "heroji": ["grimmjow - resurreccion", "ichigo kurosaki - bankai", "kaname tosen", "kensei muguruma - bankai", "sosuke aizen"], "slika": "slike/acc_55.jpg"}, {"naziv": "Account#57", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kaname tosen", "ulquiorra - resurreccion"], "slika": "slike/acc_57.jpg"}, {"naziv": "Account#58", "heroji": ["byakuya kuchiki", "gin ichimaru", "grimmjow - resurreccion", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kensei muguruma - bankai", "kisuke urahara - bankai"], "slika": "slike/acc_58.jpg"}, {"naziv": "Account#60", "heroji": ["ichigo kurosaki - dual zangetsu", "kisuke urahara", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_60.jpg"}, {"naziv": "Account#61", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - dual zangetsu", "mayuri kurotsuchi"], "slika": "slike/acc_61.jpg"}, {"naziv": "Account#62", "heroji": ["bambietta", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara"], "slika": "slike/acc_62.jpg"}, {"naziv": "Account#63", "heroji": ["ichigo kurosaki - bankai", "kenpachi zaraki", "kisuke urahara - bankai", "ulquiorra - resurreccion", "yoruichi shihoin"], "slika": "slike/acc_63.jpg"}, {"naziv": "Account#64", "heroji": ["gin ichimaru", "ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "kisuke urahara", "toshiro hitsugaya"], "slika": "slike/acc_64.jpg"}, {"naziv": "Account#67", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - dual zangetsu", "kisuke urahara - bankai", "nelliel", "sosuke aizen", "toshiro hitsugaya"], "slika": "slike/acc_67.jpg"}, {"naziv": "Account#68", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "kisuke urahara"], "slika": "slike/acc_68.jpg"}, {"naziv": "Account#69", "heroji": ["ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "ikkaku madarame", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_69.jpg"}, {"naziv": "Account#71", "heroji": ["ichigo kurosaki - dual zangetsu", "kisuke urahara", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_71.jpg"}, {"naziv": "Account#73", "heroji": ["bambietta", "ichigo kurosaki - inner hollow", "ikkaku madarame", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_73.jpg"}, {"naziv": "Account#75", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kensei muguruma - bankai", "kisuke urahara"], "slika": "slike/acc_75.jpg"}, {"naziv": "Account#76", "heroji": ["ichigo kurosaki - dual zangetsu", "nelliel", "sajin komamura", "toshiro hitsugaya"], "slika": "slike/acc_76.jpg"}, {"naziv": "Account#77", "heroji": ["kenpachi zaraki", "kisuke urahara - bankai", "kisuke urahara", "sajin komamura", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_77.jpg"}, {"naziv": "Account#78", "heroji": ["gin ichimaru", "grimmjow - resurreccion", "ikkaku madarame", "kaname tosen", "kensei muguruma - bankai", "kisuke urahara - bankai", "kisuke urahara", "nelliel"], "slika": "slike/acc_78.jpg"}, {"naziv": "Account#80", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara - bankai"], "slika": "slike/acc_80.jpg"}, {"naziv": "Account#81", "heroji": ["kisuke urahara", "soi fon", "sosuke aizen", "toshiro hitsugaya", "uryu ishida - vollstanding"], "slika": "slike/acc_81.jpg"}, {"naziv": "Account#84", "heroji": ["ichigo kurosaki - dual zangetsu", "kisuke urahara - bankai", "nelliel", "sajin komamura", "toshiro hitsugaya"], "slika": "slike/acc_84.jpg"}, {"naziv": "Account#85", "heroji": ["gin ichimaru", "ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara - bankai", "toshiro hitsugaya"], "slika": "slike/acc_85.jpg"}, {"naziv": "Account#86", "heroji": ["byakuya kuchiki", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara - bankai", "sosuke aizen", "szayelaporro"], "slika": "slike/acc_86.jpg"}, {"naziv": "Account#87", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kaname tosen", "kisuke urahara - bankai"], "slika": "slike/acc_87.jpg"}, {"naziv": "Account#88", "heroji": ["ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_88.jpg"}, {"naziv": "Account#89", "heroji": ["ichigo kurosaki - dual zangetsu", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_89.jpg"}, {"naziv": "Account#91", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - inner hollow", "kisuke urahara", "toshiro hitsugaya", "uryu ishida - vollstanding"], "slika": "slike/acc_91.jpg"}, {"naziv": "Account#92", "heroji": ["byakuya kuchiki", "ichigo kurosaki - bankai", "ichigo kurosaki - dual zangetsu", "nelliel", "sosuke aizen", "yoruichi shihoin"], "slika": "slike/acc_92.jpg"}, {"naziv": "Account#94", "heroji": ["nelliel", "sajin komamura", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_94.jpg"}, {"naziv": "Account#95", "heroji": ["ichigo kurosaki - dual zangetsu", "kenpachi zaraki", "kisuke urahara - bankai", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_95.jpg"}, {"naziv": "Account#96", "heroji": ["ichigo kurosaki - dual zangetsu", "nelliel", "sosuke aizen", "uryu ishida - vollstanding", "yoruichi shihoin"], "slika": "slike/acc_96.jpg"}, {"naziv": "Account#98", "heroji": ["ichigo kurosaki - dual zangetsu", "kenpachi zaraki", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_98.jpg"}, {"naziv": "Account#99", "heroji": ["ichigo kurosaki - dual zangetsu", "kaname tosen", "kensei muguruma - bankai", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_99.jpg"}, {"naziv": "Account#100", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kensei muguruma - bankai", "sajin komamura"], "slika": "slike/acc_100.jpg"}, {"naziv": "Account#101", "heroji": ["kenpachi zaraki", "kensei muguruma - bankai", "sajin komamura", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_101.jpg"}, {"naziv": "Account#102", "heroji": ["grimmjow - resurreccion", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "ikkaku madarame", "nelliel", "ulquiorra - resurreccion", "yoruichi shihoin"], "slika": "slike/acc_102.jpg"}, {"naziv": "Account#103", "heroji": ["ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "nelliel", "sajin komamura", "ulquiorra - resurreccion"], "slika": "slike/acc_103.jpg"}, {"naziv": "Account#104", "heroji": ["byakuya kuchiki", "kenpachi zaraki", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_104.jpg"}, {"naziv": "Account#105", "heroji": ["ichigo kurosaki - inner hollow", "kaname tosen", "kisuke urahara - bankai", "sajin komamura", "sosuke aizen", "yoruichi shihoin"], "slika": "slike/acc_105.jpg"}, {"naziv": "Account#106", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai"], "slika": "slike/acc_106.jpg"}, {"naziv": "Account#107", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "kisuke urahara - bankai", "sajin komamura", "ulquiorra - resurreccion", "yoruichi shihoin"], "slika": "slike/acc_107.jpg"}, {"naziv": "Account#108", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara"], "slika": "slike/acc_108.jpg"}, {"naziv": "Account#109", "heroji": ["gin ichimaru", "grimmjow - resurreccion", "ichigo kurosaki - bankai", "kensei muguruma - bankai", "kisuke urahara"], "slika": "slike/acc_109.jpg"}, {"naziv": "Account#110", "heroji": ["ichigo kurosaki - inner hollow", "nelliel", "toshiro hitsugaya", "ulquiorra - resurreccion", "yoruichi shihoin"], "slika": "slike/acc_110.jpg"}, {"naziv": "Account#112", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "nelliel", "sajin komamura"], "slika": "slike/acc_112.jpg"}, {"naziv": "Account#113", "heroji": ["byakuya kuchiki", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "kisuke urahara", "nelliel", "sosuke aizen"], "slika": "slike/acc_113.jpg"}, {"naziv": "Account#114", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "sajin komamura", "toshiro hitsugaya", "uryu ishida - vollstanding"], "slika": "slike/acc_114.jpg"}, {"naziv": "Account#115", "heroji": ["byakuya kuchiki", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kensei muguruma - bankai", "kisuke urahara", "nelliel", "sajin komamura"], "slika": "slike/acc_115.jpg"}, {"naziv": "Account#116", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara - bankai", "sosuke aizen"], "slika": "slike/acc_116.jpg"}, {"naziv": "Account#117", "heroji": ["byakuya kuchiki", "grimmjow - resurreccion", "ikkaku madarame", "kensei muguruma - bankai", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_117.jpg"}, {"naziv": "Account#118", "heroji": ["byakuya kuchiki", "grimmjow - resurreccion", "ikkaku madarame", "kensei muguruma - bankai", "kisuke urahara - bankai", "sajin komamura", "sosuke aizen"], "slika": "slike/acc_118.jpg"}, {"naziv": "Account#119", "heroji": ["ichigo kurosaki - dual zangetsu", "ikkaku madarame", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_119.jpg"}, {"naziv": "Account#120", "heroji": ["gin ichimaru", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_120.jpg"}, {"naziv": "Account#121", "heroji": ["gin ichimaru", "ichigo kurosaki - inner hollow", "kaname tosen", "kisuke urahara - bankai", "toshiro hitsugaya"], "slika": "slike/acc_121.jpg"}, {"naziv": "Account#122", "heroji": ["byakuya kuchiki", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara - bankai", "soi fon", "sosuke aizen", "toshiro hitsugaya"], "slika": "slike/acc_122.jpg"}, {"naziv": "Account#123", "heroji": ["byakuya kuchiki", "ichigo kurosaki - dual zangetsu", "nelliel", "sosuke aizen"], "slika": "slike/acc_123.jpg"}, {"naziv": "Account#124", "heroji": ["byakuya kuchiki", "ichigo kurosaki - dual zangetsu", "nelliel", "sajin komamura", "toshiro hitsugaya", "ulquiorra - resurreccion", "yoruichi shihoin"], "slika": "slike/acc_124.jpg"}, {"naziv": "Account#125", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - inner hollow", "kisuke urahara", "nelliel", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_125.jpg"}, {"naziv": "Account#126", "heroji": ["byakuya kuchiki", "ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "ikkaku madarame", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_126.jpg"}, {"naziv": "Account#127", "heroji": ["byakuya kuchiki", "ichigo kurosaki - dual zangetsu", "nelliel", "sosuke aizen", "yoruichi shihoin"], "slika": "slike/acc_127.jpg"}, {"naziv": "Account#129", "heroji": ["byakuya kuchiki", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kenpachi zaraki", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_129.jpg"}, {"naziv": "Account#130", "heroji": ["grimmjow - resurreccion", "kisuke urahara", "soi fon", "sosuke aizen", "uryu ishida - vollstanding"], "slika": "slike/acc_130.jpg"}, {"naziv": "Account#131", "heroji": ["ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "kaname tosen", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_131.jpg"}, {"naziv": "Account#132", "heroji": ["ichigo kurosaki - dual zangetsu", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_132.jpg"}, {"naziv": "Account#134", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "kisuke urahara"], "slika": "slike/acc_134.jpg"}, {"naziv": "Account#135", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow"], "slika": "slike/acc_135.jpg"}, {"naziv": "Account#136", "heroji": ["ichigo kurosaki - dual zangetsu", "nelliel", "sajin komamura", "toshiro hitsugaya"], "slika": "slike/acc_136.jpg"}, {"naziv": "Account#137", "heroji": ["ichigo kurosaki - bankai", "ikkaku madarame", "kisuke urahara - bankai", "nelliel", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_137.jpg"}, {"naziv": "Account#138", "heroji": ["ichigo kurosaki - dual zangetsu", "kisuke urahara", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_138.jpg"}, {"naziv": "Account#139", "heroji": ["bambietta", "byakuya kuchiki", "kisuke urahara - bankai", "nelliel", "sosuke aizen"], "slika": "slike/acc_139.jpg"}, {"naziv": "Account#140", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - dual zangetsu", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_140.jpg"}, {"naziv": "Account#141", "heroji": ["ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "nelliel", "sajin komamura", "sosuke aizen", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_141.jpg"}, {"naziv": "Account#142", "heroji": ["gin ichimaru", "kisuke urahara - bankai", "sajin komamura", "sosuke aizen", "ulquiorra - resurreccion"], "slika": "slike/acc_142.jpg"}, {"naziv": "Account#143", "heroji": ["ichigo kurosaki - dual zangetsu", "ikkaku madarame", "kensei muguruma - bankai", "nelliel", "sosuke aizen"], "slika": "slike/acc_143.jpg"}, {"naziv": "Account#144", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai"], "slika": "slike/acc_144.jpg"}, {"naziv": "Account#145", "heroji": ["byakuya kuchiki", "ichigo kurosaki - dual zangetsu", "ikkaku madarame", "kaname tosen", "nelliel", "toshiro hitsugaya", "uryu ishida - vollstanding"], "slika": "slike/acc_145.jpg"}, {"naziv": "Account#146", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - inner hollow", "sosuke aizen", "uryu ishida - vollstanding"], "slika": "slike/acc_146.jpg"}, {"naziv": "Account#147", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - dual zangetsu", "kisuke urahara - bankai", "kisuke urahara", "nelliel", "uryu ishida - vollstanding", "yoruichi shihoin"], "slika": "slike/acc_147.jpg"}, {"naziv": "Account#148", "heroji": ["ichigo kurosaki - inner hollow", "kaname tosen", "kenpachi zaraki", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_148.jpg"}, {"naziv": "Account#149", "heroji": ["bambietta", "byakuya kuchiki", "gin ichimaru", "kisuke urahara", "nelliel"], "slika": "slike/acc_149.jpg"}, {"naziv": "Account#150", "heroji": ["ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kenpachi zaraki", "ulquiorra - resurreccion"], "slika": "slike/acc_150.jpg"}, {"naziv": "Account#151", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "sajin komamura"], "slika": "slike/acc_151.jpg"}, {"naziv": "Account#152", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "yoruichi shihoin"], "slika": "slike/acc_152.jpg"}, {"naziv": "Account#153", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "yoruichi shihoin"], "slika": "slike/acc_153.jpg"}, {"naziv": "Account#154", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kaname tosen", "kisuke urahara - bankai", "sosuke aizen"], "slika": "slike/acc_154.jpg"}, {"naziv": "Account#155", "heroji": ["byakuya kuchiki", "ichigo kurosaki - inner hollow", "kenpachi zaraki", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_155.jpg"}, {"naziv": "Account#156", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai"], "slika": "slike/acc_156.jpg"}, {"naziv": "Account#157", "heroji": ["ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "kisuke urahara", "soi fon", "sosuke aizen", "toshiro hitsugaya"], "slika": "slike/acc_157.jpg"}, {"naziv": "Account#158", "heroji": ["ichigo kurosaki - bankai", "sajin komamura", "sosuke aizen", "szayelaporro", "uryu ishida - vollstanding", "yoruichi shihoin"], "slika": "slike/acc_158.jpg"}, {"naziv": "Account#159", "heroji": ["ichigo kurosaki - dual zangetsu", "ikkaku madarame", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_159.jpg"}, {"naziv": "Account#160", "heroji": ["byakuya kuchiki", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "kisuke urahara", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_160.jpg"}, {"naziv": "Account#161", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai"], "slika": "slike/acc_161.jpg"}, {"naziv": "Account#162", "heroji": ["gin ichimaru", "ichigo kurosaki - inner hollow", "kaname tosen", "kisuke urahara - bankai", "kisuke urahara", "yoruichi shihoin"], "slika": "slike/acc_162.jpg"}, {"naziv": "Account#163", "heroji": ["ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara - bankai", "nelliel", "sajin komamura", "sosuke aizen"], "slika": "slike/acc_163.jpg"}, {"naziv": "Account#164", "heroji": ["ichigo kurosaki - dual zangetsu", "kenpachi zaraki", "sosuke aizen", "yoruichi shihoin"], "slika": "slike/acc_164.jpg"}, {"naziv": "Account#165", "heroji": ["gin ichimaru", "grimmjow - resurreccion", "ichigo kurosaki - bankai", "kisuke urahara - bankai", "sajin komamura", "uryu ishida - vollstanding"], "slika": "slike/acc_165.jpg"}, {"naziv": "Account#166", "heroji": ["bambietta", "gin ichimaru", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara", "sajin komamura"], "slika": "slike/acc_166.jpg"}, {"naziv": "Account#167", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "ikkaku madarame", "kisuke urahara - bankai"], "slika": "slike/acc_167.jpg"}, {"naziv": "Account#168", "heroji": ["bambietta", "gin ichimaru", "ikkaku madarame", "kisuke urahara", "mayuri kurotsuchi", "toshiro hitsugaya"], "slika": "slike/acc_168.jpg"}, {"naziv": "Account#169", "heroji": ["bambietta", "ichigo kurosaki - inner hollow", "kisuke urahara", "soi fon", "sosuke aizen", "toshiro hitsugaya"], "slika": "slike/acc_169.jpg"}, {"naziv": "Account#170", "heroji": ["bambietta", "byakuya kuchiki", "nelliel", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_170.jpg"}, {"naziv": "Account#171", "heroji": ["ichigo kurosaki - inner hollow", "kaname tosen", "kenpachi zaraki", "toshiro hitsugaya", "ulquiorra - resurreccion", "yoruichi shihoin"], "slika": "slike/acc_171.jpg"}, {"naziv": "Account#173", "heroji": ["byakuya kuchiki", "grimmjow - resurreccion", "sajin komamura", "sosuke aizen", "szayelaporro", "uryu ishida - vollstanding"], "slika": "slike/acc_173.jpg"}, {"naziv": "Account#174", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "toshiro hitsugaya"], "slika": "slike/acc_174.jpg"}, {"naziv": "Account#176", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - dual zangetsu", "nelliel", "yoruichi shihoin"], "slika": "slike/acc_176.jpg"}, {"naziv": "Account#178", "heroji": ["bambietta", "gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kaname tosen", "kensei muguruma - bankai"], "slika": "slike/acc_178.jpg"}, {"naziv": "Account#180", "heroji": ["gin ichimaru", "kaname tosen", "soi fon", "szayelaporro", "toshiro hitsugaya", "uryu ishida - vollstanding"], "slika": "slike/acc_180.jpg"}, {"naziv": "Account#182", "heroji": ["byakuya kuchiki", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "mayuri kurotsuchi", "sosuke aizen", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_182.jpg"}, {"naziv": "Account#183", "heroji": ["ichigo kurosaki - inner hollow", "ikkaku madarame", "kenpachi zaraki", "toshiro hitsugaya", "ulquiorra - resurreccion"], "slika": "slike/acc_183.jpg"}, {"naziv": "Account#184", "heroji": ["ichigo kurosaki - dual zangetsu", "ichigo kurosaki - inner hollow", "ikkaku madarame", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_184.jpg"}, {"naziv": "Account#187", "heroji": ["bambietta", "byakuya kuchiki", "mayuri kurotsuchi", "toshiro hitsugaya"], "slika": "slike/acc_187.jpg"}, {"naziv": "Account#189", "heroji": ["kisuke urahara - bankai", "nelliel", "toshiro hitsugaya", "ulquiorra - resurreccion", "uryu ishida - vollstanding", "yoruichi shihoin"], "slika": "slike/acc_189.jpg"}, {"naziv": "Account#190", "heroji": ["bambietta", "gin ichimaru", "ichigo kurosaki - bankai", "kisuke urahara", "nelliel"], "slika": "slike/acc_190.jpg"}, {"naziv": "Account#191", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "ichigo kurosaki - inner hollow", "kisuke urahara - bankai", "sajin komamura", "yoruichi shihoin"], "slika": "slike/acc_191.jpg"}, {"naziv": "Account#192", "heroji": ["byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - inner hollow", "kaname tosen", "kisuke urahara - bankai", "sajin komamura", "yoruichi shihoin"], "slika": "slike/acc_192.jpg"}, {"naziv": "Account#193", "heroji": ["byakuya kuchiki", "ichigo kurosaki - dual zangetsu", "kisuke urahara - bankai", "nelliel", "toshiro hitsugaya"], "slika": "slike/acc_193.jpg"}, {"naziv": "Account#194", "heroji": ["bambietta", "kaname tosen", "sosuke aizen", "szayelaporro"], "slika": "slike/acc_194.jpg"}, {"naziv": "Account#196", "heroji": ["gin ichimaru", "ichigo kurosaki - bankai", "nelliel", "sajin komamura", "szayelaporro", "uryu ishida - vollstanding"], "slika": "slike/acc_196.jpg"}, {"naziv": "Account#197", "heroji": ["gin ichimaru", "kaname tosen", "kisuke urahara - bankai", "sajin komamura", "ulquiorra - resurreccion"], "slika": "slike/acc_197.jpg"}, {"naziv": "Account#199", "heroji": ["byakuya kuchiki", "grimmjow - resurreccion", "kensei muguruma - bankai", "nelliel", "toshiro hitsugaya", "yoruichi shihoin"], "slika": "slike/acc_199.jpg"}, {"naziv": "Account#200", "heroji": ["bambietta", "byakuya kuchiki", "gin ichimaru", "ichigo kurosaki - bankai", "mayuri kurotsuchi"], "slika": "slike/acc_200.jpg"}];
+    let odabrani = new Set();
+    const grid = document.getElementById('heroes');
+    HEROJI.forEach(h => {
+      const card = document.createElement('div'); card.className = 'hero-card'; card.title = h.ime;
+      card.innerHTML = `<img src="${h.slika}"><div class="cb-area"><div class="cb"></div></div>`;
+      card.onclick = () => { const k = h.ime.toLowerCase(); if (odabrani.has(k)) { odabrani.delete(k); card.classList.remove('active'); } else { odabrani.add(k); card.classList.add('active'); } 
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('topBtn');
+      if (btn) {
+        if (window.scrollY > 450) btn.classList.add('show');
+        else btn.classList.remove('show');
+      }
+    });
+
+    filtriraj(); };
+      grid.appendChild(card);
+    });
+    let trenutniRezultati = [];
+    let prikazanoDoSada = 0;
+    const KORAK_PRIKAZA = 24;
+
+    function dodajSljedecuGrupu() {
+      const lista = document.getElementById('accounts');
+      if (prikazanoDoSada >= trenutniRezultati.length) return;
+
+      let matchedHtml = '';
+      if (odabrani.size > 0) {
+        const odabraniObjekti = HEROJI.filter(h => odabrani.has(h.ime.toLowerCase()));
+        const bedzevi = odabraniObjekti.map(h => `
+          <div class="matched-hero-badge">
+            <img src="${h.slika}" alt="${h.ime}">
+            <span>${h.ime}</span>
+          </div>
+        `).join('');
+        matchedHtml = `<div class="matched-box"><span class="matched-label">⭐ Matched:</span>${bedzevi}</div>`;
+      }
+
+      const kraj = Math.min(prikazanoDoSada + KORAK_PRIKAZA, trenutniRezultati.length);
+      const fragment = document.createDocumentFragment();
+
+      for (let i = prikazanoDoSada; i < kraj; i++) {
+        const a = trenutniRezultati[i];
+        const div = document.createElement('div');
+        div.className = 'acc';
+        const url = DRIVE_LINKOVI[a.naziv] || "";
+        const gumbHtml = url ? `<a href="${url}" target="_blank" rel="noopener" class="drive-btn">📸 Click Here For All Images (Google Drive)</a>` : "";
+        div.innerHTML = `${gumbHtml}<div class="acc-title">${a.naziv}</div>${matchedHtml}<div class="img-crop-box"><img src="${a.slika}" loading="lazy"><div class="img-fade"></div></div><div class="toggle-wrap"><button type="button" class="toggle-btn" onclick="otvoriDetalje(this)">▼ Click to expand & see Shards & Weapon Stamps</button></div>`;
+        fragment.appendChild(div);
+      }
+
+      lista.appendChild(fragment);
+      prikazanoDoSada = kraj;
+    }
+
+    function filtriraj() {
+      const lista = document.getElementById('accounts');
+      const status = document.getElementById('status');
+      lista.innerHTML = '';
+      prikazanoDoSada = 0;
+
+      trenutniRezultati = NALOZI.filter(a => {
+        for (let t of odabrani) { if (!a.heroji.includes(t)) return false; }
+        return true;
+      });
+
+      if (odabrani.size > 0) {
+        status.innerHTML = `<span>Showing ${trenutniRezultati.length} of ${NALOZI.length} accounts</span> <button class="reset-btn" onclick="ponistiFilter()">✕ Clear Filter</button>`;
+      } else {
+        status.innerHTML = `<span>Showing all ${NALOZI.length} accounts</span>`;
+      }
+
+      dodajSljedecuGrupu();
+    }
+
+    window.addEventListener('scroll', () => {
+      if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 900)) {
+        dodajSljedecuGrupu();
+      }
+    }, { passive: true });
+
+    function otvoriDetalje(btn) { const box = btn.parentElement.previousElementSibling; if (box.classList.contains('expanded')) { box.classList.remove('expanded'); btn.innerText = '▼ Click to expand & see Shards & Weapon Stamps'; } else { box.classList.add('expanded'); btn.innerText = '▲ Click to hide Shards & Weapon Stamps'; } }
+    function ponistiFilter() { odabrani.clear(); document.querySelectorAll('.hero-card.active').forEach(c => c.classList.remove('active')); filtriraj(); }
+    function kopirajDiscord(btn) { navigator.clipboard.writeText(document.getElementById('dcTag').innerText); btn.innerText = '✓ Copied!'; setTimeout(() => { btn.innerText = '📋 Copy'; }, 2000); }
+    filtriraj();
+  </script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6af60c7fe84c933e6cc13678/1k78i1khn';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<!-- FLAG COUNTER HTML START -->
+  <div class="trusted-box">
+    <div class="trusted-text">⭐ 100% Trusted Seller ⭐</div>
+    <img src="slike/epicnpc.png" alt="EpicNPC Verified Seller">
+  </div>
+  
+  <!-- FLAG COUNTER HTML END -->
+  <!-- LIVE COUNTER START -->
+  <div class="live-top-box" title="Real-time visitors online">
+    <span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; box-shadow:0 0 8px #22c55e;"></span>
+    <span style="font-size:12px; font-weight:bold; color:#ffe680;">LIVE:</span>
+    <script id="_waugen">var _wau = _wau || []; _wau.push(["small", "bleachcat26", "gen"]);</script>
+    <script async src="//waust.at/s.js"></script>
+  </div>
+  <!-- LIVE COUNTER END -->
+  <div class="flag-clean-wrap">
+    <a href="https://info.flagcounter.com/E57c"><img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+  </div>
+</body>
+</html>
