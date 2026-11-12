@@ -588,6 +588,72 @@
     box-shadow: 0 0 22px rgba(255, 204, 0, 0.85);
   }
 
+
+  /* 100% IDENTICNO CENTRIRANJE I PORAVNANJE NA OBJE STRANICE */
+  html {
+    overflow-y: scroll;
+  }
+  body {
+    padding-top: 15px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    overflow-x: hidden !important;
+  }
+  .container {
+    width: 100% !important;
+    max-width: 1080px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .bleach-top-nav {
+    width: 100% !important;
+    max-width: 1080px !important;
+    margin: 0 auto 14px auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .btn-nav-active, .btn-back-home {
+    padding: 9px 24px !important;
+    font-size: 13.5px !important;
+    line-height: 1.2 !important;
+    box-sizing: border-box !important;
+  }
+  .banner-box {
+    width: 100% !important;
+    max-width: 1080px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .trusted-box {
+    position: fixed !important;
+    top: 15px !important;
+    right: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
+    transform: translateX(50%) !important;
+    width: 195px !important;
+    max-width: 195px !important;
+  }
+  .flag-clean-wrap {
+    position: fixed !important;
+    top: 15px !important;
+    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
+    transform: translateX(-50%) !important;
+  }
+  .live-top-box {
+    position: fixed !important;
+    top: 294px !important;
+    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
+    transform: translateX(-50%) !important;
+    width: 132px !important;
+  }
+  @media (max-width: 1520px) {
+    .trusted-box, .flag-clean-wrap, .live-top-box {
+      position: static !important;
+      transform: none !important;
+      margin: 12px auto !important;
+    }
+  }
+
 </style>
 </head>
 <body>
