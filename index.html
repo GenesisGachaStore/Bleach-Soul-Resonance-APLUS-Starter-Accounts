@@ -654,6 +654,44 @@
     }
   }
 
+
+  /* POPRAVLJEN FLAG COUNTER (E57c) */
+  .flag-clean-wrap {
+    position: fixed !important;
+    top: 15px !important;
+    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
+    transform: translateX(-50%) !important;
+    z-index: 95 !important;
+    background: #0d0717 !important;
+    border: 2px solid #a855f7 !important;
+    border-bottom: none !important;
+    border-radius: 10px 10px 0 0 !important;
+    padding: 6px 6px 4px 6px !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(168, 85, 247, 0.45) !important;
+    margin: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .flag-clean-wrap img {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  @media (max-width: 1280px) {
+    .flag-clean-wrap {
+      position: static !important;
+      transform: none !important;
+      margin: 12px auto !important;
+      border-bottom: 2px solid #a855f7 !important;
+      border-radius: 10px !important;
+      width: fit-content !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -839,6 +877,10 @@ s0.parentNode.insertBefore(s1,s0);
   
   <!-- FLAG COUNTER HTML END -->
   <!-- LIVE COUNTER START -->
+    <div class="flag-clean-wrap">
+    <a href="https://info.flagcounter.com/E57c" target="_blank" rel="noopener"><img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+  </div>
+
   <div class="live-top-box" title="Real-time visitors online">
     <span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; box-shadow:0 0 8px #22c55e;"></span>
     <span style="font-size:12px; font-weight:bold; color:#ffe680;">LIVE:</span>
@@ -846,8 +888,6 @@ s0.parentNode.insertBefore(s1,s0);
     <script async src="//waust.at/s.js"></script>
   </div>
   <!-- LIVE COUNTER END -->
-  <div class="flag-clean-wrap">
-    <a href="https://info.flagcounter.com/E57c"><img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-  </div>
+  
 </body>
 </html>
