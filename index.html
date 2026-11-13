@@ -916,6 +916,29 @@
     }
   }
 
+
+
+  /* ISTAKNUTA CIJENA PORED ACCOUNT NASLOVA */
+  .acc-title {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 8px 12px !important;
+    text-align: center !important;
+  }
+  .acc-price-badge {
+    background: linear-gradient(135deg, #ffd700 0%, #ffae00 100%);
+    color: #140824;
+    font-weight: 900;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.4px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.45);
+    border: 1px solid #fff3a1;
+  }
+
 </style>
 </head>
 <body>
@@ -1024,7 +1047,7 @@
         div.className = 'acc';
         const url = DRIVE_LINKOVI[a.naziv] || "";
         const gumbHtml = url ? `<a href="${url}" target="_blank" rel="noopener" class="drive-btn">📸 Click Here For All Images (Google Drive)</a>` : "";
-        div.innerHTML = `${gumbHtml}<div class="acc-title">${a.naziv}</div>${matchedHtml}<div class="img-crop-box"><img src="${a.slika}" loading="lazy"><div class="img-fade"></div></div><div class="toggle-wrap"><button type="button" class="toggle-btn" onclick="otvoriDetalje(this)">▼ Click to expand & see Shards & Weapon Stamps</button></div>`;
+        div.innerHTML = `${gumbHtml}<div class="acc-title"><span>${a.naziv}</span><span class="acc-price-badge">25 Euro</span></div>${matchedHtml}<div class="img-crop-box"><img src="${a.slika}" loading="lazy"><div class="img-fade"></div></div><div class="toggle-wrap"><button type="button" class="toggle-btn" onclick="otvoriDetalje(this)">▼ Click to expand & see Shards & Weapon Stamps</button></div>`;
         fragment.appendChild(div);
       }
 
