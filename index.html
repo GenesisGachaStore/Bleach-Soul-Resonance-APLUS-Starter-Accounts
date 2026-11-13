@@ -939,6 +939,30 @@
     border: 1px solid #fff3a1;
   }
 
+
+
+  /* KOREKCIJA VISINE SLIKE DESKTOP VS MOBITEL */
+  .img-crop-box {
+    max-height: 375px !important;
+  }
+  .acc.open .img-crop-box,
+  .acc.expanded .img-crop-box,
+  .img-crop-box.open,
+  .img-crop-box.expanded {
+    max-height: none !important;
+  }
+  @media (max-width: 768px) {
+    .img-crop-box {
+      max-height: 270px !important;
+    }
+    .acc.open .img-crop-box,
+    .acc.expanded .img-crop-box,
+    .img-crop-box.open,
+    .img-crop-box.expanded {
+      max-height: none !important;
+    }
+  }
+
 </style>
 </head>
 <body>
