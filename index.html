@@ -957,22 +957,6 @@
     <div class="ember e22"></div>
     <div class="ember e23"></div>
     <div class="ember e24"></div>
-    <div class="ember e2"></div>
-    <div class="ember e3"></div>
-    <div class="ember e4"></div>
-    <div class="ember e5"></div>
-    <div class="ember e6"></div>
-    <div class="ember e7"></div>
-    <div class="ember e8"></div>
-    <div class="ember e9"></div>
-    <div class="ember e10"></div>
-    <div class="ember e11"></div>
-    <div class="ember e12"></div>
-    <div class="ember e2"></div>
-    <div class="ember e3"></div>
-    <div class="ember e4"></div>
-    <div class="ember e5"></div>
-    <div class="ember e6"></div>
   </div>
   <!-- FULL BANNER HTML START -->
   <div class="main-banner-wrap">
@@ -1076,7 +1060,42 @@
 
     function otvoriDetalje(btn) { const box = btn.parentElement.previousElementSibling; if (box.classList.contains('expanded')) { box.classList.remove('expanded'); btn.innerText = '▼ Click to expand & see Shards & Weapon Stamps'; } else { box.classList.add('expanded'); btn.innerText = '▲ Click to hide Shards & Weapon Stamps'; } }
     function ponistiFilter() { odabrani.clear(); document.querySelectorAll('.hero-card.active').forEach(c => c.classList.remove('active')); filtriraj(); }
-    function kopirajDiscord(btn) { navigator.clipboard.writeText(document.getElementById('dcTag').innerText); btn.innerText = '✓ Copied!'; setTimeout(() => { btn.innerText = '📋 Copy'; }, 2000); }
+    async function kopirajDiscord(btn) {
+      const tekst = document.getElementById('dcTag').innerText;
+      let kopirano = false;
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(tekst);
+          kopirano = true;
+        }
+      } catch (e) {
+        // Try the compatibility fallback below.
+      }
+
+      if (!kopirano) {
+        const polje = document.createElement('textarea');
+        polje.value = tekst;
+        polje.setAttribute('readonly', '');
+        polje.style.position = 'fixed';
+        polje.style.opacity = '0';
+        document.body.appendChild(polje);
+        polje.select();
+
+        try {
+          kopirano = document.execCommand('copy');
+        } catch (e) {
+          kopirano = false;
+        } finally {
+          document.body.removeChild(polje);
+        }
+      }
+
+      if (kopirano) {
+        btn.innerText = '✓ Copied!';
+        setTimeout(() => { btn.innerText = '📋 Copy'; }, 2000);
+      }
+    }
     filtriraj();
   </script>
 
@@ -1150,23 +1169,6 @@
     Tawk_API.showWidget();
 
   };
-
-  (function(){
-
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-
-  s1.async=true;
-
-  s1.src='https://tawk.to';
-
-  s1.charset='UTF-8';
-
-  s1.setAttribute('crossorigin','*');
-
-  s0.parentNode.insertBefore(s1,s0);
-
-  })();
-
   </script>
 
   <!--Start of Tawk.to Script-->
