@@ -773,6 +773,149 @@
     display: block !important;
   }
 
+
+
+  
+
+  /* STYLISH HOW TO BUY KUTIJA ISPOD EPICNPC BEDZA */
+  .howtobuy-box {
+    width: 100%;
+    max-width: 195px;
+    background: linear-gradient(180deg, #160929 0%, #0d0717 100%);
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    padding: 10px 10px 8px 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(168, 85, 247, 0.45);
+    box-sizing: border-box;
+    margin-top: 2px;
+    text-align: left;
+  }
+  .howtobuy-header {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+    color: #ffe680;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    border-bottom: 1.5px solid rgba(255, 204, 0, 0.4);
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+  }
+  .htb-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 7px;
+    background: rgba(88, 28, 135, 0.25);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 7px;
+    padding: 5px 6px;
+  }
+  .htb-step:last-child {
+    margin-bottom: 0;
+  }
+  .htb-num {
+    min-width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #ffcc00 0%, #f59e0b 100%);
+    color: #0d0717;
+    font-size: 11px;
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    box-shadow: 0 0 6px rgba(255, 204, 0, 0.7);
+  }
+  .htb-txt {
+    font-size: 10.5px;
+    line-height: 1.28;
+    color: #f3e8ff;
+  }
+  .htb-txt b {
+    color: #ffe680;
+    display: block;
+    font-size: 11px;
+    margin-bottom: 1px;
+  }
+
+
+
+  
+
+  /* JEDNA DO DRUGE LIJEVO: EPICNPC + HOW TO BUY BEZ PREKLAPANJA */
+  .left-side-row {
+    position: fixed !important;
+    top: 15px !important;
+    left: 15px !important;
+    z-index: 95 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin: 0 !important;
+  }
+  .left-side-row .epicnpc-wrapper,
+  .left-side-row .trusted-box {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    width: 175px !important;
+    flex-shrink: 0 !important;
+  }
+  .left-side-row .howtobuy-box {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    width: 175px !important;
+    max-width: 175px !important;
+    flex-shrink: 0 !important;
+    background: linear-gradient(180deg, #160929 0%, #0d0717 100%) !important;
+    border: 2px solid #ffcc00 !important;
+    border-radius: 12px !important;
+    padding: 8px 8px 6px 8px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(168, 85, 247, 0.45) !important;
+  }
+  .left-side-row .htb-step {
+    padding: 4px 5px !important;
+    margin-bottom: 5px !important;
+  }
+  .left-side-row .htb-txt {
+    font-size: 10px !important;
+    line-height: 1.22 !important;
+  }
+  @media (max-width: 1620px) {
+    .left-side-row {
+      position: static !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      width: 100% !important;
+      max-width: 1080px !important;
+      margin: 12px auto !important;
+    }
+    .left-side-row .howtobuy-box {
+      width: 100% !important;
+      max-width: 680px !important;
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 8px !important;
+    }
+    .left-side-row .howtobuy-header {
+      grid-column: 1 / -1 !important;
+      margin-bottom: 2px !important;
+    }
+    .left-side-row .htb-step {
+      margin-bottom: 0 !important;
+    }
+  }
+  @media (max-width: 760px) {
+    .left-side-row .howtobuy-box {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -939,19 +1082,53 @@
 
 
 <!-- FLAG COUNTER HTML START -->
+  
+  
+  <!-- FLAG COUNTER HTML END -->
+  <!-- LIVE COUNTER START -->
+    
+
+  <div class="left-side-row">
   <div class="epicnpc-wrapper">
   <div class="trusted-box">
     <div class="trusted-text">⭐ 100% Trusted Seller ⭐
     
   </div>
   <a href="https://www.epicnpc.com/threads/aplus-eu-starter-catalog-selector-on-tutorial-only-13-11-2026-25e.3106689/" target="_blank" rel="noopener" class="btn-epicnpc-topic">&#128293; Click Here for EpicNPC Topic</a>
+    
 </div>
     <img src="slike/epicnpc.png" alt="EpicNPC Verified Seller">
   </div>
-  
-  <!-- FLAG COUNTER HTML END -->
-  <!-- LIVE COUNTER START -->
-    <div class="flag-clean-wrap">
+  <div class="howtobuy-box">
+      <div class="howtobuy-header">&#128722; How to Buy</div>
+      <div class="htb-step">
+        <span class="htb-num">1</span>
+        <div class="htb-txt"><b>Pick Account</b>Select your favorite Account #.</div>
+      </div>
+      <div class="htb-step">
+        <span class="htb-num">2</span>
+        <div class="htb-txt"><b>Add on Discord</b>Message me with the Account #.</div>
+      </div>
+      <div class="htb-step">
+        <span class="htb-num">3</span>
+        <div class="htb-txt"><b>Live Account Check</b>I will log back into the account so we can confirm it's the exact one you want.</div>
+      </div>
+      <div class="htb-step">
+        <span class="htb-num">4</span>
+        <div class="htb-txt"><b>Easy Payment</b>Pay via PayPal or Steam Gift.</div>
+      </div>
+      <div class="htb-step">
+        <span class="htb-num">5</span>
+        <div class="htb-txt"><b>Account Binding</b>Send mail or dummy mail &amp; password.</div>
+      </div>
+      <div class="htb-step">
+        <span class="htb-num">6</span>
+        <div class="htb-txt"><b>100% Yours</b>Account is 100% yours &mdash; change the password and do whatever you want!</div>
+      </div>
+    </div>
+</div>
+
+  <div class="flag-clean-wrap">
     <a href="https://info.flagcounter.com/E57c" target="_blank" rel="noopener"><img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
   </div>
 
