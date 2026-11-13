@@ -692,6 +692,76 @@
     }
   }
 
+
+  .trusted-box a.btn-epicnpc-topic,
+  .btn-epicnpc-topic {
+    display: block !important;
+    width: 100% !important;
+    margin: 6px 0 2px 0 !important;
+    padding: 7px 10px !important;
+    background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%) !important;
+    background-clip: padding-box !important;
+    color: #ffe680 !important;
+    border: 1.5px solid #ffcc00 !important;
+    border-radius: 8px !important;
+    outline: none !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.75) !important;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
+    line-height: 1.25 !important;
+    box-sizing: border-box !important;
+  }
+  .trusted-box a.btn-epicnpc-topic:hover,
+  .btn-epicnpc-topic:hover {
+    background: linear-gradient(90deg, #7e22ce 0%, #a855f7 50%, #7e22ce 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 14px rgba(255, 204, 0, 0.85) !important;
+  }
+
+
+  
+
+  
+
+  /* MIRAN OMOTAC: KUTIJA DISE, GUMB STOJI 100% MIRNO */
+  .epicnpc-wrapper {
+    position: fixed !important;
+    top: 15px !important;
+    right: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
+    transform: translateX(50%) !important;
+    z-index: 95 !important;
+    width: 195px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+  .epicnpc-wrapper .trusted-box {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .epicnpc-wrapper .btn-epicnpc-topic {
+    position: static !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    margin: 0 !important;
+  }
+  @media (max-width: 1280px) {
+    .epicnpc-wrapper {
+      position: static !important;
+      transform: none !important;
+      margin: 12px auto !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -858,8 +928,13 @@
 
 
 <!-- FLAG COUNTER HTML START -->
+  <div class="epicnpc-wrapper">
   <div class="trusted-box">
-    <div class="trusted-text">⭐ 100% Trusted Seller ⭐</div>
+    <div class="trusted-text">⭐ 100% Trusted Seller ⭐
+    
+  </div>
+  <a href="https://www.epicnpc.com/threads/aplus-eu-starter-catalog-selector-on-tutorial-only-13-11-2026-25e.3106689/" target="_blank" rel="noopener" class="btn-epicnpc-topic">&#128293; Click Here for EpicNPC Topic</a>
+</div>
     <img src="slike/epicnpc.png" alt="EpicNPC Verified Seller">
   </div>
   
