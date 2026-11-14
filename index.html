@@ -982,6 +982,8 @@
     padding-bottom: 6px !important;
   }
 
+  .discord-bar { position: relative !important; z-index: 9999 !important; pointer-events: auto !important; }
+  .copy-discord-btn { position: relative !important; z-index: 10000 !important; pointer-events: auto !important; cursor: pointer !important; }
 </style>
 </head>
 <body>
@@ -1029,7 +1031,7 @@
     <img src="slike/banner.jpg" alt="Bleach Soul Resonance Promo Banner">
   </div>
   <!-- FULL BANNER HTML END -->
-  <div class="discord-bar"><span class="discord-text">💬 For any questions, prices or more images, add me on Discord:</span><span class="discord-tag" id="dcTag">GenesisGacha#0271</span><button type="button" class="copy-discord-btn" onclick="kopirajDiscord(this)">📋 Copy</button></div>
+  <div class="discord-bar"><span class="discord-text">💬 For any questions, prices or more images, add me on Discord:</span><span class="discord-tag" id="dcTag">GenesisGacha#0271</span><button type="button" class="copy-discord-btn" onclick="(function(b){var t=document.getElementById('dcTag').textContent.trim();var ok=false;var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();ta.setSelectionRange(0,9999);try{ok=document.execCommand('copy');}catch(e){}document.body.removeChild(ta);if(!ok&&navigator.clipboard){navigator.clipboard.writeText(t).catch(function(){});}var o=b.innerHTML;b.innerHTML='&#10003; Copied!';setTimeout(function(){b.innerHTML=o;},2000);})(this)">&#128203; Copy</button></div>
   <!-- PAYMENT BAR HTML START -->
   <div class="payment-bar">
     <span class="payment-label">💳 Accepted Payment Methods:</span>
@@ -1166,41 +1168,24 @@
 
     function otvoriDetalje(btn) { const box = btn.parentElement.previousElementSibling; if (box.classList.contains('expanded')) { box.classList.remove('expanded'); btn.innerText = '▼ Click to expand & see Shards & Weapon Stamps'; } else { box.classList.add('expanded'); btn.innerText = '▲ Click to hide Shards & Weapon Stamps'; } }
     function ponistiFilter() { odabrani.clear(); document.querySelectorAll('.hero-card.active').forEach(c => c.classList.remove('active')); filtriraj(); }
-    async function kopirajDiscord(btn) {
-      const tekst = document.getElementById('dcTag').innerText;
-      let kopirano = false;
-
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(tekst);
-          kopirano = true;
-        }
-      } catch (e) {
-        // Try the compatibility fallback below.
-      }
-
-      if (!kopirano) {
-        const polje = document.createElement('textarea');
-        polje.value = tekst;
-        polje.setAttribute('readonly', '');
-        polje.style.position = 'fixed';
-        polje.style.opacity = '0';
-        document.body.appendChild(polje);
-        polje.select();
-
-        try {
-          kopirano = document.execCommand('copy');
-        } catch (e) {
-          kopirano = false;
-        } finally {
-          document.body.removeChild(polje);
-        }
-      }
-
-      if (kopirano) {
-        btn.innerText = '✓ Copied!';
-        setTimeout(() => { btn.innerText = '📋 Copy'; }, 2000);
-      }
+    function kopirajDiscord(btn) {
+      const el = document.getElementById('dcTag');
+      if (!el) return;
+      const t = el.textContent.trim();
+      const ta = document.createElement('textarea');
+      ta.value = t;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, 9999);
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      if (navigator.clipboard) { navigator.clipboard.writeText(t).catch(function(){}); }
+      const orig = btn.innerHTML;
+      btn.innerHTML = '&#10003; Copied!';
+      setTimeout(function() { btn.innerHTML = orig; }, 2000);
     }
     filtriraj();
   </script>
