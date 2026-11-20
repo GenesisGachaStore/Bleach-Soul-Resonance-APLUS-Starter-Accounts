@@ -1809,6 +1809,92 @@ body,.layout,.grid,.columns,.side-col,.right-col,.left-col,.sidebar,.container,.
   .hero-card-uryu .hero-name-label .hero-name-main { font-size: .84em !important; letter-spacing: -.32px !important; }
   .hero-card-uryu .hero-name-label .hero-name-sub { font-size: .80em !important; }
 }
+
+/* Prenesen izgled zlatnih kockica i boja imena heroja – bez izmjene naziva ili logike */
+.cb-area {
+  width: 100% !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  padding: 6px 0 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: center !important;
+  background: #26173d !important;
+  border-top: 1.5px solid #482d70 !important;
+}
+.cb {
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 2px solid #d6a800 !important;
+  border-radius: 4px !important;
+  background: #140b24 !important;
+  color: #111 !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  animation: cbGoldGlow 2.2s ease-in-out infinite !important;
+  will-change: opacity, box-shadow, background-color, border-color;
+}
+@keyframes cbGoldGlow {
+  0%, 100% {
+    border-color: #b8860b;
+    background-color: #140b24;
+    box-shadow: 0 0 4px rgba(255,204,0,.30);
+    opacity: .88;
+  }
+  50% {
+    border-color: #ffe066;
+    background-color: #2a210b;
+    box-shadow: 0 0 10px rgba(255,204,0,.78);
+    opacity: 1;
+  }
+}
+.hero-card.active .cb {
+  background: #ffcc00 !important;
+  border-color: #fff0a6 !important;
+  animation: cbSelectedGoldGlow 2.2s ease-in-out infinite !important;
+}
+@keyframes cbSelectedGoldGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(255,204,0,.48); opacity: .92; }
+  50% { box-shadow: 0 0 13px rgba(255,204,0,.98); opacity: 1; }
+}
+.hero-card.active .cb::after {
+  content: "✔";
+}
+.hero-name-label {
+  color: #ffe680 !important;
+}
+
+
+/* Centriranje hero kartica, uključujući nepotpun posljednji red */
+.heroes-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 7px !important;
+}
+.heroes-grid > .hero-card {
+  flex: 0 0 calc((100% - 77px) / 12) !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 1000px) {
+  .heroes-grid > .hero-card { flex-basis: calc((100% - 48px) / 9) !important; }
+}
+@media (max-width: 760px) {
+  .heroes-grid { gap: 5px !important; }
+  .heroes-grid > .hero-card { flex-basis: calc((100% - 25px) / 6) !important; }
+}
+@media (max-width: 480px) {
+  .heroes-grid { gap: 4px !important; }
+  .heroes-grid > .hero-card { flex-basis: calc((100% - 16px) / 5) !important; }
+}
+
 </style>
 </head>
 <body>
