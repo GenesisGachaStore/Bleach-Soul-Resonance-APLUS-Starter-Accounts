@@ -1,65 +1,1157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bleach Soul Resonance Catalog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Genesis Gacha Store - trusted game account sales, secure trading and fast support.">
+  <meta name="theme-color" content="#0b0614">
+  <title>Starter Bleach Catalog</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-body { background-color: #08070a; color: #fff; padding: 15px; display: flex; flex-direction: column; align-items: center; animation: none; }
-  .discord-bar { width: 100%; max-width: 1080px; background: linear-gradient(90deg, #1b1f3b 0%, #5865F2 50%, #1b1f3b 100%); border: 1.5px solid #8ea1e1; border-radius: 10px; padding: 10px 16px; margin-bottom: 12px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(88, 101, 242, 0.45); text-align: center; }
-  .discord-text { font-size: 14px; font-weight: bold; color: #ffffff; letter-spacing: 0.4px; }
-  .discord-tag { background: rgba(0, 0, 0, 0.45); color: #ffe680; font-weight: 800; font-size: 14px; padding: 4px 10px; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.25); user-select: all; }
-  .copy-discord-btn { background: #ffcc00; color: #111; border: none; border-radius: 5px; padding: 5px 11px; font-size: 12px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.15s; }
-  .copy-discord-btn:hover { background: #ffffff; transform: scale(1.04); }
-  .bleach-panel { width: 100%; max-width: 1080px; background: radial-gradient(circle at 50% 0%, #3b1c5e 0%, #190d2b 60%, #0e0917 100%); border: 2px solid #8a4fd1; border-radius: 12px; padding: 22px 18px 18px 18px; margin-bottom: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(138, 79, 209, 0.35); display: flex; flex-direction: column; align-items: center; }
-  .bleach-title { font-size: 30px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; text-align: center; background: linear-gradient(180deg, #ffffff 10%, #ffd24d 55%, #ff6600 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 3px 12px rgba(255, 102, 0, 0.7)); margin-bottom: 6px; }
-  .bleach-subtitle { font-size: 12px; font-weight: bold; letter-spacing: 2px; color: #d8bff8; background: rgba(0, 0, 0, 0.35); padding: 4px 14px; border-radius: 20px; border: 1px solid rgba(155, 102, 223, 0.3); text-transform: uppercase; margin-bottom: 16px; text-align: center; }
-  .heroes-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 9px; width: 100%; max-width: 1060px; }
-  .hero-card { background: linear-gradient(180deg, #a792d1 0%, #7d66ad 100%); border: 1.5px solid #35274d; border-radius: 6px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; align-items: center; user-select: none; box-shadow: 0 3px 6px rgba(0,0,0,0.45); transition: 0.15s; }
-  .hero-card:hover { border-color: #e0c3fc; transform: translateY(-2px); }
-  .hero-card.active { border-color: #ffcc00; box-shadow: 0 0 14px rgba(255, 204, 0, 0.95); transform: translateY(-2px) scale(1.02); }
-  .hero-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
-  @keyframes cbGlow {
+
+
+* {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: #06040a;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 16px 16px 40px;
+      color: #ffffff;
+      background: radial-gradient(circle at 50% 20%, #1b0e33 0%, #0b0614 58%, #050308 100%);
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* 1. Osnovna crna, ljubičasta i zlatna tema */
+
+    /* 2. Glavni banner sa ljubičastim sjajem i svjetlosnim prelazom */
+    @keyframes bannerShine {
+      0% { left: -100%; }
+      30%, 100% { left: 150%; }
+    }
+
+    @keyframes bannerPulse {
+      0%, 100% {
+        border-color: #a855f7;
+        box-shadow:
+          0 0 28px rgba(168, 85, 247, 0.85),
+          0 0 52px rgba(147, 51, 234, 0.55),
+          inset 0 0 18px rgba(168, 85, 247, 0.38);
+      }
+      50% {
+        border-color: #f0abfc;
+        box-shadow:
+          0 0 42px rgba(217, 70, 239, 1),
+          0 0 72px rgba(168, 85, 247, 0.85),
+          inset 0 0 26px rgba(217, 70, 239, 0.55);
+      }
+    }
+
+    .banner-box {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border: 2.5px solid #a855f7;
+      border-radius: 14px;
+      background: #0d0717;
+      box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.9),
+        0 0 34px rgba(168, 85, 247, 0.8),
+        0 0 52px rgba(147, 51, 234, 0.45);
+      animation: bannerPulse 2.4s ease-in-out infinite;
+    }
+
+    .banner-box img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .banner-box::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: -100%;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.14),
+        transparent
+      );
+      transform: skewX(-25deg);
+      animation: bannerShine 7.5s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    /* 3. Centralni Home meni */
+    .bleach-top-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto 8px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-back-home {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 20px;
+      color: #ffe680;
+      background: linear-gradient(90deg, #1b0c30 0%, #581c87 50%, #1b0c30 100%);
+      border: 2px solid #ffcc00;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 900;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8), 0 0 14px rgba(168, 85, 247, 0.5);
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-back-home:focus-visible,
+    .copy-discord-btn:focus-visible,
+    .trusted-panel-link:focus-visible {
+      outline: 3px solid #ffffff;
+      outline-offset: 3px;
+    }
+
+    .btn-back-home:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%);
+      color: #ffffff;
+      box-shadow: 0 0 22px rgba(255, 204, 0, 0.85);
+    }
+
+    /* 4. EpicNPC lijevo, banner u sredini, Flag Counter desno – poravnati po vrhu */
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 205px) minmax(0, 1fr) minmax(0, 150px);
+      align-items: stretch;
+      gap: clamp(12px, 1.5vw, 20px);
+      width: 100%;
+    }
+
+    .trusted-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+      max-width: 205px;
+      margin: 0;
+      padding: 8px 8px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, #3b1c5e 0%, #120821 100%);
+      border: 2px solid #ffcc00;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 204, 0, 0.35);
+    }
+
+    .left-info-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 205px;
+      min-width: 0;
+      height: auto;
+      margin: 0 0 0 auto;
+      align-self: start;
+      justify-content: flex-start;
+      transform: translateX(clamp(40px, 5.7vw, 90px));
+    }
+
+    .howtobuy-box {
+      width: 100%;
+      min-width: 0;
+      padding: 9px 9px 8px;
+      color: #f3e8ff;
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #160929 0%, #0d0717 100%);
+      border: 2px solid #ffcc00;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(168, 85, 247, 0.35);
+    }
+
+    .howtobuy-header {
+      margin: 0 0 8px;
+      padding: 0 0 7px;
+      color: #ffe680;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      line-height: 1.3;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 1.5px solid rgba(255, 204, 0, 0.4);
+      text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+    }
+
+    .htb-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      margin: 0 0 5px;
+      padding: 5px 6px;
+      background: rgba(88, 28, 135, 0.22);
+      border: 1px solid rgba(255, 204, 0, 0.28);
+      border-radius: 7px;
+    }
+
+    .htb-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .htb-num {
+      display: flex;
+      flex: 0 0 18px;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      color: #0d0717;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, #ffcc00 0%, #f59e0b 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(255, 204, 0, 0.45);
+    }
+
+    .htb-txt {
+      min-width: 0;
+      font-size: 10.2px;
+      line-height: 1.26;
+      overflow-wrap: anywhere;
+    }
+
+    .htb-txt b {
+      display: block;
+      margin-bottom: 1px;
+      color: #ffe680;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .trusted-panel-title {
+      color: #ffe680;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      line-height: 1.3;
+      text-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
+    }
+
+    .trusted-panel-link {
+      display: inline-block;
+      width: 100%;
+      padding: 7px 6px;
+      color: #ffe680;
+      background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%);
+      border: 1.5px solid #ffcc00;
+      border-radius: 7px;
+      font-size: 10px;
+      font-weight: 900;
+      line-height: 1.3;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+      transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .trusted-panel-link:hover {
+      color: #ffffff;
+      background: linear-gradient(90deg, #7e22ce 0%, #a855f7 50%, #7e22ce 100%);
+      box-shadow: 0 0 14px rgba(255, 204, 0, 0.85);
+    }
+
+    .trusted-panel img {
+      display: block;
+      width: 100%;
+      max-width: 135px;
+      height: auto;
+      border: 1.5px solid rgba(255, 204, 0, 0.65);
+      border-radius: 8px;
+    }
+
+    .hero-layout .banner-box {
+      min-width: 0;
+      width: 84%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 5. Flag Counter desno od bannera, poravnat s njegovim gornjim rubom */
+    .flag-counter-wrap {
+      align-self: start;
+      justify-self: center;
+      width: 100%;
+      max-width: 150px;
+      margin: 0;
+      padding: 6px 6px 4px;
+      background: #0d0717;
+      border: 2px solid #ffcc00;
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(168, 85, 247, 0.45);
+    }
+
+    .flag-counter-wrap a,
+    .flag-counter-wrap img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .flag-counter-wrap img {
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      border: 0;
+    }
+
+    /* 6. Live brojač odmah ispod Flag Countera, u istoj desnoj koloni */
+    .visitor-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: start;
+      align-self: start;
+      gap: 0;
+      width: 150px;
+      min-width: 0;
+      transform: translateX(clamp(-90px, -5.7vw, -40px));
+    }
+
+    .live-top-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      width: 100%;
+      min-height: 36px;
+      margin: 0;
+      padding: 7px 8px;
+      background: #0d0717;
+      border: 2px solid #ffcc00;
+      border-top: 1.5px solid #ffcc00;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(255, 204, 0, 0.4);
+      white-space: nowrap;
+    }
+
+    .live-indicator {
+      display: inline-block;
+      flex: 0 0 8px;
+      width: 8px;
+      height: 8px;
+      background: #ffcc00;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #ffcc00;
+    }
+
+    .live-label {
+      color: #ffe680;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Zatvara samo nedostajuću desnu bijelu ivicu LIVE "1 online" widgeta */
+    .live-widget-frame {
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      line-height: 0;
+    }
+
+    .live-widget-frame::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 14px;
+      background: #ffffff;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Manji laptopi, tableti i mobiteli: elementi se slažu bez horizontalnog skrolanja */
+    @media (max-width: 1050px) {
+      .hero-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .left-info-stack {
+        align-self: center;
+        height: auto;
+        justify-content: flex-start;
+        transform: none;
+        width: min(100%, 390px);
+        margin: 0 auto;
+      }
+
+      .trusted-panel {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .visitor-stack {
+        transform: none;
+        width: min(100%, 180px);
+        margin: 0 auto;
+      }
+
+      .flag-counter-wrap {
+        max-width: 100%;
+        margin: 0;
+      }
+
+    }
+
+    @media (max-width: 480px) {
+      .btn-back-home {
+        max-width: 100%;
+        padding: 9px 16px;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .trusted-panel {
+        max-width: 100%;
+        padding: 9px;
+      }
+
+      .trusted-panel img {
+        max-width: 135px;
+      }
+
+      .flag-counter-wrap {
+        padding: 5px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Discord i Payment trake su odmah ispod bannera, u istoj centriranoj koloni */
+    .banner-column {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .banner-column .info-bar,
+    .banner-column .payment-bar {
+      width: 84%;
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .banner-column .info-bar {
+      margin-top: 12px;
+      flex-wrap: nowrap;
+      gap: clamp(4px, 0.8vw, 10px);
+      padding: 8px clamp(6px, 1vw, 16px);
+      font-size: clamp(8px, 1vw, 13px);
+      white-space: nowrap;
+    }
+
+    .banner-column .info-bar > span:first-child {
+      white-space: nowrap;
+      min-width: 0;
+      flex: 0 1 auto;
+    }
+
+    .banner-column .info-bar .dc-tag,
+    .banner-column .info-bar .copy-discord-btn {
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+
+    .banner-column .payment-bar {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 520px) {
+      body { padding: 14px 8px 28px; }
+      .banner-column .info-bar {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 8px 6px;
+        font-size: 11px;
+        line-height: 1.35;
+        white-space: normal;
+      }
+      .banner-column .info-bar > span:first-child {
+        flex: 1 1 100%;
+        min-width: 0;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .banner-column .info-bar .dc-tag {
+        padding: 4px 7px;
+        font-size: 10px;
+      }
+
+      .banner-column .info-bar .copy-discord-btn {
+        padding: 5px 8px;
+        font-size: 10px;
+      }
+    }
+
+    /* Originalni Discord info bar */
+    .info-bar {
+      width: 100%;
+      max-width: 1080px;
+      margin: 14px auto 0;
+      background: linear-gradient(90deg, #1b1f3b 0%, #5865F2 50%, #1b1f3b 100%);
+      border: 1.5px solid #8ea1e1;
+      border-radius: 10px;
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(88, 101, 242, 0.45);
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .dc-tag {
+      color: #ffe680;
+      font-weight: 900;
+      background: rgba(88, 28, 135, 0.55);
+      padding: 4px 10px;
+      border-radius: 7px;
+      border: 1px solid #ffcc00;
+    }
+
+    .copy-discord-btn {
+      position: relative;
+      z-index: 10;
+      background: #ffcc00;
+      color: #111;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 11px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .copy-discord-btn:hover {
+      background: #ffffff;
+      transform: scale(1.04);
+    }
+
+    /* Originalni Payment bar */
+    .payment-bar {
+      width: 100%;
+      max-width: 1080px;
+      margin: 10px auto 14px;
+      background: linear-gradient(90deg, #120921 0%, #241240 50%, #120921 100%);
+      border: 1.5px solid #7e22ce;
+      border-radius: 10px;
+      padding: 9px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75), 0 0 14px rgba(147, 51, 234, 0.3);
+      position: relative;
+      z-index: 2;
+      box-sizing: border-box;
+    }
+
+    .payment-label {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #e9d5ff;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .pay-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 13px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .pay-paypal {
+      background: linear-gradient(135deg, #003087 0%, #0070e0 100%);
+      border: 1.5px solid #7dd3fc;
+      color: #ffffff;
+    }
+
+    .pay-steam {
+      background: linear-gradient(135deg, #171a21 0%, #2a475e 100%);
+      border: 1.5px solid #66c0f4;
+      color: #e0f2fe;
+    }
+
+.selling-header {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+  .selling-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a855f7, #ffcc00);
+    border-radius: 2px;
+  }
+  .selling-line.right {
+    background: linear-gradient(90deg, #ffcc00, #a855f7, transparent);
+  }
+  .selling-title {
+    color: #ffe680;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(255, 204, 0, 0.75), 0 0 22px rgba(168, 85, 247, 0.7);
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    .selling-title { font-size: 13.5px; letter-spacing: 1px; }
+  }
+
+  /* CISTI RASPORED KATALOGA (PC I MOBITEL) */
+  .two-games-row {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 18px !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+  .two-games-row > div {
+    width: 245px !important;
+    min-width: 245px !important;
+    max-width: 245px !important;
+    flex: 0 0 245px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    box-sizing: border-box !important;
+  }
+  .two-games-row > div > div:first-child {
+    width: 245px !important;
+    min-width: 245px !important;
+    max-width: 245px !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+  }
+  .two-games-row > div > div:not(:first-child) {
+    width: 245px !important;
+    min-width: 245px !important;
+    max-width: 245px !important;
+    margin-top: 10px !important;
+    box-sizing: border-box !important;
+  }
+  @media (max-width: 768px) {
+    .two-games-row {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 0 !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      gap: 12px !important;
+    }
+    .two-games-row > div {
+      margin: 0 auto !important;
+      align-items: center !important;
+    }
+    .two-games-row > div > div:not(:first-child) {
+      margin-top: 8px !important;
+      margin-bottom: 4px !important;
+      position: static !important;
+    }
+  }
+
+  /* GLAVNI TAB I PADAJUCI SUB-MENU ZA KATALOGE */
+  .game-dropdown-wrap {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .btn-game-main {
+    width: 100%;
+    padding: 16px 22px;
+    background: linear-gradient(90deg, #241042 0%, #581c87 50%, #241042 100%);
+    color: #ffe680;
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.85), 0 0 16px rgba(168, 85, 247, 0.55);
+    transition: all 0.2s ease;
+  }
+  .btn-game-main:hover {
+    background: linear-gradient(90deg, #3b176e 0%, #7e22ce 50%, #3b176e 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.95), 0 0 24px rgba(255, 204, 0, 0.85);
+  }
+  .game-arrow {
+    font-size: 14px;
+    transition: transform 0.25s ease;
+    color: #ffcc00;
+  }
+  .game-dropdown-wrap.open .game-arrow {
+    transform: rotate(180deg);
+  }
+  .game-submenu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 12px;
+    background: rgba(13, 7, 23, 0.96);
+    border: 2px solid #a855f7;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.95), 0 0 18px rgba(168, 85, 247, 0.5);
+  }
+  .game-dropdown-wrap.open .game-submenu {
+    display: flex;
+  }
+  .btn-sub-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 18px;
+    background: linear-gradient(90deg, #1b0c30 0%, #3b176e 100%);
+    color: #ffe680 !important;
+    border: 1.5px solid #ffcc00;
+    border-radius: 9px;
+    font-size: 14.5px;
+    font-weight: 800;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+  }
+  .btn-sub-item:hover {
+    background: linear-gradient(90deg, #581c87 0%, #9333ea 100%);
+    color: #ffffff !important;
+    box-shadow: 0 0 16px rgba(255, 204, 0, 0.8);
+    transform: translateY(-1px);
+  }
+
+/* Katalog centriran direktno ispod naslova */
+.selling-header + .two-games-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 768px) {
+  .selling-header + .two-games-row {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+
+.selling-header.completed-hdr {
+  margin-top: 28px !important;
+}
+.selling-header.completed-hdr .selling-line {
+  background: linear-gradient(90deg, transparent, #22c55e) !important;
+}
+.selling-header.completed-hdr .selling-line.right {
+  background: linear-gradient(90deg, #22c55e, transparent) !important;
+}
+.selling-header.completed-hdr .selling-title {
+  color: #4ade80 !important;
+  text-shadow: 0 0 12px rgba(34, 197, 94, 0.55) !important;
+}
+.btn-game-main.completed-btn {
+  background: linear-gradient(180deg, #064e3b 0%, #022c22 100%) !important;
+  border-color: #22c55e !important;
+  color: #dcfce7 !important;
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.25) !important;
+}
+.btn-game-main.completed-btn:hover {
+  background: linear-gradient(180deg, #047857 0%, #064e3b 100%) !important;
+  border-color: #86efac !important;
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.45) !important;
+}
+.sold-badge {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid #4ade80;
+  color: #86efac;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Completed sales sit centered directly beneath the available catalogs */
+#completedGamesRow {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+#completedGamesRow > .games-row {
+  width: 245px !important;
+  min-width: 245px !important;
+  max-width: 245px !important;
+  flex: 0 0 245px !important;
+  margin-top: 12px !important;
+}
+@media (max-width: 768px) {
+  #completedGamesRow {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  #completedGamesRow > .games-row {
+    margin: 0 auto 12px !important;
+  }
+}
+
+@keyframes gTw{0%,100%{opacity:.28;transform:scale(.92)}50%{opacity:.95;transform:scale(1.18)}}
+@keyframes gMt{0%{transform:translate(0,0) rotate(-35deg);opacity:0}4%{opacity:1}18%{transform:translate(-1150px,760px) rotate(-35deg);opacity:0}100%{transform:translate(-1150px,760px) rotate(-35deg);opacity:0}}
+@keyframes gSp{0%{transform:translateY(0) scale(.85);opacity:0}15%{opacity:1}85%{opacity:.85}100%{transform:translateY(-102vh) scale(1.25);opacity:0}}
+@keyframes purplePulse{0%,100%{opacity:.05}50%{opacity:.66}}
+
+html{min-height:100%!important;background:#06040a!important;background-image:none!important;position:relative!important}
+html::before{content:""!important;position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;z-index:0!important;pointer-events:none!important;background:linear-gradient(180deg,#24104a 0%,#34176b 50%,#200e42 100%)!important;animation:purplePulse 7s ease-in-out infinite!important}
+body,.layout,.grid,.columns,.side-col,.right-col,.left-col,.sidebar,.container,.main-wrap,.bleach-wrap,.page-wrap,.content-wrap,.bleach-panel,.main-wrapper,.page-wrapper{background:transparent!important;background-color:transparent!important;background-image:none!important}
+
+.hero-layout,.left-info-stack,.banner-column,.visitor-stack,img,.banner,.main-banner,.banner-box,.hero-card,.catalog-card,.panel,.card,.box,.discord-bar,.bleach-top-nav,.btn-back-home,.offer-card,.jade-card,.account-card,.acc-card,.account-box,.banner-wrap,.status,.accounts,.trusted-panel,.howtobuy-box,.flag-counter-wrap,.live-top-box,.info-bar,.payment-bar,.selling-header,.two-games-row,.btn-game-main,.game-submenu{position:relative!important;z-index:5!important}
+
+#gacha-fx,#gacha-fx *{pointer-events:none!important}
+#gacha-fx{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;z-index:1!important;overflow:hidden!important}
+#gacha-fx,#gacha-fx div{display:block!important}
+
+.g-st{position:absolute;inset:0;background-image:radial-gradient(2px 2px at 10% 15%,#fff,transparent),radial-gradient(2px 2px at 24% 68%,#ffe680,transparent),radial-gradient(1.5px 1.5px at 38% 28%,#fff,transparent),radial-gradient(2px 2px at 52% 82%,#f0abfc,transparent),radial-gradient(2px 2px at 67% 20%,#ffe680,transparent),radial-gradient(1.5px 1.5px at 79% 58%,#fff,transparent),radial-gradient(2px 2px at 91% 34%,#f0abfc,transparent),radial-gradient(1.5px 1.5px at 16% 86%,#fff,transparent);animation:gTw 4.5s infinite ease-in-out!important}
+.g-mt{position:absolute;width:140px;height:2px;background:linear-gradient(90deg,#fff 0%,#ffcc00 35%,#a855f7 75%,transparent 100%);border-radius:50%;filter:drop-shadow(0 0 6px #ffcc00);opacity:0;animation:gMt 8.5s infinite linear!important}
+.g-sp{position:absolute;bottom:-12px;border-radius:50%;opacity:0;animation-name:gSp!important;animation-iteration-count:infinite!important;animation-timing-function:linear!important}
+
+/* Mobile: banner and contact/payment first, then seller/how-to-buy, then counters */
+  @media (max-width: 1050px) {
+    .hero-layout {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 10px !important;
+    }
+    .banner-column { order: 1 !important; width: 100% !important; }
+    .left-info-stack {
+      order: 2 !important;
+      width: min(100%, 390px) !important;
+      max-width: 390px !important;
+      margin: 0 auto !important;
+      gap: 8px !important;
+      transform: none !important;
+    }
+    .visitor-stack {
+      order: 3 !important;
+      width: min(100%, 180px) !important;
+      max-width: 180px !important;
+      margin: 0 auto !important;
+      transform: none !important;
+    }
+    .hero-layout .banner-box,
+    .banner-column .info-bar,
+    .banner-column .payment-bar {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .banner-column .info-bar { margin-top: 8px !important; }
+    .banner-column .payment-bar { margin-top: 6px !important; }
+    .trusted-panel { max-width: 100% !important; }
+    .flag-counter-wrap { max-width: 100% !important; }
+    .selling-header { margin-top: 12px !important; }
+    .two-games-row, .games-row { gap: 8px !important; }
+  }
+
+  /* Both Bleach menus always expand vertically underneath their own button */
+  #bleachDropdown, #bmh_bleachDropdown {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  #bleachDropdown > .btn-game-main,
+  #bmh_bleachDropdown > .btn-game-main {
+    position: relative !important;
+    display: flex !important;
+    width: 100% !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    flex: 0 0 auto !important;
+  }
+  #bleachDropdown > .game-submenu,
+  #bmh_bleachDropdown > .game-submenu {
+    display: none !important;
+    position: static !important;
+    inset: auto !important;
+    float: none !important;
+    flex-direction: column !important;
+    align-self: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 8px 0 0 !important;
+    clear: both !important;
+    transform: none !important;
+    z-index: 6 !important;
+  }
+  #bleachDropdown.open > .game-submenu,
+  #bmh_bleachDropdown.open > .game-submenu { display: flex !important; }
+  #bleachDropdown > .game-submenu > .btn-sub-item,
+  #bmh_bleachDropdown > .game-submenu > .btn-sub-item {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+/* Mobile: keep available catalogs and completed sales side by side */
+@media (max-width: 768px) {
+  .selling-header + .two-games-row,
+  #completedGamesRow {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 0 4px !important;
+    box-sizing: border-box !important;
+  }
+  .selling-header + .two-games-row > .games-row,
+  #completedGamesRow > .games-row {
+    width: calc(50% - 4px) !important;
+    min-width: 0 !important;
+    max-width: calc(50% - 4px) !important;
+    flex: 0 0 calc(50% - 4px) !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .selling-header + .two-games-row .game-dropdown-wrap,
+  #completedGamesRow .game-dropdown-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+  .selling-header + .two-games-row .btn-game-main,
+  #completedGamesRow .btn-game-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 68px !important;
+    padding: 10px 8px !important;
+    gap: 5px !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  .selling-header + .two-games-row .btn-game-main > span:first-child,
+  #completedGamesRow .btn-game-main > span:first-child {
+    min-width: 0 !important;
+    overflow-wrap: anywhere !important;
+  }
+  #completedGamesRow .sold-badge {
+    font-size: 9px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Samo tekst/naslovi lagano trepere – bez animiranja okvira ili panela */
+  @keyframes headingTextShimmer {
+    0%, 100% {
+      color: #ffe680;
+      opacity: 0.96;
+      text-shadow: 0 0 3px rgba(255, 204, 0, 0.3);
+      filter: brightness(1);
+    }
+    50% {
+      color: #fff4c2;
+      opacity: 1;
+      text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.45),
+        0 0 8px rgba(255, 204, 0, 0.48),
+        0 0 11px rgba(168, 85, 247, 0.35);
+      filter: brightness(1.06);
+    }
+  }
+
+  .trusted-panel-title,
+  .howtobuy-header,
+  .selling-title {
+    animation: headingTextShimmer 2.4s ease-in-out infinite !important;
+  }
+/* Na mobitelu Flag Counter i LIVE idu na samo dno, ispod svih kataloga i Completed Sales */
+  @media (max-width: 768px) {
+    .container {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    /* Omogućava da se elementi iz hero sekcije rasporede zajedno s katalozima */
+    .hero-layout {
+      display: contents !important;
+    }
+
+    .bleach-top-nav { order: 0 !important; }
+    .banner-column { order: 1 !important; }
+    .left-info-stack { order: 2 !important; }
+
+    .selling-header:not(.completed-hdr) { order: 3 !important; }
+    .selling-header:not(.completed-hdr) + .two-games-row { order: 4 !important; }
+
+    .selling-header.completed-hdr { order: 5 !important; }
+    #completedGamesRow { order: 6 !important; }
+
+    .visitor-stack {
+      order: 7 !important;
+      width: min(100%, 180px) !important;
+      max-width: 180px !important;
+      margin: 12px auto 0 !important;
+      transform: none !important;
+    }
+  }
+
+    /* Accessible main heading, visually hidden to preserve the existing design */
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+
+/* Starter Bleach catalog components only; all global theme styling comes from Home */
+.bleach-panel { width: 100%; max-width: 1080px; background: radial-gradient(circle at 50% 0%, #3b1c5e 0%, #190d2b 60%, #0e0917 100%); border: 2px solid #8a4fd1; border-radius: 12px; padding: 22px 18px 18px 18px; margin-bottom: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(138, 79, 209, 0.35); display: flex; flex-direction: column; align-items: center; }
+.bleach-title { font-size: 30px; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; text-align: center; background: linear-gradient(180deg, #ffffff 10%, #ffd24d 55%, #ff6600 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 3px 12px rgba(255, 102, 0, 0.7)); margin-bottom: 6px; }
+.bleach-subtitle { font-size: 12px; font-weight: bold; letter-spacing: 2px; color: #d8bff8; background: rgba(0, 0, 0, 0.35); padding: 4px 14px; border-radius: 20px; border: 1px solid rgba(155, 102, 223, 0.3); text-transform: uppercase; margin-bottom: 16px; text-align: center; }
+.heroes-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 7px; width: 100%; max-width: none; }
+.hero-card { background: linear-gradient(180deg, #a792d1 0%, #7d66ad 100%); border: 1.5px solid #35274d; border-radius: 6px; overflow: hidden; cursor: pointer; display: flex; flex-direction: column; align-items: center; user-select: none; box-shadow: 0 3px 6px rgba(0,0,0,0.45); transition: 0.15s; }
+.hero-card:hover { border-color: #e0c3fc; transform: translateY(-2px); }
+.hero-card.active { border-color: #ffcc00; box-shadow: 0 0 14px rgba(255, 204, 0, 0.95); transform: translateY(-2px) scale(1.02); }
+.hero-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+@keyframes cbGlow {
     0%, 100% { border-color: #d8bff8; box-shadow: 0 0 6px rgba(192, 132, 252, 0.6), inset 0 0 4px rgba(192, 132, 252, 0.4); }
     50% { border-color: #ffcc00; box-shadow: 0 0 14px rgba(255, 204, 0, 0.95), inset 0 0 6px rgba(255, 204, 0, 0.6); }
   }
-  .cb-area { width: 100%; padding: 6px 0; display: flex; justify-content: center; background: #26173d; border-top: 1.5px solid #482d70; transition: 0.15s; }
-  .hero-card:hover .cb-area { background: #342052; }
-  .hero-card.active .cb-area { background: #3d2400; border-top-color: #ffcc00; }
-  .cb { width: 22px; height: 22px; border: 2px solid #d8bff8; background: #140b24; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; color: #111; animation: cbGlow 1.6s infinite ease-in-out; transition: 0.15s; }
-  .hero-card:hover .cb { border-color: #ffffff; transform: scale(1.08); }
-  .hero-card.active .cb { background: #ffcc00; border-color: #ffffff; box-shadow: 0 0 16px #ffcc00, 0 0 24px #ff8800; animation: none; }
-  .hero-card.active .cb::after { content: "✔"; }
-  .status { width: 100%; max-width: 1080px; display: flex; justify-content: center; align-items: center; gap: 12px; padding: 10px 16px; margin-bottom: 16px; background: linear-gradient(90deg, #160c24 0%, #24133b 50%, #160c24 100%); border: 1px solid #5c338f; border-radius: 8px; font-size: 14px; font-weight: bold; color: #e6d4ff; }
-  .reset-btn { background: #ffcc00; color: #140a21; border: none; border-radius: 4px; padding: 4px 10px; font-size: 12px; font-weight: 800; text-transform: uppercase; cursor: pointer; }
-  .reset-btn:hover { background: #ffffff; }
-  @keyframes blinkBorder { 0%, 100% { border-color: #666666; box-shadow: 0 0 6px rgba(255, 204, 0, 0.2); } 50% { border-color: #ffcc00; box-shadow: 0 0 18px rgba(255, 204, 0, 0.85); } }
-  @keyframes blinkAccount { 0%, 100% { color: #ffcc00; text-shadow: 0 0 8px rgba(255, 204, 0, 0.8); } 50% { color: #ffffff; text-shadow: 0 0 18px #ffcc00, 0 0 28px #ff8800; } }
-  .accounts { width: 100%; max-width: 1080px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-items: start; }
-  .acc { background: #181818; border: 2px solid #ffcc00; border-radius: 6px; padding: 0; overflow: hidden; animation: blinkBorder 1.5s infinite ease-in-out; }
-  .drive-btn { display: block; width: 100%; text-align: center; background: linear-gradient(90deg, #3b1e5e 0%, #6833a8 50%, #3b1e5e 100%); color: #ffe680; font-weight: bold; font-size: 11px; padding: 7px 6px; letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none; padding: 9px 12px; border-bottom: 1px solid #5a5a5a; transition: 0.2s; }
-  .drive-btn:hover { background: linear-gradient(90deg, #522982 0%, #8744d6 50%, #522982 100%); color: #ffffff; }
-  .acc-title { font-size: 15px; padding: 7px; font-weight: bold; color: #ffcc00; background: #262626; padding: 10px; border-bottom: 2px solid #5a5a5a; margin: 0; text-align: center; animation: blinkAccount 1.2s infinite ease-in-out; }
-  .acc img { width: 100%; display: block; padding: 8px; background: #141414; }
-  .img-crop-box { width: 100%; max-height: 580px; overflow: hidden; position: relative; background: #141414; transition: max-height 0.35s ease; }
-  .img-crop-box.expanded { max-height: 2500px; }
-  .img-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 35px; background: linear-gradient(to bottom, transparent, #181818); pointer-events: none; }
-  .img-crop-box.expanded .img-fade { display: none; }
-  .toggle-wrap { display: flex; justify-content: center; padding: 10px; background: #1c1c1c; border-top: 1px solid #333; }
-  .toggle-btn { background: linear-gradient(90deg, #3b1e5e 0%, #6833a8 50%, #3b1e5e 100%); color: #ffe680; border: 1.5px solid #9b66df; border-radius: 5px; padding: 8px 18px; font-size: 13px; font-weight: bold; letter-spacing: 0.6px; text-transform: uppercase; cursor: pointer; transition: 0.2s; }
-  .toggle-btn:hover { background: linear-gradient(90deg, #522982 0%, #8744d6 50%, #522982 100%); color: #ffffff; }
-  @media (max-width: 768px) { .accounts { grid-template-columns: 1fr; } .heroes-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; } .bleach-title { font-size: 20px; letter-spacing: 1.5px; } .img-crop-box { max-height: none !important; height: auto !important; overflow: hidden !important; border-radius: 8px; } .img-crop-box.expanded { max-height: 2500px !important; } }
-/* EXTRA EFFECTS START */
-.container { width: 100%; max-width: 1080px; margin: 0 auto; position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
-  .bleach-top-nav { width: 100%; margin: 0 auto 14px auto; display: flex; justify-content: center; align-items: center; gap: 12px; }
-  /* CENTRALNI HOME MENI - prenesen sa originalne stranice */
-  
+.cb-area { width: 100%; padding: 6px 0; display: flex; justify-content: center; background: #26173d; border-top: 1.5px solid #482d70; transition: 0.15s; }
+.hero-card:hover .cb-area { background: #342052; }
+.hero-card.active .cb-area { background: #3d2400; border-top-color: #ffcc00; }
+.cb { width: 22px; height: 22px; border: 2px solid #d8bff8; background: #140b24; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; color: #111; animation: cbGlow 1.6s infinite ease-in-out; transition: 0.15s; }
+.hero-card:hover .cb { border-color: #ffffff; transform: scale(1.08); }
+.hero-card.active .cb { background: #ffcc00; border-color: #ffffff; box-shadow: 0 0 16px #ffcc00, 0 0 24px #ff8800; animation: none; }
+.hero-card.active .cb::after { content: "✔"; }
+.status { width: 100%; max-width: 1080px; display: flex; justify-content: center; align-items: center; gap: 12px; padding: 10px 16px; margin-bottom: 16px; background: linear-gradient(90deg, #160c24 0%, #24133b 50%, #160c24 100%); border: 1px solid #5c338f; border-radius: 8px; font-size: 14px; font-weight: bold; color: #e6d4ff; }
+.reset-btn { background: #ffcc00; color: #140a21; border: none; border-radius: 4px; padding: 4px 10px; font-size: 12px; font-weight: 800; text-transform: uppercase; cursor: pointer; }
+.reset-btn:hover { background: #ffffff; }
+@keyframes blinkBorder { 0%, 100% { border-color: #666666; box-shadow: 0 0 6px rgba(255, 204, 0, 0.2); } 50% { border-color: #ffcc00; box-shadow: 0 0 18px rgba(255, 204, 0, 0.85); } }
+@keyframes blinkAccount { 0%, 100% { color: #ffcc00; text-shadow: 0 0 8px rgba(255, 204, 0, 0.8); } 50% { color: #ffffff; text-shadow: 0 0 18px #ffcc00, 0 0 28px #ff8800; } }
+.accounts { width: 100%; max-width: 1080px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-items: start; }
+.acc { background: #181818; border: 2px solid #ffcc00; border-radius: 6px; padding: 0; overflow: hidden; animation: blinkBorder 1.5s infinite ease-in-out; }
+.drive-btn { display: block; width: 100%; text-align: center; background: linear-gradient(90deg, #3b1e5e 0%, #6833a8 50%, #3b1e5e 100%); color: #ffe680; font-weight: bold; font-size: 11px; padding: 7px 6px; letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none; padding: 9px 12px; border-bottom: 1px solid #5a5a5a; transition: 0.2s; }
+.drive-btn:hover { background: linear-gradient(90deg, #522982 0%, #8744d6 50%, #522982 100%); color: #ffffff; }
+.acc-title { font-size: 15px; padding: 7px; font-weight: bold; color: #ffcc00; background: #262626; padding: 10px; border-bottom: 2px solid #5a5a5a; margin: 0; text-align: center; animation: blinkAccount 1.2s infinite ease-in-out; }
+.acc img { width: 100%; display: block; padding: 8px; background: #141414; }
+.img-crop-box { width: 100%; max-height: 580px; overflow: hidden; position: relative; background: #141414; transition: max-height 0.35s ease; }
+.img-crop-box.expanded { max-height: 2500px; }
+.img-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 35px; background: linear-gradient(to bottom, transparent, #181818); pointer-events: none; }
+.img-crop-box.expanded .img-fade { display: none; }
+.toggle-wrap { display: flex; justify-content: center; padding: 10px; background: #1c1c1c; border-top: 1px solid #333; }
+.toggle-btn { background: linear-gradient(90deg, #3b1e5e 0%, #6833a8 50%, #3b1e5e 100%); color: #ffe680; border: 1.5px solid #9b66df; border-radius: 5px; padding: 8px 18px; font-size: 13px; font-weight: bold; letter-spacing: 0.6px; text-transform: uppercase; cursor: pointer; transition: 0.2s; }
+.toggle-btn:hover { background: linear-gradient(90deg, #522982 0%, #8744d6 50%, #522982 100%); color: #ffffff; }
+@media  (max-width: 768px) {.accounts { grid-template-columns: 1fr; }.heroes-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }.bleach-title { font-size: 20px; letter-spacing: 1.5px; }.img-crop-box { max-height: none !important; height: auto !important; overflow: hidden !important; border-radius: 8px; }.img-crop-box.expanded { max-height: 2500px !important; }}
 .acc { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-  .acc:hover { transform: translateY(-3px); box-shadow: 0 0 24px rgba(255, 204, 0, 0.9), 0 0 36px rgba(168, 85, 247, 0.5) !important; }
-  /* EXTRA EFFECTS END */
-/* MATCHED HEROES START */
-  .matched-box {
+.acc:hover { transform: translateY(-3px); box-shadow: 0 0 24px rgba(255, 204, 0, 0.9), 0 0 36px rgba(168, 85, 247, 0.5) !important; }
+.matched-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -69,7 +1161,7 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     background: linear-gradient(90deg, #1b0f2e 0%, #2d184d 50%, #1b0f2e 100%);
     border-bottom: 1.5px solid #ffcc00;
   }
-  .matched-label {
+.matched-label {
     font-size: 11.5px;
     font-weight: 900;
     color: #ffe680;
@@ -77,7 +1169,7 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     letter-spacing: 0.6px;
     margin-right: 4px;
   }
-  .matched-hero-badge {
+.matched-hero-badge {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -87,7 +1179,7 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     padding: 3px 8px 3px 3px;
     box-shadow: 0 0 10px rgba(255, 204, 0, 0.75);
   }
-  .matched-hero-badge img {
+.matched-hero-badge img {
     width: 32px !important;
     height: 32px !important;
     padding: 0 !important;
@@ -95,14 +1187,12 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     object-fit: cover;
     display: block;
   }
-  .matched-hero-badge span {
+.matched-hero-badge span {
     font-size: 12px;
     font-weight: bold;
     color: #ffffff;
   }
-  /* MATCHED HEROES END */
-/* PREMIUM HEROES START */
-  .hero-card {
+.hero-card {
     position: relative;
     background: radial-gradient(circle at 50% 30%, #4b2882 0%, #1a0e2e 100%) !important;
     border: 2px solid #6b42a8 !important;
@@ -111,7 +1201,7 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.7), inset 0 0 12px rgba(168, 85, 247, 0.4) !important;
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease !important;
   }
-  .hero-card::before {
+.hero-card::before {
     content: "";
     position: absolute;
     top: 0; left: -120%;
@@ -122,99 +1212,36 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     pointer-events: none;
     z-index: 2;
   }
-  .hero-card:hover::before {
+.hero-card:hover::before {
     left: 160%;
   }
-  .hero-card:hover {
+.hero-card:hover {
     border-color: #e879f9 !important;
     transform: translateY(-4px) scale(1.03) !important;
     box-shadow: 0 8px 18px rgba(192, 132, 252, 0.55), inset 0 0 15px rgba(232, 121, 249, 0.5) !important;
   }
-  .hero-card.active {
+.hero-card.active {
     border-color: #ffcc00 !important;
     box-shadow: 0 0 18px rgba(255, 204, 0, 0.95), 0 0 28px rgba(255, 136, 0, 0.65) !important;
     transform: translateY(-4px) scale(1.04) !important;
   }
-  .hero-card img {
+.hero-card img {
     filter: contrast(1.08) saturate(1.15);
     transition: transform 0.25s ease, filter 0.25s ease;
   }
-  .hero-card:hover img {
+.hero-card:hover img {
     transform: scale(1.06);
     filter: contrast(1.12) saturate(1.22);
-  }
-  /* PREMIUM HEROES END */
-
-/* SEAMLESS BANNER START */
-  @keyframes bannerPulse {
-    0%, 100% { border-color: #9333ea; box-shadow: 0 0 22px rgba(168, 85, 247, 0.5), inset 0 0 15px rgba(168, 85, 247, 0.3); }
-    50% { border-color: #f0abfc; box-shadow: 0 0 38px rgba(217, 70, 239, 0.85), 0 0 15px rgba(255, 204, 0, 0.4); }
-  }
-  @keyframes bannerSweep {
-    0% { left: -100%; }
-    35%, 100% { left: 150%; }
-  }
-  .main-banner-wrap {
-    width: 100%;
-    max-width: 1080px;
-    margin-bottom: 0;
-    border-radius: 14px 14px 0 0;
-    overflow: hidden;
-    border: 2px solid #a855f7;
-    border-bottom: none;
-    position: relative;
-    z-index: 2;
-    background: #0d0717;
-    animation: bannerPulse 4s infinite ease-in-out;
-  }
-  .main-banner-wrap::after {
-    content: "";
-    position: absolute;
-    top: 0; left: -100%;
-    width: 45%; height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.14), transparent);
-    transform: skewX(-25deg);
-    animation: bannerSweep 7s infinite ease-in-out;
-    pointer-events: none;
-  }
-  .main-banner-wrap img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: contrast(1.04) saturate(1.08);
-  }
-  .discord-bar {
-    border-radius: 0 0 14px 14px !important;
-    border-top: 1px solid rgba(240, 171, 252, 0.45) !important;
-    border-left: 2px solid #a855f7 !important;
-    border-right: 2px solid #a855f7 !important;
-    border-bottom: 2px solid #a855f7 !important;
-    margin-bottom: 16px !important;
-    background: linear-gradient(90deg, #160c29 0%, #3b1c6e 30%, #5865F2 50%, #3b1c6e 70%, #160c29 100%) !important;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.85), 0 4px 20px rgba(168, 85, 247, 0.45) !important;
-  }
-  /* SEAMLESS BANNER END */
-
-
-/* SMOOTH SCROLL & PERF START */
-  html {
-    scroll-behavior: smooth;
   }
 .acc {
     content-visibility: auto;
     contain-intrinsic-size: 680px;
   }
-  /* SMOOTH SCROLL & PERF END */
-
-  
-  
-
-/* RED DRIVE BTN START */
-  @keyframes redDriveGlow {
+@keyframes redDriveGlow {
     0%, 100% { box-shadow: inset 0 0 12px rgba(255, 100, 100, 0.35), 0 2px 8px rgba(220, 38, 38, 0.4); }
     50% { box-shadow: inset 0 0 20px rgba(255, 204, 0, 0.45), 0 2px 14px rgba(239, 68, 68, 0.85); }
   }
-  .drive-btn {
+.drive-btn {
     position: relative !important;
     overflow: hidden !important;
     display: flex !important;
@@ -236,7 +1263,7 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     animation: redDriveGlow 2.2s infinite ease-in-out !important;
     transition: all 0.2s ease !important;
   }
-  .drive-btn::after {
+.drive-btn::after {
     content: "";
     position: absolute;
     top: 0; left: -100%;
@@ -245,66 +1272,16 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     transform: skewX(-25deg);
     transition: left 0.5s ease;
   }
-  .drive-btn:hover::after {
+.drive-btn:hover::after {
     left: 150%;
   }
-  .drive-btn:hover {
+.drive-btn:hover {
     background: linear-gradient(90deg, #7f1d1d 0%, #dc2626 30%, #ef4444 50%, #dc2626 70%, #7f1d1d 100%) !important;
     color: #ffffff !important;
     border-bottom-color: #ffcc00 !important;
     text-shadow: 0 0 10px rgba(255, 230, 128, 0.95) !important;
   }
-  /* RED DRIVE BTN END */
-/* PAYMENT BAR START */
-  .payment-bar {
-    width: 100%;
-    max-width: 1080px;
-    background: linear-gradient(90deg, #120921 0%, #241240 50%, #120921 100%);
-    border: 1.5px solid #7e22ce;
-    border-radius: 10px;
-    padding: 9px 16px;
-    margin-bottom: 14px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75), 0 0 14px rgba(147, 51, 234, 0.3);
-    position: relative;
-    z-index: 2;
-  }
-  .payment-label {
-    font-size: 13.5px;
-    font-weight: 800;
-    color: #e9d5ff;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-  }
-  .pay-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 13px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 0.4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  }
-  .pay-paypal {
-    background: linear-gradient(135deg, #003087 0%, #0070e0 100%);
-    border: 1.5px solid #7dd3fc;
-    color: #ffffff;
-  }
-  .pay-steam {
-    background: linear-gradient(135deg, #171a21 0%, #2a475e 100%);
-    border: 1.5px solid #66c0f4;
-    color: #e0f2fe;
-  }
-  /* PAYMENT BAR END */
-
-
-  .back-to-top {
+.back-to-top {
     position: fixed !important;
     right: 145px !important;
     bottom: 24px !important;
@@ -325,473 +1302,12 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     transform: none !important;
     transition: transform 0.2s ease, background 0.2s ease !important;
   }
-  .back-to-top:hover {
+.back-to-top:hover {
     background: #ffcc00 !important;
     color: #140a21 !important;
     transform: translateY(-3px) scale(1.05) !important;
   }
-
-/* FLAG COUNTER START */
-  @keyframes trustedGlow {
-    0%, 100% { color: #ffcc00; text-shadow: 0 0 6px rgba(255, 204, 0, 0.7); transform: scale(1); }
-    50% { color: #ffffff; text-shadow: 0 0 14px #ffcc00, 0 0 22px #ff8800; transform: scale(1.04); }
-  }
-  .trusted-box {
-    position: fixed;
-    top: 15px;
-    right: calc(50% + 540px + ((50vw - 540px) / 2));
-    transform: translateX(50%);
-    z-index: 95;
-    background: radial-gradient(circle at 50% 20%, #3b1c5e 0%, #120821 100%);
-    border: 2px solid #ffcc00;
-    border-radius: 12px;
-    padding: 10px 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 204, 0, 0.55);
-    text-align: center;
-    max-width: 195px;
-  }
-  .trusted-text {
-    font-size: 13.5px;
-    font-weight: 900;
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
-    line-height: 1.25;
-    animation: trustedGlow 1.8s infinite ease-in-out;
-  }
-  .trusted-box img {
-    width: 175px;
-    height: auto;
-    border-radius: 8px;
-    display: block;
-    border: 1.5px solid rgba(255, 204, 0, 0.65);
-  }
-  
-  
-  
-  @media (max-width: 1520px) {
-    .trusted-box {
-      position: static;
-      transform: none;
-      margin: 0 auto 14px auto;
-      width: fit-content;
-    }
-  }
-  @media (max-width: 1520px) {
-    
-  }
-  /* FLAG COUNTER END */
-
-  .live-top-box {
-    position: fixed;
-    top: 294px;
-    left: calc(50% + 540px + ((50vw - 540px) / 2));
-    transform: translateX(-50%);
-    z-index: 96;
-    width: 132px; padding: 7px 12px; gap: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    background: #0d0717;
-    border: 2px solid #a855f7;
-    border-top: 1.5px solid #ffcc00;
-    border-radius: 0 0 10px 10px;
-    padding: 6px 8px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(255, 204, 0, 0.4);
-  }
-  .flag-clean-wrap {
-    position: fixed;
-    top: 15px;
-    left: calc(50% + 540px + ((50vw - 540px) / 2));
-    transform: translateX(-50%);
-    z-index: 95;
-    background: #0d0717;
-    border: 2px solid #a855f7;
-    border-bottom: none;
-    border-radius: 10px 10px 0 0;
-    padding: 6px 6px 4px 6px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(168, 85, 247, 0.45);
-  }
-  @media (max-width: 1520px) {
-    .live-top-box, .flag-clean-wrap {
-      position: static;
-      transform: none;
-      margin: 16px auto;
-      width: fit-content;
-    }
-  }
-
-
-  .bleach-top-nav {
-    width: 100%;
-    max-width: 1080px;
-    margin: 0 auto 14px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-  }
-  .btn-back-home {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(90deg, #1b0c30 0%, #581c87 50%, #1b0c30 100%);
-    color: #ffe680;
-    border: 2px solid #ffcc00;
-    border-radius: 10px;
-    padding: 9px 24px;
-    font-size: 13.5px;
-    font-weight: 900;
-    letter-spacing: 0.9px;
-    text-transform: uppercase;
-    text-decoration: none;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8), 0 0 14px rgba(168, 85, 247, 0.5);
-    transition: all 0.2s ease;
-  }
-  .btn-back-home:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%);
-    color: #ffffff;
-    box-shadow: 0 0 22px rgba(255, 204, 0, 0.85);
-  }
-
-
-  /* 100% IDENTICNO CENTRIRANJE I PORAVNANJE NA OBJE STRANICE */
-  html {
-    overflow-y: scroll;
-  }
-  body {
-    padding-top: 15px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    overflow-x: hidden !important;
-  }
-  .container {
-    width: 100% !important;
-    max-width: 1080px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  .bleach-top-nav {
-    width: 100% !important;
-    max-width: 1080px !important;
-    margin: 0 auto 14px auto !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  .btn-nav-active, .btn-back-home {
-    padding: 9px 24px !important;
-    font-size: 13.5px !important;
-    line-height: 1.2 !important;
-    box-sizing: border-box !important;
-  }
-  .banner-box {
-    width: 100% !important;
-    max-width: 1080px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  .trusted-box {
-    position: fixed !important;
-    top: 15px !important;
-    right: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
-    transform: translateX(50%) !important;
-    width: 195px !important;
-    max-width: 195px !important;
-  }
-  .flag-clean-wrap {
-    position: fixed !important;
-    top: 15px !important;
-    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
-    transform: translateX(-50%) !important;
-  }
-  .live-top-box {
-    position: fixed !important;
-    top: 294px !important;
-    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
-    transform: translateX(-50%) !important;
-    width: 132px !important;
-  }
-  @media (max-width: 1520px) {
-    .trusted-box, .flag-clean-wrap, .live-top-box {
-      position: static !important;
-      transform: none !important;
-      margin: 12px auto !important;
-    }
-  }
-
-
-  /* POPRAVLJEN FLAG COUNTER (E57c) */
-  .flag-clean-wrap {
-    position: fixed !important;
-    top: 15px !important;
-    left: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
-    transform: translateX(-50%) !important;
-    z-index: 95 !important;
-    background: #0d0717 !important;
-    border: 2px solid #a855f7 !important;
-    border-bottom: none !important;
-    border-radius: 10px 10px 0 0 !important;
-    padding: 6px 6px 4px 6px !important;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(168, 85, 247, 0.45) !important;
-    margin: 0 !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  .flag-clean-wrap img {
-    display: block !important;
-    width: auto !important;
-    height: auto !important;
-    max-width: none !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  @media (max-width: 1280px) {
-    .flag-clean-wrap {
-      position: static !important;
-      transform: none !important;
-      margin: 12px auto !important;
-      border-bottom: 2px solid #a855f7 !important;
-      border-radius: 10px !important;
-      width: fit-content !important;
-    }
-  }
-
-
-  .trusted-box a.btn-epicnpc-topic,
-  .btn-epicnpc-topic {
-    display: block !important;
-    width: 100% !important;
-    margin: 6px 0 2px 0 !important;
-    padding: 7px 10px !important;
-    background: linear-gradient(90deg, #581c87 0%, #9333ea 50%, #581c87 100%) !important;
-    background-clip: padding-box !important;
-    color: #ffe680 !important;
-    border: 1.5px solid #ffcc00 !important;
-    border-radius: 8px !important;
-    outline: none !important;
-    font-size: 11px !important;
-    font-weight: 900 !important;
-    letter-spacing: 0.5px !important;
-    text-transform: uppercase !important;
-    text-decoration: none !important;
-    text-align: center !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.75) !important;
-    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease !important;
-    line-height: 1.25 !important;
-    box-sizing: border-box !important;
-  }
-  .trusted-box a.btn-epicnpc-topic:hover,
-  .btn-epicnpc-topic:hover {
-    background: linear-gradient(90deg, #7e22ce 0%, #a855f7 50%, #7e22ce 100%) !important;
-    color: #ffffff !important;
-    box-shadow: 0 0 14px rgba(255, 204, 0, 0.85) !important;
-  }
-
-
-  
-
-  
-
-  /* MIRAN OMOTAC: KUTIJA DISE, GUMB STOJI 100% MIRNO */
-  .epicnpc-wrapper {
-    position: fixed !important;
-    top: 15px !important;
-    right: calc(50% + 540px + ((100vw - 1080px) / 4)) !important;
-    transform: translateX(50%) !important;
-    z-index: 95 !important;
-    width: 195px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    margin: 0 !important;
-  }
-  .epicnpc-wrapper .trusted-box {
-    position: static !important;
-    transform: none !important;
-    width: 100% !important;
-    margin: 0 !important;
-  }
-  .epicnpc-wrapper .btn-epicnpc-topic {
-    position: static !important;
-    animation: none !important;
-    transform: none !important;
-    transition: none !important;
-    margin: 0 !important;
-  }
-  @media (max-width: 1280px) {
-    .epicnpc-wrapper {
-      position: static !important;
-      transform: none !important;
-      margin: 12px auto !important;
-    }
-  }
-
-
-
-  /* ZLATNI OKVIR OKO EPICNPC SLIKE */
-  img[src*="epicnpc" i] {
-    border: 2.5px solid #ffcc00 !important;
-    border-radius: 10px !important;
-    box-shadow: 0 0 14px rgba(255, 204, 0, 0.75), 0 4px 12px rgba(0, 0, 0, 0.85) !important;
-    box-sizing: border-box !important;
-    display: block !important;
-  }
-
-
-
-  
-
-  /* STYLISH HOW TO BUY KUTIJA ISPOD EPICNPC BEDZA */
-  .howtobuy-box {
-    width: 100%;
-    max-width: 195px;
-    background: linear-gradient(180deg, #160929 0%, #0d0717 100%);
-    border: 2px solid #ffcc00;
-    border-radius: 12px;
-    padding: 10px 10px 8px 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(168, 85, 247, 0.45);
-    box-sizing: border-box;
-    margin-top: 2px;
-    text-align: left;
-  }
-  .howtobuy-header {
-    text-align: center;
-    font-size: 12px;
-    font-weight: 900;
-    color: #ffe680;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    padding-bottom: 6px;
-    margin-bottom: 8px;
-    border-bottom: 1.5px solid rgba(255, 204, 0, 0.4);
-    text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
-  }
-  .htb-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 7px;
-    margin-bottom: 7px;
-    background: rgba(88, 28, 135, 0.25);
-    border: 1px solid rgba(168, 85, 247, 0.35);
-    border-radius: 7px;
-    padding: 5px 6px;
-  }
-  .htb-step:last-child {
-    margin-bottom: 0;
-  }
-  .htb-num {
-    min-width: 18px;
-    height: 18px;
-    background: linear-gradient(135deg, #ffcc00 0%, #f59e0b 100%);
-    color: #0d0717;
-    font-size: 11px;
-    font-weight: 900;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1px;
-    box-shadow: 0 0 6px rgba(255, 204, 0, 0.7);
-  }
-  .htb-txt {
-    font-size: 10.5px;
-    line-height: 1.28;
-    color: #f3e8ff;
-  }
-  .htb-txt b {
-    color: #ffe680;
-    display: block;
-    font-size: 11px;
-    margin-bottom: 1px;
-  }
-
-
-
-  
-
-  /* JEDNA DO DRUGE LIJEVO: EPICNPC + HOW TO BUY BEZ PREKLAPANJA */
-  .left-side-row {
-    position: fixed !important;
-    top: 15px !important;
-    left: 15px !important;
-    z-index: 95 !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-    gap: 10px !important;
-    margin: 0 !important;
-  }
-  .left-side-row .epicnpc-wrapper,
-  .left-side-row .trusted-box {
-    position: static !important;
-    transform: none !important;
-    margin: 0 !important;
-    width: 175px !important;
-    flex-shrink: 0 !important;
-  }
-  .left-side-row .howtobuy-box {
-    position: static !important;
-    transform: none !important;
-    margin: 0 !important;
-    width: 175px !important;
-    max-width: 175px !important;
-    flex-shrink: 0 !important;
-    background: linear-gradient(180deg, #160929 0%, #0d0717 100%) !important;
-    border: 2px solid #ffcc00 !important;
-    border-radius: 12px !important;
-    padding: 8px 8px 6px 8px !important;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(168, 85, 247, 0.45) !important;
-  }
-  .left-side-row .htb-step {
-    padding: 4px 5px !important;
-    margin-bottom: 5px !important;
-  }
-  .left-side-row .htb-txt {
-    font-size: 10px !important;
-    line-height: 1.22 !important;
-  }
-  @media (max-width: 1620px) {
-    .left-side-row {
-      position: static !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
-      width: 100% !important;
-      max-width: 1080px !important;
-      margin: 12px auto !important;
-    }
-    .left-side-row .howtobuy-box {
-      width: 100% !important;
-      max-width: 680px !important;
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 8px !important;
-    }
-    .left-side-row .howtobuy-header {
-      grid-column: 1 / -1 !important;
-      margin-bottom: 2px !important;
-    }
-    .left-side-row .htb-step {
-      margin-bottom: 0 !important;
-    }
-  }
-  @media (max-width: 760px) {
-    .left-side-row .howtobuy-box {
-      grid-template-columns: 1fr !important;
-    }
-  }
-
-
-
-  /* ISTAKNUTA CIJENA PORED ACCOUNT NASLOVA */
-  .acc-title {
+.acc-title {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -799,7 +1315,7 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     padding: 8px 12px !important;
     text-align: center !important;
   }
-  .acc-price-badge {
+.acc-price-badge {
     background: linear-gradient(135deg, #ffd700 0%, #ffae00 100%);
     color: #140824;
     font-weight: 900;
@@ -810,59 +1326,287 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.45);
     border: 1px solid #fff3a1;
   }
-
-
-
-  /* KOREKCIJA VISINE SLIKE DESKTOP VS MOBITEL */
-  .img-crop-box { max-height: none !important; height: auto !important; overflow: hidden !important; border-radius: 8px; }
-  .acc.open .img-crop-box,
+.img-crop-box { max-height: none !important; height: auto !important; overflow: hidden !important; border-radius: 8px; }
+.acc.open .img-crop-box,
   .acc.expanded .img-crop-box,
   .img-crop-box.open,
   .img-crop-box.expanded {
     max-height: none !important;
   }
-  @media (max-width: 768px) {
-    .img-crop-box {
+@media  (max-width: 768px) {.img-crop-box {
       max-height: 250px !important;
-    }
-    .acc.open .img-crop-box,
+    }.acc.open .img-crop-box,
     .acc.expanded .img-crop-box,
     .img-crop-box.open,
     .img-crop-box.expanded {
       max-height: none !important;
-    }
-  }
-
-
-
-  
-
-  /* ZLATNA SLOVA HEROJA */
-  .hero-name-label {
-    color: #ffd700 !important;
-    font-size: 11px !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
-    margin: 4px 2px 2px 2px !important;
-    text-align: center !important;
-    word-break: break-word !important;
-  }
-  .hero-card {
+    }}
+.hero-card {
     height: auto !important;
-    padding-bottom: 6px !important;
+    padding-bottom: 2px !important;
+  }
+.hero-card .cb-area { padding: 3px 0 !important; }
+.hero-card .cb { width: 17px !important; height: 17px !important; font-size: 12px !important; border-width: 1.5px !important; }
+.img-crop-box { max-height: none !important; height: 430px !important; overflow: hidden !important; border-radius: 8px; }
+.img-crop-box img { width: 100%; height: auto; display: block; transition: transform 0.25s ease; }
+.img-crop-box:hover img { transform: scale(1.03); }
+.img-crop-box .img-fade, .toggle-wrap { display: none !important; }
+.acc-card .img-crop-box, .img-crop-box {
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+  }
+.acc-card .img-crop-box img, .img-crop-box img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
   }
 
-  .discord-bar { position: relative !important; z-index: 9999 !important; pointer-events: auto !important; }
-  .copy-discord-btn { position: relative !important; z-index: 10000 !important; pointer-events: auto !important; cursor: pointer !important; }
-  .img-crop-box { max-height: none !important; height: 430px !important; overflow: hidden !important; border-radius: 8px; }
-  .img-crop-box img { width: 100%; height: auto; display: block; transition: transform 0.25s ease; }
-  .img-crop-box:hover img { transform: scale(1.03); }
-  .img-crop-box .img-fade, .toggle-wrap { display: none !important; }
-  .extra-btns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
-  .extra-img-btn { background: linear-gradient(180deg, #3b1c5e 0%, #24103d 100%); color: #ffe680; border: 1px solid #8b5cf6; border-radius: 6px; padding: 6px 8px; font-size: 11px; font-weight: 800; cursor: pointer; transition: 0.15s; text-align: center; }
-  .extra-img-btn:hover { background: #6d28d9; color: #fff; transform: translateY(-1px); }
-  .extra-img-btn.missing { opacity: 0.38; cursor: not-allowed; border-color: #4b5563; color: #9ca3af; }
-  .extra-img-btn.missing:hover { background: linear-gradient(180deg, #3b1c5e 0%, #24103d 100%); transform: none; }
+/* Payment strip: align its outer edges exactly with the Discord info message. */
+.catalog-payment-row {
+  width: 84% !important;
+  max-width: none !important;
+  margin: 8px auto 14px !important;
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+.catalog-payment-row .payment-bar {
+  flex: 1 1 100%;
+  width: 100%;
+  max-width: 1080px;
+  min-width: 0;
+  margin: 0;
+  justify-content: center;
+  padding: 9px 16px;
+  gap: 12px;
+  box-sizing: border-box;
+}
+.banner-column > .bleach-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 84% !important;
+  max-width: none !important;
+  margin: 12px auto 14px !important;
+  padding: 16px 12px 14px !important;
+  box-sizing: border-box !important;
+}
+.bleach-title-strip {
+  display: flex;
+  width: 100%;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 9px 12px;
+  margin: 0 0 10px;
+  color: #ffe680;
+  text-align: center;
+  font-size: clamp(12px, 1.2vw, 16px);
+  font-weight: 900;
+  letter-spacing: .8px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #160929 0%, #3b1c6e 50%, #160929 100%);
+  border: 1.5px solid #a855f7;
+  border-radius: 9px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.75), 0 0 14px rgba(168,85,247,.35);
+}
+@media (max-width: 1000px) {
+  .heroes-grid { grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 6px; }
+}
+@media (max-width: 1050px) {
+  .catalog-payment-row { width: 100% !important; max-width: 100% !important; }
+}
+@media (max-width: 760px) {
+  .catalog-payment-row { width: 100% !important; max-width: 100% !important; }
+  .banner-column > .bleach-panel { width: calc(100% - 24px) !important; max-width: none !important; }
+  .catalog-payment-row .payment-bar { width: 100%; }
+  .banner-column > .bleach-panel { padding: 14px 10px 12px !important; }
+  .heroes-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }
+}
+@media (max-width: 480px) {
+  .heroes-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+}
+
+
+/* Account count and account cards align with the same center column as payment/filter. */
+.catalog-results-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 205px) minmax(0, 1fr) minmax(0, 150px);
+  align-items: start;
+  gap: clamp(12px, 1.5vw, 20px);
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.catalog-results-column {
+  grid-column: 2;
+  width: 84%;
+  max-width: none;
+  min-width: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.catalog-results-column > #status,
+.catalog-results-column > #accounts {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+.catalog-results-column > #status { margin-top: 0; }
+.catalog-results-column > #accounts { margin-left: 0; margin-right: 0; }
+@media (max-width: 768px) {
+  .catalog-results-layout {
+    display: block;
+    width: 100%;
+    order: 2 !important;
+  }
+  .catalog-results-column {
+    width: calc(100% - 24px);
+    margin: 0 auto;
+  }
+}
+
+/* Exact alignment: match the payment strip's visible left/right guide edges. */
+@media (min-width: 761px) {
+  body > main.container > .bleach-panel {
+    width: 66vw !important;
+    max-width: 66vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* BLEACH HEADER — match the supplied reference image */
+.bleach-title-strip {
+  display: block !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 0 7px !important;
+  padding: 2px 8px 0 !important;
+  color: #ffd76a !important;
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  letter-spacing: 3px !important;
+  line-height: 1.15 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-image: linear-gradient(180deg, #fff8dc 5%, #ffe680 42%, #ffb13b 72%, #ff7a18 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none !important;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,.8)) drop-shadow(0 0 9px rgba(255,153,35,.62));
+}
+.bleach-panel .bleach-subtitle {
+  display: inline-block !important;
+  max-width: 100% !important;
+  margin: 0 auto 16px !important;
+  padding: 5px 15px !important;
+  color: #e7d3ff !important;
+  font-size: clamp(9px, .9vw, 12px) !important;
+  font-weight: 800 !important;
+  letter-spacing: clamp(.7px, .14vw, 2px) !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
+  background: rgba(8, 4, 15, .62) !important;
+  border: 1px solid rgba(168,85,247,.55) !important;
+  border-radius: 20px !important;
+  box-shadow: inset 0 0 10px rgba(168,85,247,.12), 0 0 10px rgba(0,0,0,.35) !important;
+}
+@media (max-width: 600px) {
+  .bleach-title-strip {
+    font-size: clamp(15px, 4.2vw, 20px) !important;
+    letter-spacing: clamp(.5px, .2vw, 1.2px) !important;
+    white-space: normal !important;
+  }
+  .bleach-panel .bleach-subtitle { padding: 5px 9px !important; letter-spacing: .6px !important; }
+}
+
+/* Additional catalog, image modal and button styling */
+.hero-card { min-width:0 !important; }
+.hero-card img { display:block !important; width:100% !important; }
+/* Materials / Consumables / Shards / Weapon Stamps — compact 2x2 layout */
+.extra-btns-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr) !important;
+  gap: 3px !important;
+  width: 100% !important;
+  padding: 4px 6px 6px !important;
+  margin: 0 !important;
+  background: #160d25 !important;
+}
+.extra-img-btn {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+  min-height: 31px !important;
+  width: 100% !important;
+  padding: 5px 3px !important;
+  border: 1px solid #8b4bd0 !important;
+  border-radius: 7px !important;
+  background: linear-gradient(180deg, #321653 0%, #1d1032 100%) !important;
+  color: #ffe9a6 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: .45px !important;
+  line-height: 1.05 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
+  cursor: pointer !important;
+  box-shadow: inset 0 0 7px rgba(168,85,247,.12) !important;
+}
+.extra-img-btn:hover {
+  border-color: #c084fc !important;
+  background: linear-gradient(180deg, #49216f 0%, #281342 100%) !important;
+  color: #fff1bd !important;
+}
+.extra-img-btn .game-ico {
+  display: inline-block !important;
+  flex: 0 0 12px !important;
+  width: 12px !important;
+  height: 12px !important;
+  fill: currentColor !important;
+  color: #ffdf70 !important;
+  opacity: 1 !important;
+}
+.extra-img-btn span {
+  display: inline-block !important;
+  min-width: 0 !important;
+  line-height: 1.05 !important;
+}
+/* Nudge Materials label slightly left so it sits comfortably in its button */
+.extra-btns-grid .extra-img-btn:nth-child(1) span {
+  position: relative !important;
+  left: -3px !important;
+}
+@media (max-width: 520px) {
+.extra-btns-grid { gap: 3px !important; padding: 4px !important; }
+  .extra-img-btn { min-height: 29px !important; padding: 4px 2px !important; font-size: 9.5px !important; letter-spacing: .2px !important; }
+  .extra-img-btn .game-ico { width: 11px !important; height: 11px !important; flex-basis: 11px !important; }
+}
+
+
+  /* Modal za kategorijske slike — preuzeta pravila iz verzije u kojoj radi */
   #imgModal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 99999; align-items: center; justify-content: center; flex-direction: column; padding: 16px; }
   #imgModal.open { display: flex; }
   #imgModalTop { display: flex; align-items: center; justify-content: center; gap: 14px; width: 100%; max-width: 760px; margin: 0 auto 10px auto; color: #ffe680; font-weight: 800; font-size: 15px; text-align: center; }
@@ -939,50 +1683,211 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     transition: 0.15s;
   }
   #imgModalDrive:hover { background: #7e22ce; transform: scale(1.04); color: #ffe680; }
-  .acc-card .img-crop-box, .img-crop-box {
-    height: auto !important;
-    max-height: none !important;
-    aspect-ratio: auto !important;
-    overflow: hidden !important;
-    border-radius: 8px !important;
+
+.hero-card {
+  height: auto !important;
+  padding-bottom: 6px !important;
+}
+
+/* Urednija imena heroja: jednake visine, centriranje i skladno prelamanje */
+.hero-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  min-width: 0 !important;
+}
+.hero-name-label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 5px 4px !important;
+  box-sizing: border-box !important;
+  color: #ffe28a !important;
+  background: linear-gradient(180deg, #291744 0%, #190e2a 100%) !important;
+  border-top: 1px solid rgba(255, 204, 0, .28) !important;
+  border-bottom: 1px solid rgba(168, 85, 247, .25) !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: clamp(9px, .78vw, 11px) !important;
+  font-weight: 800 !important;
+  letter-spacing: .12px !important;
+  line-height: 1.22 !important;
+  text-align: center !important;
+  text-shadow: 0 1px 2px #100719, 0 0 6px rgba(255, 204, 0, .38) !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+.hero-card.active .hero-name-label {
+  color: #fff1b8 !important;
+  background: linear-gradient(180deg, #49300d 0%, #281a0b 100%) !important;
+  border-top-color: rgba(255, 204, 0, .75) !important;
+  text-shadow: 0 0 7px rgba(255, 204, 0, .6) !important;
+}
+@media (max-width: 760px) {
+  .hero-name-label {
+    min-height: 36px !important;
+    padding: 4px 2px !important;
+    font-size: 9.5px !important;
+    line-height: 1.18 !important;
+    letter-spacing: 0 !important;
   }
-  .acc-card .img-crop-box img, .img-crop-box img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    object-fit: contain !important;
-    display: block !important;
+}
+@media (max-width: 480px) {
+  .hero-name-label {
+    min-height: 34px !important;
+    padding: 3px 2px !important;
+    font-size: 8.8px !important;
   }
+}
+
+
+/* Posebno slaganje dugih imena u uredne, centrirane redove */
+.hero-name-label .hero-name-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  gap: 2px;
+  line-height: 1.12;
+}
+.hero-name-label .hero-name-main {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+}
+.hero-name-label .hero-name-sub {
+  display: block;
+  max-width: 100%;
+  color: inherit;
+  font-size: .88em;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+/* Szayelaporro ostaje u jednom redu, ali se blago sužava da ne udara u rubove */
+.hero-name-label .hero-name-single {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  font-size: .78em;
+  letter-spacing: -.18px;
+  line-height: 1.15;
+  transform: scaleX(.94);
+  transform-origin: center;
+}
+@media (max-width: 760px) {
+  .hero-name-label .hero-name-sub { font-size: .84em; }
+  .hero-name-label .hero-name-single { font-size: .74em; letter-spacing: -.22px; }
+}
+@media (max-width: 480px) {
+  .hero-name-label .hero-name-sub { font-size: .82em; }
+  .hero-name-label .hero-name-single { font-size: .70em; letter-spacing: -.25px; }
+}
+
+
+/* Uryu Ishida: malo kompaktniji prvi red, bez promjene boje ili ostalih imena */
+.hero-card-uryu .hero-name-label .hero-name-main {
+  font-size: .88em !important;
+  letter-spacing: -.28px !important;
+  line-height: 1.08 !important;
+  white-space: nowrap !important;
+}
+.hero-card-uryu .hero-name-label .hero-name-sub {
+  font-size: .84em !important;
+  letter-spacing: 0 !important;
+  line-height: 1.08 !important;
+}
+@media (max-width: 760px) {
+  .hero-card-uryu .hero-name-label .hero-name-main { font-size: .84em !important; letter-spacing: -.32px !important; }
+  .hero-card-uryu .hero-name-label .hero-name-sub { font-size: .80em !important; }
+}
 </style>
-<link href="https://googleapis.com" rel="stylesheet">
-<style>.extra-btns-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:3px!important;box-sizing:border-box!important;width:100%!important;padding:2px 3px 8px 3px!important;margin:0!important}.extra-img-btn{width:100%!important;box-sizing:border-box!important;min-width:0!important;padding-left:2px!important;padding-right:2px!important;gap:3px!important}.extra-img-btn svg,.extra-img-btn span:first-child{margin-right:0!important}</style><style>.flag-clean-wrap{border:2px solid #ffcc00!important;border-bottom:2px solid #ffcc00!important;border-radius:10px!important;padding-bottom:6px!important}.live-top-box{border:2px solid #ffcc00!important;border-top:2px solid #ffcc00!important;border-radius:10px!important;width:auto!important;min-width:138px!important;padding:7px 12px!important}.live-top-box div[title]{width:80px!important;min-width:80px!important;box-sizing:content-box!important;overflow:visible!important}</style><style id="gfx-c">@keyframes gTw{0%,100%{opacity:.28;transform:scale(.92)}50%{opacity:.95;transform:scale(1.18)}}@keyframes gMt{0%{transform:translate(0,0) rotate(-35deg);opacity:0}4%{opacity:1}18%{transform:translate(-1150px,760px) rotate(-35deg);opacity:0}100%{transform:translate(-1150px,760px) rotate(-35deg);opacity:0}}@keyframes gSp{0%{transform:translateY(0) scale(.85);opacity:0}15%{opacity:1}85%{opacity:.85}100%{transform:translateY(-102vh) scale(1.25);opacity:0}}#gacha-fx,#gacha-fx *{pointer-events:none!important}#gacha-fx{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;min-width:100vw!important;height:100%!important;min-height:100vh!important;z-index:1!important;overflow:hidden!important}html{background:#06040a!important;background-image:radial-gradient(circle at 50% 22%,#1b0e33 0%,#0b0614 55%,#050308 100%)!important;background-attachment:fixed!important}body,.layout,.grid,.columns,.side-col,.right-col,.left-col,.sidebar{background:transparent!important;background-color:transparent!important}.container,.main-wrap,.bleach-wrap,.page-wrap,.content-wrap{background:transparent!important}img,.banner,.main-banner,.hero-card,.catalog-card,.panel,.card,.box,.discord-bar,.bleach-top-nav,.btn-back-home{position:relative!important;z-index:5!important}.g-st{position:absolute;inset:0;background-image:radial-gradient(2px 2px at 10% 15%,#fff,transparent),radial-gradient(2px 2px at 24% 68%,#ffe680,transparent),radial-gradient(1.5px 1.5px at 38% 28%,#fff,transparent),radial-gradient(2px 2px at 52% 82%,#f0abfc,transparent),radial-gradient(2px 2px at 67% 20%,#ffe680,transparent),radial-gradient(1.5px 1.5px at 79% 58%,#fff,transparent),radial-gradient(2px 2px at 91% 34%,#f0abfc,transparent),radial-gradient(1.5px 1.5px at 16% 86%,#fff,transparent);animation:gTw 4.5s infinite ease-in-out}.g-mt{position:absolute;width:140px;height:2px;background:linear-gradient(90deg,#fff 0%,#ffcc00 35%,#a855f7 75%,transparent 100%);border-radius:50%;filter:drop-shadow(0 0 6px #ffcc00);opacity:0;animation:gMt 8.5s infinite linear}.g-sp{position:absolute;bottom:-12px;border-radius:50%;opacity:0;animation:gSp 8s infinite linear}</style>
-<style id="gfx-unblock">#gacha-fx,#gacha-fx div{display:block!important}.bleach-wrap,.bleach-panel,.main-wrapper,.page-wrapper{background:transparent!important}img,.account-card,.acc-card,.account-box,.hero-card,.hero-btn,.hero-item,.filter-box,.banner-wrap,.discord-bar,.bleach-top-nav,.btn-back-home,.status,.accounts{position:relative!important;z-index:5!important}</style>
-<style id="home-purple-theme">@keyframes purplePulse{0%,100%{opacity:.05}50%{opacity:.66}}html{min-height:100%!important;background:#06040a!important;background-image:none!important;position:relative!important}html::before{content:""!important;position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;z-index:0!important;pointer-events:none!important;background:linear-gradient(180deg,#24104a 0%,#34176b 50%,#200e42 100%)!important;animation:purplePulse 7s ease-in-out infinite!important}body{background:transparent!important;background-image:none!important}</style>
 </head>
 <body>
-  <div class="bleach-top-nav"><a href="https://genesisgachastore.github.io/home/" class="btn-back-home">🏠 Home • Genesis Gacha Store</a></div>
+  <h1 class="visually-hidden">Starter Bleach Catalog</h1>
+  <main class="container">
+    <nav class="bleach-top-nav" aria-label="Main navigation">
+      <a href="https://genesisgachastore.github.io/home/" class="btn-back-home">🏠 Home • Genesis Gacha Store</a>
+    </nav>
 
-  
-  
-  <!-- NEBULA & TOP BTN HTML START -->
-  <button type="button" class="back-to-top" id="topBtn" onclick="document.querySelector('.bleach-panel').scrollIntoView({behavior:'smooth'})">▲ Top</button>
-  <!-- NEBULA & TOP BTN HTML END -->
-<!-- FULL BANNER HTML START -->
-  <div class="main-banner-wrap">
-    <img src="slike/banner.jpg" alt="Bleach Soul Resonance Promo Banner">
-  </div>
-  <!-- FULL BANNER HTML END -->
-  <div class="discord-bar"><span class="discord-text">💬 For any questions, prices or more images, add me on Discord:</span><span class="discord-tag" id="dcTag">GenesisGacha#0271</span><button type="button" class="copy-discord-btn" onclick="(function(b){var t=document.getElementById('dcTag').textContent.trim();var ok=false;var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();ta.setSelectionRange(0,9999);try{ok=document.execCommand('copy');}catch(e){}document.body.removeChild(ta);if(!ok&&navigator.clipboard){navigator.clipboard.writeText(t).catch(function(){});}var o=b.innerHTML;b.innerHTML='&#10003; Copied!';setTimeout(function(){b.innerHTML=o;},2000);})(this)">&#128203; Copy</button></div>
-  <!-- PAYMENT BAR HTML START -->
-  <div class="payment-bar">
-    <span class="payment-label">💳 Accepted Payment Methods:</span>
-    <span class="pay-badge pay-paypal">🅿️ PayPal</span>
-    <span class="pay-badge pay-steam">🎮 Steam Gift Cards (EU)</span>
-  </div>
-  <!-- PAYMENT BAR HTML END -->
-  <div class="bleach-panel"><div class="bleach-title">BLEACH: SOUL RESONANCE</div><div class="bleach-subtitle">EU • APLUS GUEST STARTER CATALOG • SELECT HEROES TO FILTER</div><div id="heroes" class="heroes-grid"></div></div>
-  <div id="status" class="status"></div>
-  <div id="accounts" class="accounts"></div>
+    <!-- Back-to-top button restored -->
+    <button type="button" class="back-to-top" id="topBtn" onclick="document.querySelector('.bleach-panel').scrollIntoView({behavior:'smooth'})">▲ Top</button>
+
+    <div class="hero-layout">
+      <div class="left-info-stack">
+        <section class="trusted-panel" aria-label="EpicNPC trusted seller">
+          <div class="trusted-panel-title">⭐ 100% Trusted Seller ⭐</div>
+          <a class="trusted-panel-link" href="https://www.epicnpc.com/threads/aplus-eu-starter-catalog-selector-on-tutorial-only-13-11-2026-25e.3106689/" target="_blank" rel="noopener">
+            🔥 Click Here for EpicNPC Topic
+          </a>
+          <img src="slike/epicnpc.png" alt="EpicNPC Trusted Seller">
+        </section>
+
+        <section class="howtobuy-box" aria-label="How to Buy">
+          <h2 class="howtobuy-header">🛒 How to Buy</h2>
+          <div class="htb-step"><span class="htb-num">1</span><div class="htb-txt"><b>Pick Account</b><span>Select your favorite Account #.</span></div></div>
+          <div class="htb-step"><span class="htb-num">2</span><div class="htb-txt"><b>Add on Discord</b><span>Message me with the Account #.</span></div></div>
+          <div class="htb-step"><span class="htb-num">3</span><div class="htb-txt"><b>Live Account Check</b><span>I will log back into the account so we can confirm it's the exact one you want.</span></div></div>
+          <div class="htb-step"><span class="htb-num">4</span><div class="htb-txt"><b>Easy Payment</b><span>Pay via PayPal or Steam Gift.</span></div></div>
+          <div class="htb-step"><span class="htb-num">5</span><div class="htb-txt"><b>Account Binding</b><span>Send mail or dummy mail &amp; password.</span></div></div>
+          <div class="htb-step"><span class="htb-num">6</span><div class="htb-txt"><b>100% Yours</b><span>Account is 100% yours — change the password and do whatever you want!</span></div></div>
+        </section>
+      </div>
+
+      <div class="banner-column">
+      <div class="banner-box">
+        <img src="slike/banner.jpg" alt="Bleach Soul Resonance Banner">
+      </div>
+
+    <div class="info-bar">
+      <span>💬 For any questions, prices or more images, add me on Discord:</span>
+      <span class="dc-tag" id="dcTag">GenesisGacha#0271</span>
+      <button type="button" class="copy-discord-btn" onclick="copyDiscord(this)" aria-label="Copy Discord username">&#128203; Copy</button>
+    </div>
+
+    <div class="catalog-payment-row">
+      <div class="payment-bar">
+        <span class="payment-label">💳 Accepted Payment Methods:</span>
+        <span class="pay-badge pay-paypal">🅿️ PayPal</span>
+        <span class="pay-badge pay-steam">🎮 Steam Gift Cards (EU)</span>
+      </div>
+    </div>
+      <div class="bleach-panel"><div class="bleach-title-strip">BLEACH: SOUL RESONANCE</div><div class="bleach-subtitle">EU • APLUS GUEST STARTER CATALOG • SELECT HEROES TO FILTER</div><div id="heroes" class="heroes-grid"></div></div>
+      </div>
+
+      <aside class="visitor-stack" aria-label="Visitor statistics">
+        <div class="flag-counter-wrap" role="group" aria-label="Visitor flag counter">
+          <a href="https://info.flagcounter.com/E57c" target="_blank" rel="noopener noreferrer">
+            <img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Visitor Flag Counter">
+          </a>
+        </div>
+
+        <div class="live-top-box" role="group" title="Real-time visitors online" aria-label="Live visitors online">
+          <span class="live-indicator" aria-hidden="true"></span>
+          <span class="live-label">LIVE:</span>
+          <span class="live-widget-frame">
+            <script id="_waugen">var _wau = _wau || []; _wau.push(["small", "bleachcat26", "gen"]);</script>
+            <script async src="//waust.at/s.js"></script>
+          </span>
+        </div>
+      </aside>
+    </div>
+
+
+  <section class="catalog-results-layout" aria-label="Bleach account results">
+    <div class="catalog-results-column">
+      <div id="status" class="status"></div>
+      <div id="accounts" class="accounts"></div>
+    </div>
+  </section>
   <script>
     const HEROJI = [{"ime": "Bambietta", "slika": "slike/hero_0.jpg"}, {"ime": "Byakuya Kuchiki", "slika": "slike/hero_1.jpg"}, {"ime": "Gin Ichimaru", "slika": "slike/hero_2.jpg"}, {"ime": "Grimmjow - Resurreccion", "slika": "slike/hero_3.jpg"}, {"ime": "Ichigo Kurosaki - Bankai", "slika": "slike/hero_4.jpg"}, {"ime": "Ichigo Kurosaki - Dual Zangetsu", "slika": "slike/hero_5.jpg"}, {"ime": "Ichigo Kurosaki - Inner Hollow", "slika": "slike/hero_6.jpg"}, {"ime": "Ikkaku Madarame", "slika": "slike/hero_7.jpg"}, {"ime": "Kaname Tosen", "slika": "slike/hero_8.jpg"}, {"ime": "Kenpachi Zaraki", "slika": "slike/hero_9.jpg"}, {"ime": "Kensei Muguruma - Bankai", "slika": "slike/hero_10.jpg"}, {"ime": "Kisuke Urahara - Bankai", "slika": "slike/hero_11.jpg"}, {"ime": "Kisuke Urahara", "slika": "slike/hero_12.jpg"}, {"ime": "Mayuri Kurotsuchi", "slika": "slike/hero_13.jpg"}, {"ime": "Nelliel", "slika": "slike/hero_14.jpg"}, {"ime": "Sajin Komamura", "slika": "slike/hero_15.jpg"}, {"ime": "Soi Fon", "slika": "slike/hero_16.jpg"}, {"ime": "Sosuke Aizen", "slika": "slike/hero_17.jpg"}, {"ime": "Szayelaporro", "slika": "slike/hero_18.jpg"}, {"ime": "Toshiro Hitsugaya", "slika": "slike/hero_19.jpg"}, {"ime": "Ulquiorra - Resurreccion", "slika": "slike/hero_20.jpg"}, {"ime": "Uryu Ishida - Vollstanding", "slika": "slike/hero_21.jpg"}, {"ime": "Yoruichi Shihoin", "slika": "slike/hero_22.jpg"}];
     const DRIVE_LINKOVI = {"Account#105": "https://drive.google.com/drive/folders/1mHjV29iBgyYXmULxk5iLSgAD4jnY3bFt", "Account#194": "https://drive.google.com/drive/folders/1XmZIYdejbohtQvzQ-OrgrjWDc1r5s9Nh", "Account#199": "https://drive.google.com/drive/folders/1gknUA7AqIP_ZgtOApjJW6bRi7YFOBMTK", "Account#197": "https://drive.google.com/drive/folders/1r2ICvGVkkO-dkYLbyouxpI-HuAO991PJ", "Account#193": "https://drive.google.com/drive/folders/1K0oSwIKCpk6E1H_ztXKc-R9_EhmhLUgr", "Account#189": "https://drive.google.com/drive/folders/1dAgHndpeauPQ8bq1PKi8ozVkWxke5-2C", "Account#187": "https://drive.google.com/drive/folders/1ShwJYoKvp1IHMFJOFVlnvia4D2bp6Xl4", "Account#184": "https://drive.google.com/drive/folders/1PfiCc7BCvz3q8OO1xbahHbXn4-bbLpZK", "Account#183": "https://drive.google.com/drive/folders/1qMphfjOqCOdmXOM5NegR9k7jLrfQ7vgg", "Account#182": "https://drive.google.com/drive/folders/1T74Axl8JpxwntwlGhFb9Pwk83MXkDQs_", "Account#180": "https://drive.google.com/drive/folders/1oY2SEDLvMTrZt9c0lkHLFaR3J28-X48P", "Account#174": "https://drive.google.com/drive/folders/1hGetoyY89hSsRhp9E70YfVZhs573-Ent", "Account#173": "https://drive.google.com/drive/folders/1WbN__R9ChnUURTaODQDl3yWDFxv-K2lX", "Account#171": "https://drive.google.com/drive/folders/1Fe4U6KhDzRfXg4unzew1F7P9Kvy4VOQy", "Account#170": "https://drive.google.com/drive/folders/18xqBUkmv6Msxmwod0Cb_8CcNsA3ZC2fS", "Account#169": "https://drive.google.com/drive/folders/1eKp9IJgWYBMTpfvfsIuP24dkOTzeY8F5", "Account#168": "https://drive.google.com/drive/folders/1t41ajbaEYsSbVavdwBwO-olM2fbBGEcW", "Account#167": "https://drive.google.com/drive/folders/1sbjNpzCu5X27L8cRHEn5eUemt1GUDd1W", "Account#166": "https://drive.google.com/drive/folders/1O77TWo6TOKy8q9wDl2M9OrkZQcyjGqWW", "Account#164": "https://drive.google.com/drive/folders/1aV2RVxc6E3e0ZKm-6X11Eder1YWTWCIe", "Account#163": "https://drive.google.com/drive/folders/1fC6DKGFXldHyihOTCJzVB_j5PxIN4yLr", "Account#162": "https://drive.google.com/drive/folders/17yuK0QWoW4-56LOiYwHWW4ynx1YbX00q", "Account#161": "https://drive.google.com/drive/folders/1ECGnL78rGvzEUwDie89wFneR-AhhcII8", "Account#160": "https://drive.google.com/drive/folders/10n8twrATf8wce150FJOm-gIlBVwQTCUr", "Account#159": "https://drive.google.com/drive/folders/1cVakB4mujqRyzKRefA5eKhR6zMNsXIrc", "Account#155": "https://drive.google.com/drive/folders/1VojU3JpR-PYAADXcwngGibKHqV5Mn_et", "Account#154": "https://drive.google.com/drive/folders/1SW3dCRWfo-ZcXIfeHacz__PdtlBgM_AX", "Account#151": "https://drive.google.com/drive/folders/1W0AL4Ig6mmKeJ-Jz5xLp0c3jqwIdFwCw", "Account#149": "https://drive.google.com/drive/folders/1pEfo3AOT236qLNPQwTfdC7TVfV-lJ1OG", "Account#148": "https://drive.google.com/drive/folders/1SDC6hRNvy7k3e2GtNpxNmEP5nyIbcByR", "Account#146": "https://drive.google.com/drive/folders/1dQitNcuhyaONQtTVXVcjBwjX30Bet0CK", "Account#144": "https://drive.google.com/drive/folders/1F4GYigvl23oc9IYVcrZxEIt4LwyNUHyb", "Account#143": "https://drive.google.com/drive/folders/15Lb2fX3BnI5CCuQgSyNcjRfZII2pPKsC", "Account#142": "https://drive.google.com/drive/folders/1eFTxmbq3Gmhq06SEOXAU9xaFrsMFO4Hq", "Account#141": "https://drive.google.com/drive/folders/1KMbiJ973zXKHjgeE2I5IafUBcH27Kqvm", "Account#140": "https://drive.google.com/drive/folders/1xb4nZvNgUT2W849Eblyr-qM4ag1bGrNP", "Account#139": "https://drive.google.com/drive/folders/1lAQCXCf5lqh-1Nnule2iAUQYSo6UtPRu", "Account#138": "https://drive.google.com/drive/folders/1PyUlOa5RX2b7iRMyvJ49j-EDmPLFQv-h", "Account#136": "https://drive.google.com/drive/folders/18AjraBkglRRJKe19n4ibqdf8VAMTznb2", "Account#132": "https://drive.google.com/drive/folders/1GDytesZ5tsaSiRgb8pHEXFbKwX5bgLqb", "Account#131": "https://drive.google.com/drive/folders/1TD5_53bO1u5Iw-LWkfWDGt6h13Zhk_E0", "Account#130": "https://drive.google.com/drive/folders/1KmQQsVzKbzb0uI3sru5xhaHqF2XkJl4D", "Account#129": "https://drive.google.com/drive/folders/1Pv4Pa-8hALI7asew9e4c_ngi5Q3vE4kn", "Account#127": "https://drive.google.com/drive/folders/1puHBsa10rv0aVBZ8Y-yM55KLBzpWNW-0", "Account#126": "https://drive.google.com/drive/folders/1jEX0ycn0a6ARAZZskP8R7NwC6tYmb9iR", "Account#125": "https://drive.google.com/drive/folders/1bVj8WhiICofHZHwG2HU6HzrlqinxUE0R", "Account#124": "https://drive.google.com/drive/folders/1O23FU-EZ1mXTjGwLqn5z3jP-oEIK4Tfz", "Account#123": "https://drive.google.com/drive/folders/1nCmkud8jKpAC3mjoT55isCPsQgVqnPkd", "Account#122": "https://drive.google.com/drive/folders/15bjPZXqAe0XEqAIl2O-2a0VCJqdYzGCl", "Account#121": "https://drive.google.com/drive/folders/13GqpvDcFWgukMaly7Ta9BIfCAzErLBgk", "Account#120": "https://drive.google.com/drive/folders/1YVjF-GJpGuVFQJs_aIpPcNjAscAZGUSG", "Account#119": "https://drive.google.com/drive/folders/12jS22t2zZc60GmJR1NKo6FcKEfb1lF28", "Account#117": "https://drive.google.com/drive/folders/10dL-3d497uqMiRLwqAJl3bRNtpnE2OWp", "Account#114": "https://drive.google.com/drive/folders/1zkuzZhUH1xTxBC6y3fp6FpoZXmIcN7GJ", "Account#113": "https://drive.google.com/drive/folders/11nkjobfe6dnsBj59nkQONZ0F4LcpcSkU", "Account#112": "https://drive.google.com/drive/folders/1eG8gDNRXaD2wlqbM5Y2NdZLSx24bM9kE", "Account#110": "https://drive.google.com/drive/folders/1uuI_6HV4nhOiEBf20wID6cZNytyUpf86", "Account#108": "https://drive.google.com/drive/folders/1AC6q6IG4bBCFulIE0d-dsB7zCtVz7vf3", "Account#106": "https://drive.google.com/drive/folders/1jJ7_w2GWt0FJcFlw200Q7WzcVz0MibJE", "Account#104": "https://drive.google.com/drive/folders/1zEk8g_5MBJedeKdrWQmysQPFjAm7z3-e", "Account#102": "https://drive.google.com/drive/folders/1wbT8VjvOkDonJ1lSJ2leSws3KyUX6j9P", "Account#101": "https://drive.google.com/drive/folders/1XmHzfSGKOqvJWfYtjLk-KePyoPuZInh8", "Account#100": "https://drive.google.com/drive/folders/1_qYxqLSiqFsFQ8TCA3sOIfLFR4FbIEgC", "Account#99": "https://drive.google.com/drive/folders/1NtTiYl-bsLs4m0xKu9n_nd-xvJ5QcK0t", "Account#98": "https://drive.google.com/drive/folders/1ThpEOlIjp7Ha0ur8nfY-jceBE_cBInzc", "Account#96": "https://drive.google.com/drive/folders/1PDBR6Qzz1eci34OInCKHMP4gCIgJgzYB", "Account#95": "https://drive.google.com/drive/folders/14oN6D7KGkejW93otL5j4Hauc5SJuA92x", "Account#94": "https://drive.google.com/drive/folders/1OXMW2YM9YtuVsxTL2o-UxvDmbmDaeSHJ", "Account#88": "https://drive.google.com/drive/folders/1UzV70gnaGJNzKkQSophm701gDW4keDYd", "Account#86": "https://drive.google.com/drive/folders/1NS8_WmUy-EcW6_bX0169h09M5AsAW-js", "Account#85": "https://drive.google.com/drive/folders/190eW_PNatxVc1au0w2fnHApgdG3zNV5Y", "Account#84": "https://drive.google.com/drive/folders/1zz_ocjLoV_6qc-bpiCLWSwOENAxbokZ1", "Account#81": "https://drive.google.com/drive/folders/1TSoQPxDadIq3MI3zyv1RGjKal8pVWBwu", "Account#78": "https://drive.google.com/drive/folders/1_JmxgBDETU2lv_gMvCs8AeVHy7MDcm3E", "Account#77": "https://drive.google.com/drive/folders/1JjC4ELcFEdNju2SruAbTU86HRYjMFwA6", "Account#76": "https://drive.google.com/drive/folders/1PBhIAYLZEQ4aJptDFbeozFomGvwfyJih", "Account#73": "https://drive.google.com/drive/folders/15ELZNF9e26T8hf4pkDzW6jGnbgCf5VJU", "Account#71": "https://drive.google.com/drive/folders/1l1_JxhP4K32A_utbw_MMUcDUypYcMZxp", "Account#69": "https://drive.google.com/drive/folders/1Gb9InrWYoMSZRhY2cowgQABSLBz6M9UE", "Account#68": "https://drive.google.com/drive/folders/1ztsHsY23QJ5csj0upd5yB2Usy0r8MPH1", "Account#67": "https://drive.google.com/drive/folders/1aiV1HGEEDqjx26Kcghc0-I6jf723J-3N", "Account#64": "https://drive.google.com/drive/folders/1pPFVjwU-4W1JXJojbs9o1DhnlaHgoMN4", "Account#63": "https://drive.google.com/drive/folders/1DEU4ZQCF52sEXmKiIzOlqnNOZ05BKN8X", "Account#61": "https://drive.google.com/drive/folders/1yJzflD7SWro334UTCgqmfeL6jFZIOkbX", "Account#60": "https://drive.google.com/drive/folders/1QOY964IcPfll_XH7srX2aNv5c8gZQfwm", "Account#53": "https://drive.google.com/drive/folders/1ODYOgMHmRSAft10_2cbjR01WuDJkKUzv", "Account#51": "https://drive.google.com/drive/folders/1dFbulTk0OTK5r9dJ-_mZPC0GfXFLWPVd", "Account#50": "https://drive.google.com/drive/folders/1MpYunn_kJXUhr-ph0IvviGccrrAAlWOI", "Account#49": "https://drive.google.com/drive/folders/1jDfDGm4bWSwqUgCxKl1TrqiQjFOWQjsS", "Account#48": "https://drive.google.com/drive/folders/1kXkYugTtBs-X1bsplcfX3NqMzdMPtwk1", "Account#47": "https://drive.google.com/drive/folders/10VcX70qVfrf73-_NfO6-BRsy9-AEPw7G", "Account#46": "https://drive.google.com/drive/folders/1P-2FTpfcY9HjgNaYsSx9BSfIWPGVv8gL", "Account#45": "https://drive.google.com/drive/folders/1G8tFrcogBWJWtYB48vtqiLWDRxSj0tsr", "Account#43": "https://drive.google.com/drive/folders/17JTD0zoM0B-16U0rDJDga3z0ri9oLBoc", "Account#42": "https://drive.google.com/drive/folders/1TkeCE4Qvl9zmMRVAQSA8FRoRHBPSzCOZ", "Account#41": "https://drive.google.com/drive/folders/1UomWQdi7g2mC68tB336dapQhv1Aryz0X", "Account#40": "https://drive.google.com/drive/folders/1tfyR2GX-E6w3jy6etED5pJfeBFl6X-XG", "Account#39": "https://drive.google.com/drive/folders/1QE2ryCPb_jzyyRQ6BFYUhyjkm3fbTsqq", "Account#38": "https://drive.google.com/drive/folders/1J6v8WIc0IYTw9bEXSwFviQyqx6IsHTYr", "Account#34": "https://drive.google.com/drive/folders/1WI3ha9CjymLVJFd_whwvWFG31VurfyjD", "Account#33": "https://drive.google.com/drive/folders/1baKrq8xQx8PT7Msdh2JJiwUYL6uU1Eju", "Account#30": "https://drive.google.com/drive/folders/1fdXrbXY24iExZCBotCt9gJgKm99GwwOQ", "Account#27": "https://drive.google.com/drive/folders/1cmZUB1uMR0GNth4Tl0mnkLPwSvK1U74d", "Account#26": "https://drive.google.com/drive/folders/1R7yogYVTTCJm80dyQQ816fy9h_6BdDi0", "Account#23": "https://drive.google.com/drive/folders/1Waq0qKrFZEY47jSZkvNfbZvF5TOFm9rq", "Account#22": "https://drive.google.com/drive/folders/1AmLfpXZiNt2UCBhLsaDtGB2Pp-PpxdqZ", "Account#16": "https://drive.google.com/drive/folders/1IEONBE46zo3kptuokCw8xuG04psAeh1W", "Account#15": "https://drive.google.com/drive/folders/1doKdlVX2hVkXOyHW0etq_SX6Yeto_1eZ", "Account#14": "https://drive.google.com/drive/folders/1DOJ4VBiQBcN5oTgXAOlhHs6_eTOY1aWC", "Account#13": "https://drive.google.com/drive/folders/1bB6pJB8Vh3O6bJLiaD00Fy0Ks562WOva", "Account#12": "https://drive.google.com/drive/folders/1HLnSx8Qk-p7PGMH0LKn1WLBUWjFXl0bd", "Account#10": "https://drive.google.com/drive/folders/1hsim6LaRjQuHnEUPjwWoLQf46ekB--rp", "Account#8": "https://drive.google.com/drive/folders/1XTKoSCdK_OrtAx8Wb76tQXSa-jatGrBZ", "Account#7": "https://drive.google.com/drive/folders/1P_aab6oz4yZF527FUhsFJH5NkkgsMTAD", "Account#3": "https://drive.google.com/drive/folders/1WIOOjfZtMTCt36CHeRbi3hdfykZK868S", "Account#2": "https://drive.google.com/drive/folders/1hgqMKWnA0uYLfDsz80712kHRENiUdqho", "Account#200": "https://drive.google.com/drive/folders/1tS7BBsy88rnXouyZpbx3xL8xO6lyHbQH", "Account#196": "https://drive.google.com/drive/folders/1B01_70q0WZiutcTPVVA8-fZquSPD4E8U", "Account#192": "https://drive.google.com/drive/folders/1Jp1TRGfkLFW-ZiiKlHFkanbA5HaKS3NJ", "Account#190": "https://drive.google.com/drive/folders/1tStCunEaRR_Gs1ODsw8SNNxrNPTULTsE", "Account#191": "https://drive.google.com/drive/folders/1pl9lfBYI8AtARqz711EkFZEyCycV6zR2", "Account#178": "https://drive.google.com/drive/folders/1WU0Vfqjo-JRZ3xyRcn5csiiI7-S2Egmj", "Account#176": "https://drive.google.com/drive/folders/1GrhdKWJXaKF7m6N3qWg_DzIYnXFo9cus", "Account#165": "https://drive.google.com/drive/folders/1_J_QbFy5XhXs58GzRMV1_TahrZa0yNi6", "Account#158": "https://drive.google.com/drive/folders/1uxD1IWT4VWbDferqyJwFXTQIh-y7prY8", "Account#157": "https://drive.google.com/drive/folders/1pAi5hGUrGqIvOX_1MP30JiaHg8Wi_rH3", "Account#156": "https://drive.google.com/drive/folders/18OTEsFiFS8QbshpHUtRUovz9PQMjAIwn", "Account#153": "https://drive.google.com/drive/folders/19FJDmZoRz8hRYcG5WvajHT0sGP4eq8yy", "Account#152": "https://drive.google.com/drive/folders/1srtWfZcwsCYFLhS5Azf07igzH7UzdBtf", "Account#150": "https://drive.google.com/drive/folders/1TH-2MVKMF_fYyAt_txInAWkMOadfSia2", "Account#147": "https://drive.google.com/drive/folders/1O7KoZ91fOdj2caARaNnZJ54_q9Z01I3f", "Account#145": "https://drive.google.com/drive/folders/1g7NUeiYxJOey0jRA0A8tWaDCkZ7P6wcx", "Account#137": "https://drive.google.com/drive/folders/1V7x8Ml4eQf89vnGHz9mLf_9bT6QAg628", "Account#135": "https://drive.google.com/drive/folders/1qh-ymG2cdeQ3rueBJ01MxQKWEHyYwLmj", "Account#134": "https://drive.google.com/drive/folders/1bfd7rmKNizFq6Q2jWwLbkW0B3kc715SC", "Account#118": "https://drive.google.com/drive/folders/1favUFxAOnRRnBPB6iUnruAsp57-vY0rr", "Account#116": "https://drive.google.com/drive/folders/1_sIY4VB_aG7AEPgU1BORP0PIYNM3A0Cr", "Account#115": "https://drive.google.com/drive/folders/1KviIN1SNEyvUKBj_yxTqTMT9Oq4UKVoU", "Account#109": "https://drive.google.com/drive/folders/12zfH5iozY7kNQW8W0i-qO3cUdq_0FuFI", "Account#107": "https://drive.google.com/drive/folders/1c_9gxGTttIysOTaMU6UwhLnkziwBmdnu", "Account#103": "https://drive.google.com/drive/folders/10t-2hAhz3mhwUUm6VMOs2QYvodmNB4Kt", "Account#92": "https://drive.google.com/drive/folders/1NmIiNCkVYN1unY_pPaDzsy5vcBdbLTZv", "Account#91": "https://drive.google.com/drive/folders/12EEAJgjICakhveluZJ8XlK2c4Tsvmbt-", "Account#89": "https://drive.google.com/drive/folders/1epx3BI5Lwv46XzWA-RV0zC34i74XYoum", "Account#87": "https://drive.google.com/drive/folders/13PtNx2P541NH0EulLk4wt0l9Erc_AVg3", "Account#80": "https://drive.google.com/drive/folders/1ld21Y_Y1pP-qtBE1PQGrW4VXmL-k3zxV", "Account#75": "https://drive.google.com/drive/folders/1ZRjlyyp07ykFNbrBDY8fh0_2JTAzhtK-", "Account#62": "https://drive.google.com/drive/folders/18achpppE011t8jXnualsnHsaKwc4ihbQ", "Account#57": "https://drive.google.com/drive/folders/12mbArsQxXGZ5RAn7n5n2jU63ghBACcVB", "Account#55": "https://drive.google.com/drive/folders/1MtCfRxT3rr_aP5MygTEkpPLi87DhYYkM", "Account#52": "https://drive.google.com/drive/folders/1a3ClxYrq2eXSWECNWmsEmf9H7JoU8tKm", "Account#36": "https://drive.google.com/drive/folders/1Kvkive5M0dZP3cEfBYgeoWog6XKIzoGT", "Account#35": "https://drive.google.com/drive/folders/1BVcJjZr2irSe-5Dbl8L2m74-J7DyH_th", "Account#31": "https://drive.google.com/drive/folders/1S5ol98AH2goWs-Nfj2Po6DJsdBi_ALuj", "Account#28": "https://drive.google.com/drive/folders/1r7hdfiPsNtplEM_II2g4eXWo0Gc2nLH2", "Account#24": "https://drive.google.com/drive/folders/1OHpAdnBE6XOrXisPoHJKB8otcs2DelzD", "Account#21": "https://drive.google.com/drive/folders/1QdkylWR2UQmdx9vMvZhFiX74e4iXn2kn", "Account#11": "https://drive.google.com/drive/folders/1_rBHTGOYD8vFCYObI5EDFdfZ7p-y6A9x", "Account#9": "https://drive.google.com/drive/folders/1HjoF-CkQwgTHJfVcAr2rFXZvMq8z11Pa", "Account#6": "https://drive.google.com/drive/folders/14nXh0yViXqxGIiAQL-0MKwmRuxYfT6LV", "Account#1": "https://drive.google.com/drive/folders/1flyI2hb5nSXKH2CvVJURLm77cQnTj1IF"};
@@ -1030,8 +1935,18 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     let odabrani = new Set();
     const grid = document.getElementById('heroes');
     HEROJI.forEach(h => {
-      const card = document.createElement('div'); card.className = 'hero-card'; card.title = h.ime;
-      card.innerHTML = `<img src="${h.slika}"><div class="hero-name-label">${h.ime}</div><div class="cb-area"><div class="cb"></div></div>`;
+      const card = document.createElement('div'); card.className = 'hero-card'; if (h.ime === 'Uryu Ishida - Vollstanding') card.classList.add('hero-card-uryu'); card.title = h.ime;
+      // Duza imena prikazi u dva uredna reda; originalno ime ostaje netaknuto za filtere.
+      const displayName = h.ime === 'Grimmjow - Resurreccion'
+        ? '<span class="hero-name-stack"><span class="hero-name-main">Grimmjow</span><span class="hero-name-sub">- Resurreccion</span></span>'
+        : h.ime === 'Uryu Ishida - Vollstanding'
+          ? '<span class="hero-name-stack"><span class="hero-name-main">Uryu Ishida</span><span class="hero-name-sub">- Vollstanding</span></span>'
+          : h.ime === 'Ulquiorra - Resurreccion'
+            ? '<span class="hero-name-stack"><span class="hero-name-main">Ulquiorra</span><span class="hero-name-sub">- Resurreccion</span></span>'
+            : h.ime === 'Szayelaporro'
+            ? '<span class="hero-name-single">Szayelaporro</span>'
+            : h.ime;
+      card.innerHTML = `<img src="${h.slika}"><div class="hero-name-label">${displayName}</div><div class="cb-area"><div class="cb"></div></div>`;
       card.onclick = () => { const k = h.ime.toLowerCase(); if (odabrani.has(k)) { odabrani.delete(k); card.classList.remove('active'); } else { odabrani.add(k); card.classList.add('active'); } 
     window.addEventListener('scroll', () => {
       const btn = document.getElementById('topBtn');
@@ -1114,7 +2029,6 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
         dodajSljedecuGrupu();
       }
     }, { passive: true });
-
     let TRENUTNA_LISTA_SLIKA = [];
     let TRENUTNI_INDEKS_SLIKE = 0;
     const KAT_LISTA = [
@@ -1213,25 +2127,41 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
       else if (e.key === 'Escape') zatvoriSliku();
     });
     function ponistiFilter() { odabrani.clear(); document.querySelectorAll('.hero-card.active').forEach(c => c.classList.remove('active')); filtriraj(); }
-    function kopirajDiscord(btn) {
-      const el = document.getElementById('dcTag');
-      if (!el) return;
-      const t = el.textContent.trim();
-      const ta = document.createElement('textarea');
-      ta.value = t;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.focus();
-      ta.select();
-      ta.setSelectionRange(0, 9999);
-      try { document.execCommand('copy'); } catch (e) {}
-      document.body.removeChild(ta);
-      if (navigator.clipboard) { navigator.clipboard.writeText(t).catch(function(){}); }
-      const orig = btn.innerHTML;
-      btn.innerHTML = '&#10003; Copied!';
-      setTimeout(function() { btn.innerHTML = orig; }, 2000);
+    async function copyDiscord(button) {
+      const username = document.getElementById("dcTag")?.textContent.trim();
+      if (!username) return;
+
+      const originalLabel = button.innerHTML;
+      let copied = false;
+
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(username);
+          copied = true;
+        } else {
+          const field = document.createElement("textarea");
+          field.value = username;
+          field.setAttribute("readonly", "");
+          field.style.position = "fixed";
+          field.style.opacity = "0";
+          document.body.appendChild(field);
+          try {
+            field.select();
+            copied = document.execCommand("copy");
+          } finally {
+            field.remove();
+          }
+        }
+      } catch (error) {
+        copied = false;
+      }
+
+      button.textContent = copied ? "✓ Copied!" : "Copy failed";
+      window.setTimeout(() => {
+        button.innerHTML = originalLabel;
+      }, 1800);
     }
+
     filtriraj();
   </script>
 
@@ -1283,17 +2213,6 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     </div>
 </div>
 
-  <div class="flag-clean-wrap">
-    <a href="https://info.flagcounter.com/E57c" target="_blank" rel="noopener"><img src="https://s01.flagcounter.com/count2/E57c/bg_000000/txt_FFFFFF/border_CCCCCC/columns_1/maxflags_10/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter"></a>
-  </div>
-
-  <div class="live-top-box" title="Real-time visitors online">
-    <span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; box-shadow:0 0 8px #22c55e;"></span>
-    <span style="font-size:12px; font-weight:bold; color:#ffe680;">LIVE:</span>
-    <script id="_waugen">var _wau = _wau || []; _wau.push(["small", "bleachcat26", "gen"]);</script>
-    <script async src="//waust.at/s.js"></script>
-  </div>
-  <!-- LIVE COUNTER END -->
   
   
   <script>
@@ -1320,6 +2239,9 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
   })();
   </script>
   <!--End of Tawk.to Script-->
+
+
+</main>
 <div id="imgModal" onclick="if(event.target===this)zatvoriSliku()">
   <div id="imgModalTop"><span id="imgModalTitle">Preview</span><a id="imgModalDrive" href="#" target="_blank" rel="noopener">&#128248; All Images (Google Drive)</a><button id="imgModalClose" onclick="zatvoriSliku()">&#10005; Close</button></div>
   <div id="imgModalWrap">
@@ -1328,6 +2250,11 @@ body { background-color: #08070a; color: #fff; padding: 15px; display: flex; fle
     <button type="button" id="imgModalNext" class="modal-nav-btn" onclick="promijeniSliku(1)" title="Next">&#9654;</button>
   </div>
 </div>
-<div id="gacha-fx"><div class="g-st"></div><div class="g-mt" style="top:6%;left:26%;animation-delay:0.5s"></div><div class="g-mt" style="top:18%;left:42%;animation-delay:2.4s"></div><div class="g-mt" style="top:12%;left:58%;animation-delay:4.2s"></div><div class="g-mt" style="top:28%;left:35%;animation-delay:6.0s"></div><div class="g-mt" style="top:8%;left:76%;animation-delay:1.6s"></div><div class="g-mt" style="top:22%;left:90%;animation-delay:3.5s"></div><div class="g-mt" style="top:34%;left:96%;animation-delay:5.3s"></div><div class="g-st" style="transform:scaleX(-1) scaleY(-1);animation-delay:2.2s;opacity:.75"></div><div class="g-sp" style="left:8.5%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:0.35s;animation-duration:7.6s"></div><div class="g-sp" style="left:16.3%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:1.0s;animation-duration:8.45s"></div><div class="g-sp" style="left:24.1%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:1.65s;animation-duration:9.299999999999999s"></div><div class="g-sp" style="left:31.9%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:2.3s;animation-duration:7.6s"></div><div class="g-sp" style="left:39.7%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:2.95s;animation-duration:8.45s"></div><div class="g-sp" style="left:47.5%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:3.6s;animation-duration:9.299999999999999s"></div><div class="g-sp" style="left:55.3%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:4.25s;animation-duration:7.6s"></div><div class="g-sp" style="left:63.1%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:4.9s;animation-duration:8.45s"></div><div class="g-sp" style="left:70.9%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:5.55s;animation-duration:9.299999999999999s"></div><div class="g-sp" style="left:78.7%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:6.2s;animation-duration:7.6s"></div><div class="g-sp" style="left:86.5%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:6.85s;animation-duration:8.45s"></div><div class="g-sp" style="left:94.3%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:7.5s;animation-duration:9.299999999999999s"></div><div class="g-sp" style="left:5.0%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:0.0s;animation-duration:7.2s"></div><div class="g-sp" style="left:12.8%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:0.65s;animation-duration:8.1s"></div><div class="g-sp" style="left:20.6%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:1.3s;animation-duration:9.0s"></div><div class="g-sp" style="left:28.4%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:1.95s;animation-duration:7.2s"></div><div class="g-sp" style="left:36.2%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:2.6s;animation-duration:8.1s"></div><div class="g-sp" style="left:44.0%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:3.25s;animation-duration:9.0s"></div><div class="g-sp" style="left:51.8%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:3.9s;animation-duration:7.2s"></div><div class="g-sp" style="left:59.6%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:4.55s;animation-duration:8.1s"></div><div class="g-sp" style="left:67.4%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:5.2s;animation-duration:9.0s"></div><div class="g-sp" style="left:75.2%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:5.85s;animation-duration:7.2s"></div><div class="g-sp" style="left:83.0%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:6.5s;animation-duration:8.1s"></div><div class="g-sp" style="left:90.8%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:7.15s;animation-duration:9.0s"></div></div>
+<div id="gacha-fx"><div class="g-st"></div><div class="g-mt" style="top:6%;left:26%;animation-delay:0.5s!important"></div><div class="g-mt" style="top:18%;left:42%;animation-delay:2.4s!important"></div><div class="g-mt" style="top:12%;left:58%;animation-delay:4.2s!important"></div><div class="g-mt" style="top:28%;left:35%;animation-delay:6.0s!important"></div><div class="g-mt" style="top:8%;left:76%;animation-delay:1.6s!important"></div><div class="g-mt" style="top:22%;left:90%;animation-delay:3.5s!important"></div><div class="g-mt" style="top:34%;left:96%;animation-delay:5.3s!important"></div><div class="g-st" style="transform:scaleX(-1) scaleY(-1);animation-delay:2.2s!important;opacity:.75"></div><div class="g-sp" style="left:8.5%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:0.35s!important;animation-duration:7.6s!important"></div><div class="g-sp" style="left:16.3%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:1.0s!important;animation-duration:8.45s!important"></div><div class="g-sp" style="left:24.1%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:1.65s!important;animation-duration:9.3s!important"></div><div class="g-sp" style="left:31.9%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:2.3s!important;animation-duration:7.6s!important"></div><div class="g-sp" style="left:39.7%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:2.95s!important;animation-duration:8.45s!important"></div><div class="g-sp" style="left:47.5%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:3.6s!important;animation-duration:9.3s!important"></div><div class="g-sp" style="left:55.3%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:4.25s!important;animation-duration:7.6s!important"></div><div class="g-sp" style="left:63.1%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:4.9s!important;animation-duration:8.45s!important"></div><div class="g-sp" style="left:70.9%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:5.55s!important;animation-duration:9.3s!important"></div><div class="g-sp" style="left:78.7%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:6.2s!important;animation-duration:7.6s!important"></div><div class="g-sp" style="left:86.5%;width:3.5px;height:3.5px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:6.85s!important;animation-duration:8.45s!important"></div><div class="g-sp" style="left:94.3%;width:3.5px;height:3.5px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:7.5s!important;animation-duration:9.3s!important"></div><div class="g-sp" style="left:5.0%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:0.0s!important;animation-duration:7.2s!important"></div><div class="g-sp" style="left:12.8%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:0.65s!important;animation-duration:8.1s!important"></div><div class="g-sp" style="left:20.6%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:1.3s!important;animation-duration:9.0s!important"></div><div class="g-sp" style="left:28.4%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:1.95s!important;animation-duration:7.2s!important"></div><div class="g-sp" style="left:36.2%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:2.6s!important;animation-duration:8.1s!important"></div><div class="g-sp" style="left:44.0%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:3.25s!important;animation-duration:9.0s!important"></div><div class="g-sp" style="left:51.8%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:3.9s!important;animation-duration:7.2s!important"></div><div class="g-sp" style="left:59.6%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:4.55s!important;animation-duration:8.1s!important"></div><div class="g-sp" style="left:67.4%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:5.2s!important;animation-duration:9.0s!important"></div><div class="g-sp" style="left:75.2%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:5.85s!important;animation-duration:7.2s!important"></div><div class="g-sp" style="left:83.0%;width:4px;height:4px;background:#ffcc00;box-shadow:0 0 11px #ffcc00;animation-delay:6.5s!important;animation-duration:8.1s!important"></div><div class="g-sp" style="left:90.8%;width:4px;height:4px;background:#d946ef;box-shadow:0 0 11px #d946ef;animation-delay:7.15s!important;animation-duration:9.0s!important"></div></div>
+
+  <!--Start of Tawk.to Script-->
+  <!-- Duplicate Tawk.to loader removed; the earlier loader is retained. -->
+  <!--End of Tawk.to Script-->
+
 </body>
 </html>
