@@ -1297,10 +1297,17 @@ body,.layout,.grid,.columns,.side-col,.right-col,.left-col,.sidebar,.container,.
     text-transform: uppercase !important;
     cursor: pointer !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 16px rgba(255, 204, 0, 0.75) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(8px) !important;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease, background 0.2s ease !important;
+  }
+.back-to-top.show {
     opacity: 1 !important;
     visibility: visible !important;
+    pointer-events: auto !important;
     transform: none !important;
-    transition: transform 0.2s ease, background 0.2s ease !important;
   }
 .back-to-top:hover {
     background: #ffcc00 !important;
@@ -1905,7 +1912,7 @@ body,.layout,.grid,.columns,.side-col,.right-col,.left-col,.sidebar,.container,.
     </nav>
 
     <!-- Back-to-top button restored -->
-    <button type="button" class="back-to-top" id="topBtn" onclick="document.querySelector('.bleach-panel').scrollIntoView({behavior:'smooth'})">▲ Top</button>
+    <button type="button" class="back-to-top" id="topBtn" onclick="document.querySelector('.bleach-panel')?.scrollIntoView({behavior: 'smooth', block: 'start'})" aria-label="Back to Bleach Catalog">▲ Top</button>
 
     <div class="hero-layout">
       <div class="left-info-stack">
@@ -2034,17 +2041,19 @@ body,.layout,.grid,.columns,.side-col,.right-col,.left-col,.sidebar,.container,.
             : h.ime;
       card.innerHTML = `<img src="${h.slika}"><div class="hero-name-label">${displayName}</div><div class="cb-area"><div class="cb"></div></div>`;
       card.onclick = () => { const k = h.ime.toLowerCase(); if (odabrani.has(k)) { odabrani.delete(k); card.classList.remove('active'); } else { odabrani.add(k); card.classList.add('active'); } 
-    window.addEventListener('scroll', () => {
-      const btn = document.getElementById('topBtn');
-      if (btn) {
-        if (window.scrollY > 450) btn.classList.add('show');
-        else btn.classList.remove('show');
-      }
-    });
-
     filtriraj(); };
       grid.appendChild(card);
     });
+
+    // TOP dugme se prikazuje tek nakon skrolanja i uvijek vraća na vrh stranice.
+    const topBtn = document.getElementById('topBtn');
+    function azurirajTopDugme() {
+      if (!topBtn) return;
+      topBtn.classList.toggle('show', window.scrollY > 450);
+    }
+    window.addEventListener('scroll', azurirajTopDugme, { passive: true });
+    azurirajTopDugme();
+
     let trenutniRezultati = [];
     let prikazanoDoSada = 0;
     const KORAK_PRIKAZA = 24;
